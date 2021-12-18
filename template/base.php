@@ -7,10 +7,35 @@
 </head>
 <body>
     <header>
-
+        <img src="./upload/hiking.png" alt="" >
     </header>
     <nav>
-
+        <ul>
+            <li>
+                <a href="#">HomePage</a>
+            </li>
+            <li>
+                <a href="#">Catalogo</a>
+            </li>
+            <li>
+                <a href="#">Contatti</a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./upload/user.png" alt="Profilo Utente" >
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./upload/bell.png" alt="Notifiche" >
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./upload/cart.png" alt="Carrello" >
+                </a>
+            </li>
+        </ul>
     </nav>
     <main>
 
