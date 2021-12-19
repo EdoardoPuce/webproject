@@ -28,6 +28,10 @@ nav > ul{
     align-items: center;
 }
 
+nav > ul > li:nth-child(4){
+    display: none;
+}
+
 nav > ul > li:first-child{
     margin-left: 20px;
 }
@@ -40,12 +44,13 @@ nav > ul > li{
 margin: 0px 10px;
 }
 
-nav > ul > li:nth-child(4){
+nav > ul > li:nth-child(5){
     margin-left: auto;
 }
 
 nav > ul > li > a{
     text-decoration: none;
+    display: block;
     color: white;
 }
 
@@ -65,4 +70,24 @@ nav > ul > li > a > img{
 }
 
 
+@media screen and (max-width: 768px) {
 
+    nav > ul > li:nth-child(-n+3){
+        display: none;
+    }
+    
+    nav > ul > li:nth-child(4){
+        display: initial;
+    }
+
+    nav > ul > li:nth-child(4) > a{
+        display: block;
+        margin-right: 10px;
+    }
+
+    nav > ul > li:nth-child(4):hover ~ :nth-child(-n+3){
+        display: inline;
+    }
+
+      
+}
