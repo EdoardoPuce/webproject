@@ -44,7 +44,11 @@
         </ul>
     </nav>
     <main>
-
+        <?php
+            if(isset($templateParams["nome"])){
+                require($templateParams["nome"]);
+            }
+        ?>
     </main>
     <aside>
 
