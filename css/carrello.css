@@ -1,0 +1,56 @@
+main > section > h1 {
+    text-align: center;
+}
+
+.carrello{
+    border: 1px solid black;
+    border-radius: var(--border);
+    float: left;
+    margin-left: 2%;
+    margin-right: 68%;
+    position: absolute;
+    width: 30%;
+    height: 400px;
+}
+
+.dati{
+    border: 1px solid black;
+    border-radius: var(--border);
+    float: right;
+    margin-left: 38%;
+    margin-right: 2%;
+    width: 60%;
+    height: 400px;
+}
+
+.dati > div:first-child{
+    border: 1px solid red;
+    border-radius: var(--border);
+    margin: 0px 5%;
+    margin-top: 5%;
+    width: 90%;
+    height: 20%;
+}
+
+.dati > div:last-child{
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 90%;
+    height: 65%;
+}
+
+.dati > div > div:first-child{
+    border: 1px solid red;
+    border-radius: var(--border);
+    position: absolute;
+    width: 25%;
+    height: 26.5%;
+}
+
+.dati > div > div:last-child{
+    border: 1px solid red;
+    border-radius: var(--border);
+    float: right;
+    width: 50%;
+    height: 100%;
+}

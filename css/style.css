@@ -1,10 +1,15 @@
+:root {
+    --border: 15px;
+    --main_color: #4F6D59;
+  }
+
 body, header {
     margin: 0;
     padding: 0;
 }
 
 body > header{
-    background-color: #4F6D59;
+    background-color: var(--main_color);
 }
 
 body > header > img{
@@ -14,7 +19,7 @@ body > header > img{
 }
 
 nav{
-    background-color: #4F6D59;
+    background-color: var(--main_color);
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     height: 50px;
