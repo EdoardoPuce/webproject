@@ -2,7 +2,9 @@
 <section>
     <h1>Carrello</h1>
     <div class="carrello">
-        
+        <?php 
+                require("articolo-carrello.php")
+        ?>
     </div>
     <div class="dati">
         <div>
