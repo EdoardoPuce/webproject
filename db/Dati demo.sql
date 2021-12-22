@@ -22,6 +22,25 @@ SET time_zone = "+00:00";
 --
 
 --
+-- Dump dei dati per la tabella `categoria`
+--
+
+INSERT INTO `categoria` (`idCategoria`, `nomeCategoria`) VALUES
+(1, 'Accessori'),
+(2, 'Pantaloni'),
+(3, 'Felpe'),
+(4, 'T-shirt');
+
+
+--
+-- Dump dei dati per la tabella `rivenditore`
+--
+
+INSERT INTO `rivenditore` (`idRivenditore`, `nome`, `cognome`, `email`, `password`, `piva`, `citta`, `indirizzo`, `civico`, `cap`) VALUES
+(1, 'Mario', 'Bianchi', 'mario.bianchi@gmail.com', 'webproject', '12345678901', 'Cesena', 'Via dell\'università', 50, 47521);
+COMMIT;
+
+--
 -- Dump dei dati per la tabella `articolo`
 --
 
@@ -32,15 +51,7 @@ INSERT INTO `articolo` (`idArticolo`, `nomeArticolo`, `descrizione`, `taglia`, `
 (5, 'Pantaloni uomo', 'descrizione pantaloni uomo', 'M', 25, 'pantaloniUomo.jpg', 4, 2, 1),
 (6, 'Pantaloni donna', 'descrizione pantaloni donna', 'S', 2, 'pantaloniDonna.jpg', 0, 2, 1);
 
---
--- Dump dei dati per la tabella `categoria`
---
 
-INSERT INTO `categoria` (`idCategoria`, `nomeCategoria`) VALUES
-(1, 'Accessori'),
-(2, 'Pantaloni'),
-(3, 'Felpe'),
-(4, 'T-shirt');
 
 --
 -- Dump dei dati per la tabella `cliente`
@@ -65,13 +76,7 @@ INSERT INTO `rigaordine` (`qta`, `idArticolo`, `idOrdine`) VALUES
 (2, 2, 1),
 (1, 3, 2);
 
---
--- Dump dei dati per la tabella `rivenditore`
---
 
-INSERT INTO `rivenditore` (`idRivenditore`, `nome`, `cognome`, `email`, `password`, `piva`, `citta`, `indirizzo`, `civico`, `cap`) VALUES
-(1, 'Mario', 'Bianchi', 'mario.bianchi@gmail.com', 'webproject', '12345678901', 'Cesena', 'Via dell\'università', 50, 47521);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
