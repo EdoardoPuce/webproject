@@ -2,13 +2,21 @@
     --height_main: 500px;
 }
 
-main > section > h1 {
+h1, h2 {
     text-align: center;
 }
 
-.carrello{
+h2{
+    font-size: 20px;
+}
+
+.carrello, .dati, .dati > section, .dati > div > section:first-child, .dati > div > section:last-child {
     border: 1px solid black;
     border-radius: var(--border);
+}
+
+.carrello{
+    margin-top: 20px;
     margin-left: 2%;
     display: inline-block;
     width: 30%;
@@ -22,42 +30,90 @@ main > section > h1 {
 
 
 .dati{
-    border: 1px solid black;
-    border-radius: var(--border);
     float: right;
     margin-right: 2%;
     width: 60%;
-    height: var(--height_main);
 }
 
-.dati > div:first-child{
-    border: 1px solid red;
-    border-radius: var(--border);
+.dati > section{
     margin: 30px auto 30px;
     width: 90%;
-    height: 100px;
+    height: 140px;
 }
 
-.dati > div:last-child{
+.dati-spedizione > ul, .dati-pagamento > ul, .riepilogo-ordine > ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+
+.dati-spedizione > ul > li > input, .dati-pagamento > ul > li > input, .riepilogo-ordine > ul > li > input{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+}
+
+.dati-spedizione > ul > li:first-child{
+    width: auto;
+}
+
+.dati-spedizione > ul > li > label{
+    font-size: 18px;
+}
+
+.dati-spedizione > ul > li:first-child > input{
+    width: 60%;
+}
+
+.dati-spedizione > ul > li:nth-child(2){
+    float: left;
+    width: 40%;
+    margin-top: 10px;
+}
+
+.dati-spedizione > ul > li:nth-child(3){
+    float: right;
+    width: 40%;
+    margin-top: 10px;
+    margin-right: 10%;
+}
+
+.dati > div{
     margin: 0px auto 30px;
     width: 90%;
     height: 310px;
 }
 
-.dati > div > div:first-child{
-    border: 1px solid red;
-    border-radius: var(--border);
+.dati-pagamento{
     display: inline-block;
     width: 45%;
     height: 100%;
 }
 
-.dati > div > div:last-child{
-    border: 1px solid red;
-    border-radius: var(--border);
+.dati-pagamento > ul{
+    padding-left: 0px;
+    margin-top: 10%;
+}
+
+.dati-pagamento > ul > li{
+    margin: 10px 0px;
+}
+
+
+.riepilogo-ordine{
     float: right;
     width: 45%;
     height: 100%;
+}
+
+.riepilogo-ordine > ul{
+    padding-left: 0px;
+    margin-top: 10%;
+}
+
+.riepilogo-ordine > ul > li{
+    margin: 10px 0px;
 }
 
 @media screen and (max-width: 768px) {
@@ -76,25 +132,46 @@ main > section > h1 {
         height: 810px;
     }
 
-    .dati > div:first-child{
+    .dati > section{
         margin: 30px auto 30px;
         width: 90%;
-        height: 100px;
+        height: fit-content;
+    }
+
+    .dati-spedizione > ul {
+        padding-left: 0%;
+    }
+
+    .dati-spedizione > ul > li:first-child {
+        margin-top: 20px;
     }
     
-    .dati > div:last-child{
+    .dati-spedizione > ul > li:nth-child(2), .dati-spedizione > ul > li:nth-child(3){
+        float: none;
+        width: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: auto;
+    }
+
+    .dati-spedizione > ul > li:nth-child(3){
+        margin-right: 0px;
+    }
+
+    
+    .dati > div{
         margin: 0px auto 30px;
         width: 90%;
         height: 620px;
     }
     
-    .dati > div > div:first-child{
+    .dati-pagamento{
         display: block;
         width: 100%;
         height: 50%;
     }
     
-    .dati > div > div:last-child{
+    .riepilogo-ordine{
         width: 100%;
         height: 50%;
     }
