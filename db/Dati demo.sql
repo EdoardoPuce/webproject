@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 19, 2021 alle 15:29
+-- Creato il: Dic 22, 2021 alle 15:45
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.12
 
@@ -26,15 +26,21 @@ SET time_zone = "+00:00";
 --
 
 INSERT INTO `articolo` (`idArticolo`, `nomeArticolo`, `descrizione`, `taglia`, `prezzo`, `imgArticolo`, `qtaMagazzino`, `categoria`, `rivenditore`) VALUES
-(2, 'Scaldacollo', 'Protegge dalle intemperie', 'unisex', 15, '', 30, 1, 1),
-(3, 'Berretta uomo', 'Tieni al caldo i pensieri', 'S', 25, '', 20, 1, 1);
+(2, 'Scaldacollo', 'Protegge dalle intemperie', 'unisex', 15, 'paracollo.png', 30, 1, 1),
+(3, 'Berretta uomo', 'Tieni al caldo i pensieri', 'S', 25, 'berrettaUomo.png', 20, 1, 1),
+(4, 'Berretta donna', 'Tieni al caldo i pensieri', 'unisex', 25, 'berrettaDonna.png', 28, 1, 1),
+(5, 'Pantaloni uomo', 'descrizione pantaloni uomo', 'M', 25, 'pantaloniUomo.jpg', 4, 2, 1),
+(6, 'Pantaloni donna', 'descrizione pantaloni donna', 'S', 2, 'pantaloniDonna.jpg', 0, 2, 1);
 
 --
 -- Dump dei dati per la tabella `categoria`
 --
 
 INSERT INTO `categoria` (`idCategoria`, `nomeCategoria`) VALUES
-(1, 'Accessori');
+(1, 'Accessori'),
+(2, 'Pantaloni'),
+(3, 'Felpe'),
+(4, 'T-shirt');
 
 --
 -- Dump dei dati per la tabella `cliente`
