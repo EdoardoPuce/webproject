@@ -1,11 +1,14 @@
 <link rel="stylesheet" type="text/css" href="./css/catalogo.css" />
 
 <section>
-    <form>
-        <input type = "image" src ="./upload/search.png" alt = "Submit" width="48" height = "48" />
-        <label>Cerca per nome: <input type = "text" name = "ricerca"/>
-    </form>
+    <form class="rierca">
+        <input type = "image" src ="./upload/search.png" alt = "Submit" />
+        <input type = "text" name = "ricerca" placeholder="Ricerca..."/>
+       
 
+    </form>
+    <input type="button" value="Filtra"  />
+    
 </section>
 
 
@@ -22,7 +25,7 @@
             } ?> 
     
     <div class="articolo">
-        <img class="prodotto" src='<?php echo UPLOAD_DIR.$articolo["imgArticolo"]; ?>' alt ="" />
+        <img class="prodotto" src='<?php echo UPLOAD_IMG.$articolo["imgArticolo"];?>' alt ="" />
         <p class="prezzo">€ <?php echo ($articolo["prezzo"]) ?> </p>
         <p class="nome"> <?php echo ($articolo["nomeArticolo"]) ?> </p>
         
