@@ -16,5 +16,12 @@ class DatabaseHelper{
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getCategorie(){
+        $stmt = $this->db->prepare("SELECT idCategoria, nomeCategoria FROM categoria");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>

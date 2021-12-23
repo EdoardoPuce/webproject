@@ -2,37 +2,30 @@ section:first-of-type{
     background-color: #76A99A;
 }
 
-main > section > form{
-    display: inline-block;
-    background-color: #98DAC6;
-    border-radius: 20px;
-    height: 80%;
-    width: 300px;
-}
-
+/*Sezione di ricerca*/
 main > section:first-of-type{
     padding: 10px 5px;
 }
 
+/*FORM DI RICERCA */
+main > section > form{
+    display: inline-block;
+    background-color: #98DAC6;
+    border-radius: 20px;
+    width: 300px;
+    margin: 0;
+}
+
+/*LABEL FORM DI RICERCA */
 section > form > label{
     vertical-align: top;
     font-family: verdana, "Helvetica Neue", Helvetica, sans-serif;
     color: black;
 }
 
-section > input[type="button"]{
-    
-    vertical-align:middle;
-    margin-left: 20px;
-    vertical-align:top;
-    margin-top:10px;
-    padding: 1px;
-    background-color: #76A99A;
-    border:none;
-    
-   
-   
-}
+
+
+/*Lente d'ingrandimento bottone*/
 main > section > form > input[type="image"]{
     width: 25px;
     height: 25px;
@@ -41,6 +34,27 @@ main > section > form > input[type="image"]{
     
 }
 
+/* BOTTONE FILTRA  HOVER*/
+section > input[type="button"]:hover{  
+    background-color: #E5A23C;
+    border-radius: 20px;
+}
+
+/* BOTTONE FILTRA */
+section > input[type="button"]{
+    margin: 5px 20px 0 ;
+    vertical-align:top;
+    padding: 1px;
+    background-color: #76A99A;
+    border:none;
+    width: 50px;
+    height: 30px;    
+}
+
+
+
+
+/*Form dove si scrive*/
 main > section > form > input[type="text"]{
     background-color: #98DAC6;
     border: none;
@@ -50,18 +64,42 @@ main > section > form > input[type="text"]{
     width: 200px;
 }
 
-main > section > form > input[type="text"]:focus-within{
-    border: none;
 
+/*  ASIDE */
+aside{
+    float: left;
+    background-color: #DEF2C8;
+    display:none;
+    margin: 10px 0;
+    font-size: 18px;
+    border-style: solid;
+    border-color: black;
+    width: 10%;
+    overflow: visible;
+    min-width: 107px;   
+    
 }
+
+/* CATEGORIE ASIDE*/
+main > aside > form > li{
+    list-style:none;
+    margin: 10px 0;
+    font-size:15px;
+   
+}
+
+/*CONTENITORE ARTICOLO */
 div.articolo{
     display: inline-block;
     margin: 10px 2%;
     width: 20%;
+    height: 40%;
     border-style: solid;
     border-width: 1px;
     border-color: black;
     border-radius: 10px;
+    vertical-align: top;
+    
 }
 
 img.prodotto{
@@ -69,7 +107,9 @@ img.prodotto{
     display: block;
     margin:0px auto;
     text-align: center;
-    width:80%;    
+    width:80%;
+    
+    max-height: 204px;
 }
 
 p{
@@ -91,19 +131,26 @@ p.disponibilità[value ="Ultimi pezzi"]{
 }
 
 
+/* PROPRIETA' SOLO PER SCHERMO PICCOLO */
 @media screen and (max-width: 768px){
 
     div.articolo{
         width:30%;
         margin: 15px 5px;
     }
+
+    aside{
+        box-sizing: border-box;
+        width: 100%;
+    }
 }
 
+/* PROPRIETA' SOLO PER SCHERMO GRANDE */
 @media screen and (min-width: 768px){
     
-div:nth-child(4n+1){
-    margin-left: 25px;
+    div:nth-child(4n+1){
+        margin-left: 25px;
+    }
 
 
-}
 }    

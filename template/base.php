@@ -50,9 +50,6 @@
             }
         ?>
     </main>
-    <aside>
-
-    </aside>
     <footer>
 
     </footer>

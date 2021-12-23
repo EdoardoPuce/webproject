@@ -7,11 +7,22 @@
        
 
     </form>
-    <input type="button" value="Filtra"  />
-    
+    <input type="button" value="Filtra"/> 
 </section>
 
+<aside>
+    <p>Categorie</p>
 
+    <form >
+    <?php foreach($templeteParams["categorie"] as $categoria): ?>
+        <li>
+        <label><input type="checkbox" name="categoria" value="<?php $categoria["nomeCategoria"]?>"/><?php echo $categoria["nomeCategoria"]?></label>
+        </li>
+    <?php endforeach;?>
+    
+    <input type="submit" value="Filtra" />
+
+</aside>
 <section>
 <?php foreach ($templateParams['articoli'] as $articolo) : ?>
     
@@ -30,8 +41,10 @@
         <p class="nome"> <?php echo ($articolo["nomeArticolo"]) ?> </p>
         
         <p class="disponibilità" value="<?php echo $disponibilità?>"> <?php echo $disponibilità?>
-            </p>
+        </p>
     </div>
 
 <?php endforeach;?>
 </section>
+
+<script src="./js/filtriCatalogo.js" type="text/javascript"></script>
