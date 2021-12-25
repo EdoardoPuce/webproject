@@ -1,6 +1,7 @@
 :root {
     --border: 15px;
     --main_color: #4F6D59;
+    --hover_pulsante: #E5A23C;
   }
 
 body, header {
@@ -63,7 +64,7 @@ nav > ul > li > a{
 }
 
 nav > ul > li > a:hover{
-    background-color: #E5A23C;
+    background-color: var(--hover_pulsante);
 }
 
 

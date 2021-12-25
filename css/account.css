@@ -1,0 +1,67 @@
+section > h1 {
+    text-align: center;
+}
+
+section > aside, section > section {
+    border: 1px solid black;
+    border-radius: var(--border);
+}
+
+section > aside {
+    display: inline-block;
+    margin: 0px 3% 10px;
+    width: 20%;
+    text-align: center;
+}
+
+
+section > aside > a {
+    display: block;
+    margin: 10px 40px;
+    padding: 10px 0px;
+    text-decoration: none;
+    color: black;
+}
+
+section > aside > div {
+    display: block;
+    width: 80%;
+    text-align: center;
+    border-top: 1px solid black;
+    margin: 0px 20px;
+}
+
+section > aside > a:hover {
+    background-color: var(--hover_pulsante);
+}
+
+section > section {
+    margin-right: 3%;
+    width: 65%;
+    float: right;
+    text-align: center;
+    overflow-y: auto;
+    height: 400px;
+}
+
+section > section::-webkit-scrollbar {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    
+    section {
+        text-align: center;
+    }
+
+    section > aside, section > section {
+        width: 80%;
+        margin: 10px 0px;
+    }
+
+    section > section{
+        display: inline-block;
+        float: none;
+    }
+
+}

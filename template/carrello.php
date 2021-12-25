@@ -46,16 +46,16 @@
             <h2>Riepilogo Ordine</h2>
                 <ul>
                     <li>
-                        <label for="articoli">Costo Articoli:</label>
+                        <label for="n-articoli">N° Articoli: 4</label>
                     </li>
                     <li>
-                        <label for="spedizione">Spedizione:</label>
+                        <label for="articoli">Costo Articoli: 32$</label>
                     </li>
                     <li>
-                        <label for="totale">Totale:</label>
+                        <label for="spedizione">Spedizione: 5$</label>
                     </li>
                     <li>
-                        <label for="data">Data:</label>
+                        <label for="totale">Totale: 37$</label>
                     </li>
                     <li>
                         <input type="button" name="Acquista" value="acquista" />
