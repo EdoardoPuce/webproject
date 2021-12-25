@@ -2,6 +2,7 @@
     --height_main: 500px;
 }
 
+
 h1, h2 {
     text-align: center;
 }
@@ -52,6 +53,7 @@ h2{
     border-right-style: hidden;
     border-left-style: hidden;
     border-bottom-style: groove;
+    text-align: center;
 }
 
 .dati-spedizione > ul > li:first-child{
@@ -113,7 +115,16 @@ h2{
 }
 
 .riepilogo-ordine > ul > li{
-    margin: 10px 0px;
+    margin: 20px 0px;
+}
+
+.riepilogo-ordine > ul > li > input{
+    padding: 10px 20px;
+    border-bottom-style: hidden;
+}
+
+.riepilogo-ordine > ul > li > input:hover{
+    background-color: orange;
 }
 
 @media screen and (max-width: 768px) {
@@ -126,16 +137,20 @@ h2{
     }
     
     .dati{
-        margin: 0px 5%;
+        margin: 50px 5%;
         display: block;
         width: 90%;
-        height: 810px;
+        height: fit-content;
     }
 
     .dati > section{
         margin: 30px auto 30px;
         width: 90%;
         height: fit-content;
+    }
+
+    .dati-pagamento, .riepilogo-ordine {
+        margin-bottom: 20px;
     }
 
     .dati-spedizione > ul {
