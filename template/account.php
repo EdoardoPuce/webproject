@@ -11,7 +11,7 @@
     </aside>
     <section>
         <?php 
-            require("box-dettagli.php");
+            require("dati-personali.php");
         ?>
     </section>
 </section>
