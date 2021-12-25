@@ -18,22 +18,24 @@ div > ul > li:first-child, div > ul > li:nth-child(4), div > ul > li:nth-child(6
     display: inline;
     float: left;
     margin-left: 5%;
+    margin-right: 10px;
 }
 
 div > ul > li:nth-child(2), div > ul > li:nth-child(5), div > ul > li:nth-child(7){
     float: right;
     display: block;
     margin-right: 5%;
+    margin-left: 10px;
 }
 
 div > ul > li:first-child, div > ul > li:nth-child(4), div > ul > li:nth-child(8), div > ul > li:nth-child(2), div > ul > li:nth-child(5), div > ul > li:nth-child(7){
     margin-top: 20px;
-    width: 40%;
+    width: 38%;
 }
 
 div > ul > li:nth-child(3), div > ul > li:nth-child(6){
     float: left;
-    width: 100%;
+    width: 90%;
     text-align: start;
     margin-top: 20px;
     margin-left: 10%;
@@ -46,3 +48,10 @@ div > ul > li:nth-child(3) > input, div > ul > li:nth-child(6) > input{
 
 
 
+@media screen and (max-width: 768px) {
+    
+    div > ul > li > input{
+        margin-left: 0px;
+    }
+
+}

@@ -41,9 +41,27 @@ section > section {
     float: right;
     text-align: center;
     overflow-y: auto;
-    height: 500px;
+    height: 400px;
 }
 
 section > section::-webkit-scrollbar {
     display: none;
+}
+
+@media screen and (max-width: 768px) {
+    
+    section {
+        text-align: center;
+    }
+
+    section > aside, section > section {
+        width: 80%;
+        margin: 10px 0px;
+    }
+
+    section > section{
+        display: inline-block;
+        float: none;
+    }
+
 }
