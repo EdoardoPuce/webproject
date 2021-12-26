@@ -7,61 +7,55 @@
         ?>
     </section>
     <div class="dati">
-        <section class="dati-spedizione">
-            <h2>Dati Spedizione</h2>
-            <ul>
-                <li>
-                    <label for="indirizzo">Indirizzo:</label><input type="text" id="indirizzo" name="indirizzo" />
-                </li>
-                <li>
-                    <label for="paese">Paese:</label><input type="text" id="paese" name="paese" />
-                </li>
-                <li>
-                    <label for="citta">Citta:</label><input type="text" id="citta" name="citta" />
-                </li>
-            </ul>
-        </section>
+        <fieldset class="dati-spedizione">
+            <legend>Dati Spedizione</legend>
+            <div>
+                <label for="indirizzo">Indirizzo:</label><input type="text" id="indirizzo" name="indirizzo"/>
+            </div>
+            <div>
+                <label for="paese">Paese:</label><input type="text" id="paese" name="paese" />
+            </div>
+            <div>
+                <label for="citta">Citta:</label><input type="text" id="citta" name="citta" />
+            </div>
+        </fieldset>
         <div>
-            <section class="dati-pagamento">
-                <h2>Dati Pagamento</h2>
-                <ul>
-                    <li>
-                        <label for="nome">Nome:</label><input type="text" id="nome" name="nome" />
-                    </li>
-                    <li>
-                        <label for="cognome">Cognome:</label><input type="text" id="cognome" name="cognome" />
-                    </li>
-                    <li>
-                        <label for="codice-carta">Codice carta:</label><input type="text" id="codice-carta" name="codice-carta" />
-                    </li>
-                    <li>
-                        <label for="data">Data:</label><input type="month" id="data" name="data" />
-                    </li>
-                    <li>
-                        <label for="cvv">Cvv:</label><input type="text" id="cvv" name="cvv" />
-                    </li>
-                </ul>
-            </section>
-            <section class="riepilogo-ordine">
-            <h2>Riepilogo Ordine</h2>
-                <ul>
-                    <li>
-                        <label for="n-articoli">N° Articoli: 4</label>
-                    </li>
-                    <li>
-                        <label for="articoli">Costo Articoli: 32$</label>
-                    </li>
-                    <li>
-                        <label for="spedizione">Spedizione: 5$</label>
-                    </li>
-                    <li>
-                        <label for="totale">Totale: 37$</label>
-                    </li>
-                    <li>
-                        <input type="button" name="Acquista" value="acquista" />
-                    </li>
-                </ul>
-            </section>
+            <fieldset class="dati-pagamento">
+                <legend>Dati Pagamento</legend>
+                <div>
+                    <label for="nome">Nome:</label><input type="text" id="nome" name="nome" />
+                </div>
+                <div>
+                    <label for="cognome">Cognome:</label><input type="text" id="cognome" name="cognome" />
+                </div>
+                <div>
+                    <label for="codice-carta">Codice carta:</label><input type="text" id="codice-carta" name="codice-carta" />
+                </div>
+                <div>
+                    <label for="data">Data:</label><input type="month" id="data" name="data" />
+                </div>
+                <div>
+                    <label for="cvv">Cvv:</label><input type="text" id="cvv" name="cvv" />
+                </div>
+            </fieldset>
+            <fieldset class="riepilogo-ordine">
+                <legend>Riepilogo Ordine</legend>
+                <div>
+                    <label for="n-articoli">N° Articoli: 4</label>
+                </div>
+                <div>
+                    <label for="articoli">Costo Articoli: 32$</label>
+                </div>
+                <div>
+                    <label for="spedizione">Spedizione: 5$</label>
+                </div>
+                <div>
+                    <label for="totale">Totale: 37$</label><br/>
+                </div>
+                <div>
+                    <input type="button" name="Acquista" value="acquista" />
+                </div>
+            </fieldset>
         </div>
     </div>
 </section>

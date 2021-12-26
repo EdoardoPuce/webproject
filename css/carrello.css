@@ -11,13 +11,15 @@ h2{
     font-size: 20px;
 }
 
-.carrello, .dati, .dati > section, .dati > div > section:first-child, .dati > div > section:last-child {
+.carrello, .dati{
     border: 1px solid black;
+}
+
+.carrello, .dati, .dati-spedizione , .dati-pagamento, .riepilogo-ordine {
     border-radius: var(--border);
 }
 
 .carrello{
-    margin-top: 20px;
     margin-left: 2%;
     display: inline-block;
     width: 30%;
@@ -33,22 +35,22 @@ h2{
 .dati{
     float: right;
     margin-right: 2%;
+    margin-top: 10px;
     width: 60%;
 }
 
-.dati > section{
-    margin: 30px auto 30px;
+.dati-spedizione{
+    margin: 20px auto 30px;
     width: 90%;
-    height: 140px;
+    height: auto;
 }
 
-.dati-spedizione > ul, .dati-pagamento > ul, .riepilogo-ordine > ul {
-    list-style-type: none;
+.dati-spedizione > div, .dati-pagamento > div, .riepilogo-ordine > div {
     text-align: center;
 }
 
 
-.dati-spedizione > ul > li > input, .dati-pagamento > ul > li > input, .riepilogo-ordine > ul > li > input{
+.dati-spedizione > div > input, .dati-pagamento > div > input, .riepilogo-ordine > div > input{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -56,74 +58,73 @@ h2{
     text-align: center;
 }
 
-.dati-spedizione > ul > li:first-child{
-    width: auto;
+.dati-spedizione > div:nth-child(2){
+    width: 90%;
 }
 
-.dati-spedizione > ul > li > label{
+.dati-spedizione > div > label{
     font-size: 18px;
 }
 
-.dati-spedizione > ul > li:first-child > input{
+.dati-spedizione > div:nth-child(2) > input{
     width: 60%;
 }
 
-.dati-spedizione > ul > li:nth-child(2){
+.dati-spedizione > div:nth-child(3){
     float: left;
     width: 40%;
     margin-top: 10px;
+    margin-left: 10%;
+    margin-bottom: 20px;
 }
 
-.dati-spedizione > ul > li:nth-child(3){
+.dati-spedizione > div:nth-child(4){
     float: right;
     width: 40%;
     margin-top: 10px;
     margin-right: 10%;
+    margin-bottom: 20px;
 }
 
 .dati > div{
     margin: 0px auto 30px;
     width: 90%;
-    height: 310px;
+    height: auto;
 }
 
 .dati-pagamento{
     display: inline-block;
+    padding-top: 7%;
+    padding-bottom: 10%;
     width: 45%;
-    height: 100%;
+    height: max-content;
 }
 
-.dati-pagamento > ul{
-    padding-left: 0px;
-    margin-top: 10%;
-}
-
-.dati-pagamento > ul > li{
+.dati-pagamento > div{
     margin: 10px 0px;
 }
 
 
 .riepilogo-ordine{
     float: right;
-    width: 45%;
-    height: 100%;
-}
-
-.riepilogo-ordine > ul{
+    width: 42%;
+    height: fit-content;
+    padding-top: 4%;
     padding-left: 0px;
-    margin-top: 10%;
+    margin-top: auto;
+
 }
 
-.riepilogo-ordine > ul > li{
+.riepilogo-ordine > div{
     margin: 20px 0px;
 }
 
-.riepilogo-ordine > ul > li > input{
+.riepilogo-ordine > div > input{
     padding: 10px 20px;
     border-bottom-style: hidden;
 }
 
-.riepilogo-ordine > ul > li > input:hover{
+.riepilogo-ordine > div > input:hover{
     background-color: orange;
 }
 
@@ -143,8 +144,9 @@ h2{
         height: fit-content;
     }
 
-    .dati > section{
+    .dati-spedizione{
         margin: 30px auto 30px;
+        padding-left: 0%;
         width: 90%;
         height: fit-content;
     }
@@ -153,15 +155,11 @@ h2{
         margin-bottom: 20px;
     }
 
-    .dati-spedizione > ul {
-        padding-left: 0%;
-    }
-
-    .dati-spedizione > ul > li:first-child {
+    .dati-spedizione > div:nth-child(2) {
         margin-top: 20px;
     }
     
-    .dati-spedizione > ul > li:nth-child(2), .dati-spedizione > ul > li:nth-child(3){
+    .dati-spedizione > div:nth-child(3), .dati-spedizione > div:nth-child(4){
         float: none;
         width: auto;
         margin-top: 20px;
@@ -169,26 +167,29 @@ h2{
         margin-right: auto;
     }
 
-    .dati-spedizione > ul > li:nth-child(3){
+    .dati-spedizione > div:nth-child(4){
         margin-right: 0px;
     }
 
     
     .dati > div{
-        margin: 0px auto 30px;
+        margin: 30px auto 30px;
+        padding-left: 0%;
         width: 90%;
-        height: 620px;
+        height: fit-content;
     }
     
     .dati-pagamento{
-        display: block;
         width: 100%;
         height: 50%;
+        padding: 0px;
     }
     
     .riepilogo-ordine{
+        float: none;
         width: 100%;
         height: 50%;
+        padding: 0px;
     }
       
 }
