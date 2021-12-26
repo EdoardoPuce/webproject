@@ -1,30 +1,29 @@
 <link rel="stylesheet" type="text/css" href="./css/dati-personali.css" />
-<div>
-    <h2>Dati Personali</h2>
-    <ul>
-        <li>
-            <label for="nome">Nome:</label><input type="text" id="nome" name="nome" />
-        </li>
-        <li>
-            <label for="cognome">Cognome:</label><input type="text" id="cognome" name="cognome" />
-        </li>
-        <li>
-            <label for="email">Email:</label><input type="text" id="email" name="email" />
-        </li>
-        <li>
-            <label for="paese_iva">Paese:</label><input type="text" id="paese_iva" name="paese_iva" />
-        </li>
-        <li>
-            <label for="citta">Citta:</label><input type="text" id="citta" name="citta" />
-        </li>
-        <li>
-            <label for="indirizzo">Indirizzo:</label><input type="text" id="indirizzo" name="indirizzo" />
-        </li>
-        <li>
-            <label for="civico">Civico:</label><input type="text" id="civico" name="civico" />
-        </li>
-        <li>
-            <label for="cap">Cap:</label><input type="text" id="cap" name="cap" />
-        </li>
-    </ul>
-</div>
+
+<fieldset>
+    <legend>Dati Personali</legend>
+    <div>
+        <label for="nome">Nome:</label><input type="text" id="nome" name="nome" />
+    </div>
+    <div>
+        <label for="cognome">Cognome:</label><input type="text" id="cognome" name="cognome" />
+    </div>
+    <div>
+        <label for="email">Email:</label><input type="text" id="email" name="email" />
+    </div>
+    <div>
+        <label for="paese_iva">Paese:</label><input type="text" id="paese_iva" name="paese_iva" />
+    </div>
+    <div>
+        <label for="citta">Citta:</label><input type="text" id="citta" name="citta" />
+    </div>
+    <div>
+        <label for="indirizzo">Indirizzo:</label><input type="text" id="indirizzo" name="indirizzo" />
+    </div>
+    <div>
+        <label for="civico">Civico:</label><input type="text" id="civico" name="civico" />
+    </div>
+    <div>
+        <label for="cap">Cap:</label><input type="text" id="cap" name="cap" />
+    </div>
+</fieldset>

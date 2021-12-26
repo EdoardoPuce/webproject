@@ -2,7 +2,7 @@ section > h1 {
     text-align: center;
 }
 
-section > aside, section > section {
+section > aside, .account {
     border: 1px solid black;
     border-radius: var(--border);
 }
@@ -35,7 +35,7 @@ section > aside > a:hover {
     background-color: var(--hover_pulsante);
 }
 
-section > section {
+.account {
     margin-right: 3%;
     width: 65%;
     float: right;
@@ -44,7 +44,7 @@ section > section {
     height: 400px;
 }
 
-section > section::-webkit-scrollbar {
+.account::-webkit-scrollbar {
     display: none;
 }
 
@@ -54,12 +54,12 @@ section > section::-webkit-scrollbar {
         text-align: center;
     }
 
-    section > aside, section > section {
+    section > aside, .account {
         width: 80%;
         margin: 10px 0px;
     }
 
-    section > section{
+    .account{
         display: inline-block;
         float: none;
     }
