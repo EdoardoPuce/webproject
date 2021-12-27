@@ -52,10 +52,11 @@
         ?>
     </main>
     <footer>
-        <div>
+        <div class = "footer">
             <hr> 
-            <img src="<?php echo UPLOAD_DIR."mountains.png"?>" alt=""/></div>
+            <img src="<?php echo UPLOAD_DIR."mountains.png"?>" alt=""/>
         </div>
+        
             <section class="pagamentiSicuri">
                 <h3>Pagamenti sicuri</h3>
                 <div class="pagamenti"><img src="<?php echo UPLOAD_DIR.'mastercard.png'; ?>" alt ="mastercard"/></div>
@@ -72,6 +73,7 @@
                 <img src="<?php echo UPLOAD_DIR.'twitter.png'; ?>" alt ="twitter"/>
                 <img src="<?php echo UPLOAD_DIR.'youtube.png'; ?>" alt ="youtube"/>
             </section>
+        
     </footer>
 </body>
 </html>

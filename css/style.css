@@ -80,20 +80,26 @@ nav > ul > li > a > img{
 
 
 body > footer{
-    text-align:center;
-    font:smaller "Arial";
-    width: 100%;
-    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    padding:20px, 0px;
+    font-family: verdana;
+   
 }
 
 /* Linea sotto immagine */
 body > footer > div > hr{
-    z-index: 2;
+   
+    margin:0px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
 }
 
 /*Immagine montagne */
 body > footer > div > img{
-    z-index: 1;
+    width: 5%;
+   
 }
 
 body > footer > section{
@@ -103,30 +109,28 @@ body > footer > section{
     box-sizing: border-box;
     display: inline-block;
     color:white;
-    height: 88px;
+    height: 100px;
 }
 
 body > footer > section > h3{
-    margin: 5px 0px 10px 0px;
+    margin: 0px ;
+    padding-bottom: 7px;
+    padding-top:5px;
 }
 
 
 body > footer > section.pagamentiSicuri{
     width: 34%;
 }
-body > footer > section.pagamentiSicuri > img{
-    background-color: white;
-    border-radius: 10px;
-    width: 10%;
-    padding: 1%;
-}
 
 body > footer > section.social > img{
     padding:0px;
     border-radius: 0px;
     color:none;
-    width: 10%;
+    width: 42px;
+    height: 42px;
     padding: 1%;
+    
 }
 
 body > footer > section > div{
@@ -134,7 +138,7 @@ body > footer > section > div{
     display: inline-block;
     width: 42px;
     height: 42px;
-    margin: 2%;
+    margin: 2% 2% 0 2%;
     background-color: white;
     border-radius: 10px;
 }
@@ -153,6 +157,8 @@ body > footer > section > div > img[alt="mastercard"]{
 body > footer > section.servizioClienti > a{
     font-family: verdana;  
     color: white;  
+    padding:2px
+    
 }
 
 body > footer > section.servizioClienti > a:hover{
@@ -178,4 +184,11 @@ body > footer > section.servizioClienti > a:hover{
     nav > ul > li:nth-child(4):hover ~ :nth-child(-n+3){
         display: inline;
     } 
+
+    body > footer > section.servizioClienti, body > footer > section.pagamentiSicuri, body > footer > section.social{
+        box-sizing: content-box;
+        display: block;
+        width: 100%;
+
+    }
 }

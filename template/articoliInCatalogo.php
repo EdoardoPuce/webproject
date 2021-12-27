@@ -12,18 +12,16 @@
 
 <aside>
     <p>Categorie</p>
-
     <form >
     <?php foreach($templeteParams["categorie"] as $categoria): ?>
         <li>
         <label><input type="checkbox" name="categoria" value="<?php $categoria["nomeCategoria"]?>"/><?php echo $categoria["nomeCategoria"]?></label>
         </li>
     <?php endforeach;?>
-    
     <input type="submit" value="Filtra" />
-
 </aside>
-<section>
+
+<section class ="articoli">
 <?php foreach ($templateParams['articoli'] as $articolo) : ?>
     
     <?php $qta = $articolo["qtaMagazzino"];
