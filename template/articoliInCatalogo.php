@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./css/catalogo.css" />
 
-<section>
+<section class="ricerca">
     <form class="rierca">
         <input type = "image" src ="./upload/search.png" alt = "Submit" />
         <input type = "text" name = "ricerca" placeholder="Ricerca..."/>

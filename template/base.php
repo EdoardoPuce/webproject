@@ -52,7 +52,26 @@
         ?>
     </main>
     <footer>
-
+        <div>
+            <hr> 
+            <img src="<?php echo UPLOAD_DIR."mountains.png"?>" alt=""/></div>
+        </div>
+            <section class="pagamentiSicuri">
+                <h3>Pagamenti sicuri</h3>
+                <div class="pagamenti"><img src="<?php echo UPLOAD_DIR.'mastercard.png'; ?>" alt ="mastercard"/></div>
+                <div class="pagamenti"><img src="<?php echo UPLOAD_DIR.'paypal.png'; ?>" alt ="paypal"/></div>
+                <div class="pagamenti"><img src="<?php echo UPLOAD_DIR.'postepay.png'; ?>" alt ="postepay"/></div>
+                <div class="pagamenti"><img src="<?php echo UPLOAD_DIR.'visa.png'; ?>" alt ="visa"/></div>
+            </section><section class ="servizioClienti">
+                <h3>Servizio clienti</h3>
+                <a href="#">Contatti</a>
+            </section><section class = "social">
+                <h3>Seguici su</h3>
+                <img src="<?php echo UPLOAD_DIR.'facebook.png'; ?>" alt ="facebook"/>
+                <img src="<?php echo UPLOAD_DIR.'instagram.png'; ?>" alt ="instagram"/>
+                <img src="<?php echo UPLOAD_DIR.'twitter.png'; ?>" alt ="twitter"/>
+                <img src="<?php echo UPLOAD_DIR.'youtube.png'; ?>" alt ="youtube"/>
+            </section>
     </footer>
 </body>
 </html>
