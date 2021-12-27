@@ -11,11 +11,11 @@ h2{
     font-size: 20px;
 }
 
-.carrello, .dati{
+.carrello, .dati, .riepilogo-ordine{
     border: 1px solid black;
 }
 
-.carrello, .dati, .dati-spedizione , .dati-pagamento, .riepilogo-ordine {
+.carrello, .dati, .dati-spedizione > fieldset , .dati-pagamento > fieldset, .riepilogo-ordine  {
     border-radius: var(--border);
 }
 
@@ -45,12 +45,12 @@ h2{
     height: auto;
 }
 
-.dati-spedizione > div, .dati-pagamento > div, .riepilogo-ordine > div {
+.dati-spedizione > fieldset  > div, .dati-pagamento > fieldset > div, .riepilogo-ordine > div {
     text-align: center;
 }
 
 
-.dati-spedizione > div > input, .dati-pagamento > div > input, .riepilogo-ordine > div > input{
+.dati-spedizione > fieldset > div > input, .dati-pagamento > fieldset > div > input{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -58,19 +58,19 @@ h2{
     text-align: center;
 }
 
-.dati-spedizione > div:nth-child(2){
+.dati-spedizione > fieldset > div:nth-child(2){
     width: 90%;
 }
 
-.dati-spedizione > div > label{
+.dati-spedizione > fieldset > div > label{
     font-size: 18px;
 }
 
-.dati-spedizione > div:nth-child(2) > input{
+.dati-spedizione > fieldset > div:nth-child(2) > input{
     width: 60%;
 }
 
-.dati-spedizione > div:nth-child(3){
+.dati-spedizione > fieldset > div:nth-child(3){
     float: left;
     width: 40%;
     margin-top: 10px;
@@ -78,7 +78,7 @@ h2{
     margin-bottom: 20px;
 }
 
-.dati-spedizione > div:nth-child(4){
+.dati-spedizione > fieldset > div:nth-child(4){
     float: right;
     width: 40%;
     margin-top: 10px;
@@ -94,14 +94,14 @@ h2{
 
 .dati-pagamento{
     display: inline-block;
-    padding-top: 7%;
-    padding-bottom: 10%;
+    padding-top: 1%;
+    padding-bottom: 3%;
     width: 45%;
     height: max-content;
 }
 
-.dati-pagamento > div{
-    margin: 10px 0px;
+.dati-pagamento > fieldset > div{
+    margin: 20px 0px;
 }
 
 
@@ -109,22 +109,23 @@ h2{
     float: right;
     width: 42%;
     height: fit-content;
-    padding-top: 4%;
+    padding-top: 3%;
     padding-left: 0px;
-    margin-top: auto;
-
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
 }
 
-.riepilogo-ordine > div{
+.riepilogo-ordine > p{
     margin: 20px 0px;
 }
 
-.riepilogo-ordine > div > input{
+.riepilogo-ordine > form > input{
     padding: 10px 20px;
-    border-bottom-style: hidden;
+    margin-bottom: 20px;
 }
 
-.riepilogo-ordine > div > input:hover{
+.riepilogo-ordine > form > input:hover{
     background-color: orange;
 }
 

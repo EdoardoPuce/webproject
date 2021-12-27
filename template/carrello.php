@@ -7,55 +7,51 @@
         ?>
     </section>
     <div class="dati">
-        <fieldset class="dati-spedizione">
-            <legend>Dati Spedizione</legend>
-            <div>
-                <label for="indirizzo">Indirizzo:</label><input type="text" id="indirizzo" name="indirizzo"/>
-            </div>
-            <div>
-                <label for="paese">Paese:</label><input type="text" id="paese" name="paese" />
-            </div>
-            <div>
-                <label for="citta">Citta:</label><input type="text" id="citta" name="citta" />
-            </div>
-        </fieldset>
+        <form class="dati-spedizione">
+            <fieldset>
+                <legend>Dati Spedizione</legend>
+                <div>
+                    <label for="indirizzo">Indirizzo:</label><input type="text" id="indirizzo" name="indirizzo"/>
+                </div>
+                <div>
+                    <label for="paese">Paese:</label><input type="text" id="paese" name="paese" />
+                </div>
+                <div>
+                    <label for="citta">Citta:</label><input type="text" id="citta" name="citta" />
+                </div>
+            </fieldset>
+        </form>
         <div>
-            <fieldset class="dati-pagamento">
-                <legend>Dati Pagamento</legend>
-                <div>
-                    <label for="nome">Nome:</label><input type="text" id="nome" name="nome" />
-                </div>
-                <div>
-                    <label for="cognome">Cognome:</label><input type="text" id="cognome" name="cognome" />
-                </div>
-                <div>
-                    <label for="codice-carta">Codice carta:</label><input type="text" id="codice-carta" name="codice-carta" />
-                </div>
-                <div>
-                    <label for="data">Data:</label><input type="month" id="data" name="data" />
-                </div>
-                <div>
-                    <label for="cvv">Cvv:</label><input type="text" id="cvv" name="cvv" />
-                </div>
-            </fieldset>
-            <fieldset class="riepilogo-ordine">
-                <legend>Riepilogo Ordine</legend>
-                <div>
-                    <label for="n-articoli">N° Articoli: 4</label>
-                </div>
-                <div>
-                    <label for="articoli">Costo Articoli: 32$</label>
-                </div>
-                <div>
-                    <label for="spedizione">Spedizione: 5$</label>
-                </div>
-                <div>
-                    <label for="totale">Totale: 37$</label><br/>
-                </div>
-                <div>
+            <form class="dati-pagamento">
+                <fieldset >
+                    <legend>Dati Pagamento</legend>
+                    <div>
+                        <label for="nome">Nome:</label><input type="text" id="nome" name="nome" />
+                    </div>
+                    <div>
+                        <label for="cognome">Cognome:</label><input type="text" id="cognome" name="cognome" />
+                    </div>
+                    <div>
+                        <label for="codice-carta">Codice carta:</label><input type="text" id="codice-carta" name="codice-carta" />
+                    </div>
+                    <div>
+                        <label for="data">Data:</label><input type="month" id="data" name="data" />
+                    </div>
+                    <div>
+                        <label for="cvv">Cvv:</label><input type="text" id="cvv" name="cvv" />
+                    </div>
+                </fieldset>
+            </form>
+            <section class="riepilogo-ordine">
+                <h2>Riepilogo Ordine</h2>
+                <p>N° Articoli: 4</p>
+                <p>Costo Articoli: 32$</p>
+                <p>Spedizione: 5$</p>
+                <p>Totale: 37$</p>
+                <form>
                     <input type="button" name="Acquista" value="acquista" />
-                </div>
-            </fieldset>
+                </form>
+            </section>
         </div>
     </div>
 </section>
