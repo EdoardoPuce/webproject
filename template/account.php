@@ -2,16 +2,22 @@
 
 <section>
     <h1>Account</h1>
-    <aside>
+    <aside class="account-menu">
         <a href="#">Dati</a>
-        <div></div>
+        <hr>
         <a href="#">Ordini</a>
-        <div></div>
+        <hr>
         <a href="#">Gestione Articoli</a>
     </aside>
-    <section>
+        <!--
+    <section class="account">
         <?php 
-            require("dati-personali.php");
+            require("box-dettagli.php");
         ?>
     </section>
+        -->
+    <?php 
+        require("ordini.php");
+    ?>
+
 </section>

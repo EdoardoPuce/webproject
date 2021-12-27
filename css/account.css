@@ -2,20 +2,20 @@ section > h1 {
     text-align: center;
 }
 
-section > aside, .account {
+.account-menu, .account {
     border: 1px solid black;
     border-radius: var(--border);
 }
 
-section > aside {
+.account-menu {
     display: inline-block;
-    margin: 0px 3% 10px;
+    margin: 0px 2% 10px;
     width: 20%;
     text-align: center;
 }
 
 
-section > aside > a {
+.account-menu > a {
     display: block;
     margin: 10px 40px;
     padding: 10px 0px;
@@ -23,12 +23,9 @@ section > aside > a {
     color: black;
 }
 
-section > aside > div {
-    display: block;
+section > aside > hr {
     width: 80%;
     text-align: center;
-    border-top: 1px solid black;
-    margin: 0px 20px;
 }
 
 section > aside > a:hover {
@@ -48,15 +45,18 @@ section > aside > a:hover {
     display: none;
 }
 
+
 @media screen and (max-width: 768px) {
     
-    section {
+
+    section, .articoli {
         text-align: center;
     }
 
-    section > aside, .account {
+    .account-menu, .account {
         width: 80%;
         margin: 10px 0px;
+        float: none;
     }
 
     .account{
