@@ -25,6 +25,20 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getOrder($idCliente)
+    {
+        $query = "SELECT r.idOrdine, r.idArticolo, r.qta
+        FROM ordine o, rigaordine r
+        where o.idOrdine = r.idOrdine
+        and o.idCliente = ?";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idCliente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getArticoli()
     {
         $stmt = $this->db->prepare("SELECT idArticolo, nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore FROM articolo ");

@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="./css/account.css" />
-
+<script src="./js/account.js" type="text/javascript"></script>
 <section>
     <h1>Account</h1>
     <aside class="account-menu">
