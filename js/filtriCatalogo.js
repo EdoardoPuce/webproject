@@ -15,9 +15,7 @@ $(document).ready(function () {
             $("div.articolo").css("margin", "10px 1%");
             $("section.articoli").css("width", "80%");
             $("section.articoli").css("float", "right"); 
-            $("div.footer").css("clear", "both");
-
-        
+            $("div.footer").css("clear", "both");       
         }
     });
 });
