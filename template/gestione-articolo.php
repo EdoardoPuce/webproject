@@ -33,12 +33,45 @@
             <label for="qta">Quantita</label><input type="number" id="qta" name="qta" />
         </div>
         <div>
-            <label for="categoria">categoria</label>
-            <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
-            <input type="radio" id="categoria" name="categoria" value="S" /><label for="taglia">S</label>
-            <input type="radio" id="categoria" name="categoria" value="M" /><label for="taglia">M</label>
-            <input type="radio" id="categoria" name="categoria" value="L" /><label for="taglia">L</label>
-            <input type="radio" id="categoria" name="categoria" value="XL" /><label for="taglia">XL</label>
+            <label for="categoria">Categoria</label>
+            <div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+                <div>
+                    <input type="radio" id="categoria" name="categoria" value="Unisex" /><label for="taglia">Unisex</label>
+                </div>
+            </div>
         </div>
         <div>
             <input type="submit" name="submit" value="Conferma" />

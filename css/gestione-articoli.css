@@ -22,6 +22,7 @@ fieldset{
 
 .right{
     margin-right: 3%;
+    vertical-align: top;
 }
 
 
@@ -31,23 +32,41 @@ fieldset{
 
 .right > div:last-child{
     text-align: end;
+    margin-top: 120px;
 }
 
 .left > div > input, .left > div > textarea, .right > div:nth-child(2) > input{
     display: block;
 }
 
-.left > div > img, .right > div:nth-child(3) {
+.left > div > img, .right > div:nth-child(3) > div {
     border: 1px solid black;
     border-radius: var(--border);
     height: 180px;
     width: 190px;
 }
 
+.right > div:nth-child(3) > div{
+    overflow-y: auto;
+    text-align: center;
+}
+
+.right > div:nth-child(3) > div > div{
+    width: 46%;
+}
+
+.right > div:nth-child(3) > div > div:nth-child(even){
+    display: inline-block;
+}
+
 @media screen and (max-width: 768px) {
     
-    fieldset{
+    fieldset, .right > div:last-child{
         text-align: center;
+    }
+
+    .right > div:last-child{
+        margin-top: 50px;
     }
 
     .left, .right{
@@ -55,7 +74,7 @@ fieldset{
         display: initial;
     }
 
-    .left > div > input, .left > div > textarea, .right > div > input, .right > div:nth-child(3){
+    .left > div > input, .left > div > textarea, .right > div > input, .right > div:nth-child(3) > div{
         margin: 0px auto;
     }
 
