@@ -23,15 +23,18 @@ $templateParams["articoli"] = $dbh->getArticoliByCategoriaEPrezzo($idcategoria, 
 
 if (count($templateParams["articoli"]) == 0) {
     $templateParams["articoli"] = $dbh->getArticoli();
-    if( !($idcategoria == -1 && $idprezzo == -1)){
+    if (!($idcategoria == -1 && $idprezzo == -1)) {
         $templateParams["messaggio"] = "Nessun articolo trovato";
     }
 }
 
-
-if( isset($_GET["ricerca"]) && $_GET["ricerca"] != ""){
+if (isset($_GET["ricerca"]) && $_GET["ricerca"] != "") {
     $ricerca = $_GET["ricerca"];
     $templateParams["articoli"] = $dbh->getArticoliByRicerca($ricerca);
-} 
+    if (empty($templateParams["articoli"])) {
+        $templateParams["messaggio"] = "Nessun articolo trovato";
+        $templateParams["articoli"] = $dbh->getArticoli();
+    }
+}
 
 require_once "template/base.php";
