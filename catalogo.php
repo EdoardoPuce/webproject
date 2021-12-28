@@ -1,26 +1,37 @@
-<?php 
+<?php
 require_once 'bootstrap.php';
 
 $templateParams["titolo"] = "Catalogo";
 $templateParams["nome"] = "articoliInCatalogo.php";
 $templeteParams["categorie"] = $dbh->getCategorie();
 
-$idcategoria= -1;
-if(isset($_GET["categoria"])){
-    $idcategoria = $_GET["categoria"];
-    $Categoria = $dbh->getCategoriaById($idcategoria);
-    $templateParams["articoli"] = $dbh->getArticoliByCategoria($idcategoria);
+$idcategoria = -1;
+$idprezzo = -1;
 
-    if(count($templateParams["articoli"]) == 0){
-        $templateParams["messaggio"]= "Nessun articolo trovato per questa categoria: ".$Categoria[0]["nomeCategoria"];
-        $templateParams["articoli"] = $dbh->getArticoli();
+if (count($_GET) == 2) {
+    $idcategoria = $_GET["categoria"];
+    $idprezzo = $_GET["prezzo"];
+} else if (isset($_GET["categoria"])) {
+    $idcategoria = $_GET["categoria"];
+} else if (isset($_GET["prezzo"])) {
+    $idprezzo = $_GET["prezzo"];
+} else {
+    $idcategoria = -1;
+    $idprezzo = -1;
+}
+$templateParams["articoli"] = $dbh->getArticoliByCategoriaEPrezzo($idcategoria, $idprezzo);
+
+if (count($templateParams["articoli"]) == 0) {
+    $templateParams["articoli"] = $dbh->getArticoli();
+    if( !($idcategoria == -1 && $idprezzo == -1)){
+        $templateParams["messaggio"] = "Nessun articolo trovato";
     }
 }
 
-else{
-    $templateParams["articoli"] = $dbh->getArticoli();
-}
+
+if( isset($_GET["ricerca"]) && $_GET["ricerca"] != ""){
+    $ricerca = $_GET["ricerca"];
+    $templateParams["articoli"] = $dbh->getArticoliByRicerca($ricerca);
+} 
 
 require_once "template/base.php";
-
-?>

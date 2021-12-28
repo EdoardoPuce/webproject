@@ -33,6 +33,45 @@ class DatabaseHelper{
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getArticoliByCategoriaEPrezzo($idcategoria = -1, $prezzo = -1){
+        if($prezzo == 1){
+            $min = 0;
+            $max = 15;
+        } else if($prezzo == 2){
+            $min = 16;
+            $max = 50;
+        } else if($prezzo == 3){
+            $min = 51;
+            $max = 4294967295;
+        } else{
+            $min = 0;
+            $max = 4294967295;
+        }
+        $query = "SELECT idArticolo, nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore FROM articolo, categoria WHERE articolo.categoria = categoria.idcategoria 
+        AND articolo.categoria = ?
+        AND articolo.prezzo BETWEEN ? AND ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iii', $idcategoria, $min, $max);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getArticoliByRicerca($ricerca){
+        $articoli = $this->getArticoli();
+        $ricerca = strtolower($ricerca);
+        $result = array();
+        foreach( $articoli as $articolo){
+            $nome = strtolower($articolo["nomeArticolo"]);
+            if(substr_count($nome, $ricerca) > 0){
+                array_push($result, $articolo);
+            }
+        }
+        return $result;
+        
+
+    }
+
     public function getCategoriaById($idcategoria){
         $query = "SELECT nomeCategoria FROM categoria WHERE idCategoria = ?";
         $stmt = $this->db->prepare($query);

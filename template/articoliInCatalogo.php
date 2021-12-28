@@ -18,15 +18,15 @@
         <?php endforeach; ?>
         <p>Prezzo</p>
         <li>
-            <label><input type="radio" name="prezzo" value="0-15">€0 - €15</label>
+            <label><input type="radio" name="prezzo" value="1">€0 - €15</label>
         </li>
         <li>
-            <label><input type="radio" name="prezzo" value="15-50">€15 - €50</label>
+            <label><input type="radio" name="prezzo" value="2">€15 - €50</label>
         </li>
         <li>
-            <label><input type="radio" name="prezzo" value=">50">> €50</label>
+            <label><input type="radio" name="prezzo" value="3">> €50</label>
         </li>
-        <input type="submit" value="Filtra" onclick="articoli-filtrati.php" />
+        <input type="submit" value="Filtra" />
 </aside>
 
 <section class="articoli">
