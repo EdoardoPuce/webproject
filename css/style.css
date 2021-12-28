@@ -84,7 +84,7 @@ body > footer{
     text-align: center;
     padding:20px, 0px;
     font-family: verdana;
-   
+    clear: both;
 }
 
 /* Linea sotto immagine */

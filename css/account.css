@@ -39,6 +39,7 @@ section > aside > a:hover {
     text-align: center;
     overflow-y: auto;
     height: 400px;
+    margin-bottom: 30px;
 }
 
 .account::-webkit-scrollbar {

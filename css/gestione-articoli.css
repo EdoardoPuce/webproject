@@ -1,0 +1,66 @@
+.account{
+    border: none;
+    overflow-y: unset;
+    height: fit-content;
+    text-align: start;
+}
+
+fieldset{
+    border-radius: var(--border);   
+    margin-bottom: 20px;
+}
+
+
+.left, .right{
+    width: 45%;
+    display: inline-block;
+}
+
+.left{
+    margin: 0px 3%;
+}
+
+.right{
+    margin-right: 3%;
+}
+
+
+.right > div, .left > div {
+    margin: 20px 0px;
+}
+
+.right > div:last-child{
+    text-align: end;
+}
+
+.left > div > input, .left > div > textarea, .right > div:nth-child(2) > input{
+    display: block;
+}
+
+.left > div > img, .right > div:nth-child(3) {
+    border: 1px solid black;
+    border-radius: var(--border);
+    height: 180px;
+    width: 190px;
+}
+
+@media screen and (max-width: 768px) {
+    
+    fieldset{
+        text-align: center;
+    }
+
+    .left, .right{
+        width: 80%;
+        display: initial;
+    }
+
+    .left > div > input, .left > div > textarea, .right > div > input, .right > div:nth-child(3){
+        margin: 0px auto;
+    }
+
+
+}
+
+
+
