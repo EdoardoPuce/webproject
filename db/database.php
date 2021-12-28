@@ -97,6 +97,12 @@ class DatabaseHelper
     }
 
     public function getArticoloByid($idarticolo){
+        $query = "SELECT idArticolo, nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore FROM articolo WHERE idArticolo = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idarticolo);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result ->fetch_all(MYSQLI_ASSOC);
 
     }
 }

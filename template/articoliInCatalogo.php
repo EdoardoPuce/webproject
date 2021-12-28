@@ -46,11 +46,11 @@
         } ?>
 
         <div class="articolo" >
-            <a href="singolo-articolo.php">
+            <a href="articolo.php?idArticolo=<?php echo( $articolo["idArticolo"]);?>">
             <img class="prodotto" src='<?php echo UPLOAD_IMG . $articolo["imgArticolo"]; ?>' alt="" />
             </a>
             <p class="prezzo">€ <?php echo ($articolo["prezzo"]) ?> </p>
-            <a href="singolo-articolo.php"> <?php echo ($articolo["nomeArticolo"]) ?> </a> 
+            <a href="articolo.php?idArticolo=<?php echo( $articolo["idArticolo"]); ?>"> <?php echo ($articolo["nomeArticolo"]) ?> </a> 
             <p class="disponibilità" value="<?php echo $disponibilità ?>"> <?php echo $disponibilità ?>
             </p>
         </div>

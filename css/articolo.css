@@ -1,0 +1,47 @@
+div.img{
+    float:left;
+    margin: 80px 50px 40px 60px;
+    width:40%;
+}
+
+/*Immagine stelle recensione*/
+article > section > div> img{
+    width: 10%;
+    float: left;
+}
+
+article > section > div.recensione > p{
+    margin: 30px 0 10px 0;
+}
+
+img{
+    width: 100%;
+}
+
+p{
+    font-family: verdana;
+}
+
+h1{
+    
+    margin:30px 0;
+    font-family: verdana;
+}
+article > header > p{
+    display:inline-block;
+    padding: 4px 15px;
+    margin: 0 20px 0 0;
+    background-color: yellow;
+    border: 1px;
+    border-style: solid;
+    box-shadow: 1px 1px black;
+}
+
+article > header > input{
+    border-radius:20px;
+    padding: 10px; 
+}
+
+article > header > input:hover{
+    background-color:#E5A23C;
+}

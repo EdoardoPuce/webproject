@@ -4,13 +4,14 @@ require_once 'bootstrap.php';
 
 //Home Template
 $idarticolo = -1;
-if(isset($_GET["id"])){
-    $idarticolo = $_GET["id"];
+if(isset($_GET["idArticolo"])){
+    $idarticolo = $_GET["idArticolo"];
 }
+
 $templateParams["articolo"] = $dbh->getArticoloById($idarticolo);
 
 //Base Template
-$templateParams["titolo"] = $templateParams["articolo"]["nomeArticolo"];
+$templateParams["titolo"] = $templateParams["articolo"][0]["nomeArticolo"];
 $templateParams["nome"] = "singolo-articolo.php";
 
 

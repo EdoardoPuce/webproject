@@ -93,6 +93,7 @@ div.articolo{
     border-color: black;
     border-radius: 10px;
     vertical-align: top;
+    text-align: center;
 }
 
 img.prodotto{
@@ -109,6 +110,18 @@ p{
     margin: 5px;
     text-align: center;
     font-family: verdana;
+}
+
+body > main > section.articoli > div.articolo > a:link,body > main > section.articoli > div.articolo > a:visited{
+    color:black;
+    text-align: center;
+    text-decoration: none;
+    text-decoration: bold;
+    font-family: verdana;
+}
+
+body > main > section.articoli > div.articolo > a:hover{
+    text-decoration: underline;
 }
 
 p.disponibilità[value ="Disponibile"]{
