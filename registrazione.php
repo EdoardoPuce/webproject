@@ -1,7 +1,7 @@
 <?php
 require_once 'bootstrap.php';
 
-if(isset($_POST['registrazione']){
+if(isset($_POST['registrazione'])){
     $nome = $_POST['nome'] ?? '';
     $cognome = $_POST['cognome'] ?? '';
     $indirizzo = $_POST['indirizzo'] ?? '';

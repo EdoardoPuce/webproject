@@ -99,4 +99,16 @@ class DatabaseHelper
     public function getArticoloByid($idarticolo){
 
     }
+
+    public function checkLogin($email, $password){
+        $query = "SELECT idCliente, email, nome FROM cliente WHERE email = ? AND password = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss',$email, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    }
 }
