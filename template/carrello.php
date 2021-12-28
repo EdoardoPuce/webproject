@@ -32,13 +32,13 @@
                         <label for="cognome">Cognome:</label><input type="text" id="cognome" name="cognome" />
                     </div>
                     <div>
-                        <label for="codice-carta">Codice carta:</label><input type="text" id="codice-carta" name="codice-carta" />
+                        <label for="codice-carta">Codice carta:</label><input type="number" id="codice-carta" name="codice-carta" />
                     </div>
                     <div>
                         <label for="data">Data:</label><input type="month" id="data" name="data" />
                     </div>
                     <div>
-                        <label for="cvv">Cvv:</label><input type="text" id="cvv" name="cvv" />
+                        <label for="cvv">Cvv:</label><input type="number" id="cvv" name="cvv" />
                     </div>
                 </fieldset>
             </form>

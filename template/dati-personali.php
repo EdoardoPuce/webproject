@@ -9,7 +9,7 @@
         <label for="cognome">Cognome:</label><input type="text" id="cognome" name="cognome" />
     </div>
     <div>
-        <label for="email">Email:</label><input type="text" id="email" name="email" />
+        <label for="email">Email:</label><input type="email" id="email" name="email" />
     </div>
     <div>
         <label for="paese_iva">Paese:</label><input type="text" id="paese_iva" name="paese_iva" />
@@ -21,9 +21,9 @@
         <label for="indirizzo">Indirizzo:</label><input type="text" id="indirizzo" name="indirizzo" />
     </div>
     <div>
-        <label for="civico">Civico:</label><input type="text" id="civico" name="civico" />
+        <label for="civico">Civico:</label><input type="number" id="civico" name="civico" />
     </div>
     <div>
-        <label for="cap">Cap:</label><input type="text" id="cap" name="cap" />
+        <label for="cap">Cap:</label><input type="number" id="cap" name="cap" />
     </div>
 </fieldset>

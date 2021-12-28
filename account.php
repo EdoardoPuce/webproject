@@ -7,7 +7,7 @@ $templateParams["nome"] = "account.php";
 //Home Template
 
 //Base template
-
+$templateParams["pg"] = $_GET["pg"];
 
 require_once "template/base.php";
 ?>
