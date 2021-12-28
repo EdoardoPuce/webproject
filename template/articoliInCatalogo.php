@@ -31,9 +31,7 @@
 
 <section class="articoli">
     <?php if (isset($templateParams["messaggio"])) { ?>
-
         <p> <?php echo $templateParams["messaggio"] ?> </p>
-
     <?php };
 
     foreach ($templateParams['articoli'] as $articolo) : ?>
@@ -47,11 +45,12 @@
             $disponibilità = "Non disponibile";
         } ?>
 
-        <div class="articolo">
+        <div class="articolo" >
+            <a href="singolo-articolo.php">
             <img class="prodotto" src='<?php echo UPLOAD_IMG . $articolo["imgArticolo"]; ?>' alt="" />
+            </a>
             <p class="prezzo">€ <?php echo ($articolo["prezzo"]) ?> </p>
-            <p class="nome"> <?php echo ($articolo["nomeArticolo"]) ?> </p>
-
+            <a href="singolo-articolo.php"> <?php echo ($articolo["nomeArticolo"]) ?> </a> 
             <p class="disponibilità" value="<?php echo $disponibilità ?>"> <?php echo $disponibilità ?>
             </p>
         </div>

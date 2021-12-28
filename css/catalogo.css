@@ -51,9 +51,6 @@ section > input[type="button"]{
     height: 30px;    
 }
 
-
-
-
 /*Form dove si scrive*/
 main > section > form > input[type="text"]{
     background-color: #98DAC6;
@@ -63,7 +60,6 @@ main > section > form > input[type="text"]{
     margin: 10px 10px;
     width: 200px;
 }
-
 
 /*  ASIDE */
 aside{
@@ -77,7 +73,6 @@ aside{
     width: 10%;
     overflow: visible;
     min-width: 107px;   
-    
 }
 
 /* CATEGORIE ASIDE*/

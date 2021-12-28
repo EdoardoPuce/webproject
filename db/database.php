@@ -38,7 +38,7 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getArticoliByCategoriaEPrezzo($idcategoria = -1, $prezzo = -1)
+    public function getArticoliByCategoriaEPrezzo($idcategoria, $prezzo)
     {
         if ($prezzo == 1) {
             $min = 0;
@@ -94,5 +94,9 @@ class DatabaseHelper
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getArticoloByid($idarticolo){
+
     }
 }
