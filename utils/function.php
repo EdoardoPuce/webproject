@@ -48,4 +48,14 @@ function uploadImage($path, $image){
     return array($result, $msg);
 }
 
+function registerLoggedUser($user){
+    $_SESSION["idcliente"] = $user["idCliente"];
+    $_SESSION["email"] = $user["email"];
+    $_SESSION["nome"] = $user["nome"];
+}
+
+function isUserLoggedIn(){
+    return !empty($_SESSION['idcliente']);
+}
+
 ?>

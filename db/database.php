@@ -11,6 +11,34 @@ class DatabaseHelper
         }
     }
 
+    public function getPersonaByEmail($email, $i = 1)
+    {
+        if($i==1){
+            $query = "SELECT idCliente, nome, cognome, email, 'password', paese, citta, indirizzo, civico, cap FROM cliente WHERE email = ?";
+        } else {
+            $query = "SELECT idRivenditore, nome, cognome, email, 'password', piva, citta, indirizzo, civico, cap FROM rivenditore WHERE email = ?";
+        }
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getOrder($idCliente)
+    {
+        $query = "SELECT r.idOrdine, r.idArticolo, r.qta
+        FROM ordine o, rigaordine r
+        where o.idOrdine = r.idOrdine
+        and o.idCliente = ?";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idCliente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getArticoli()
     {
         $stmt = $this->db->prepare("SELECT idArticolo, nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore FROM articolo ");
@@ -105,4 +133,16 @@ class DatabaseHelper
         return $result ->fetch_all(MYSQLI_ASSOC);
 
     }
+
+    public function checkLogin($email, $password){
+        $query = "SELECT idCliente, email, nome FROM cliente WHERE email = ? AND password = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss',$email, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    
 }
