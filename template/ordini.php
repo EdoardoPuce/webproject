@@ -30,32 +30,15 @@
 <section class="dati">
     <fieldset class="dati-spedizione">
         <legend>Dati Spedizione</legend>
-        <div>
-            <p>Indirizzo: </p>
-        </div>
-        <div>
-            <p>Paese: </p>
-        </div>
-        <div>
-            <p>Citta: </p>
-        </div>
+        <p>Indirizzo: </p>
+        <p>Paese: </p>
+        <p>Citta: </p>
     </fieldset>
     <fieldset class="riepilogo-ordine">
         <legend>Riepilogo Ordine</legend>
-        <div>
-            <label for="n-articoli">N° Articoli: 4</label>
-        </div>
-        <div>
-            <label for="articoli">Costo Articoli: 32$</label>
-        </div>
-        <div>
-            <label for="spedizione">Spedizione: 5$</label>
-        </div>
-        <div>
-            <label for="totale">Totale: 37$</label><br/>
-        </div>
-        <div>
-            <input type="button" name="Acquista" value="acquista" />
-        </div>
+        <p>N° Articoli: 4</p>
+        <p>Costo Articoli: 32$</p>
+        <p>Spedizione: 5$</p>
+        <p>Totale: 37$</p>
     </fieldset>
 </section>
