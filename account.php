@@ -7,19 +7,28 @@ $templateParams["nome"] = "account.php";
 
 //$templateParams["persona"] = $dbh->getPersonaByEmail("mario.bianchi@gmail.com",0);
 $templateParams["persona"] = $dbh->getPersonaByEmail("giorgio.verdi@gmail.com");
-$templateParams["ordini"] = $dbh->getOrder(1);    //$_SESSION["idcliente"]
+$templateParams["ordini"] = $dbh->getOrderByClient(1);    //$_SESSION["idcliente"]
 
 $templateParams["pg"] = $_GET["pg"];
 
 
 if(isset($templateParams["pg"]) && $templateParams["pg"] == 3){
     //$templateParams["IdOrdine"] = $_GET["idO"];
-
-    foreach($templateParams["ordini"][$_GET["idO"]] as $key=>$rigaordine){
-        $articoli = array('idOrdine'=>$rigaordine['idOrdine'], 'idArticolo'=>$rigaordine[1], 'Qta'=>$rigaordine[2]);
-        var_dump($key);
+    
+    $idOrdine = $_GET["idO"];       //Salvo l'id dell'Ordine
+    
+    $ordine = $dbh->getOrderById($idOrdine);    //Ottengo l'ordine dal db
+    
+    $articoli = array();    //Array associativo contenente tutti gli articoli dell'ordine richiesto
+    
+    foreach($ordine as $rigaordine){
+        $articolo = $dbh->getArticoloByid($rigaordine["idArticolo"]);  //Ottengo l'articolo dal db
+        
+        array_push($articoli,$articolo);  //Inserisco l'articolo nell'array di articoli       
+       
         //$ordine = array_push($dbh->getArticoloByid($ordini["idArticolo"]));
     }
+    //var_dump($articoli);
   
 }
 

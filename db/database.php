@@ -25,12 +25,13 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getOrder($idCliente)
+    public function getOrderByClient($idCliente)
     {
         $query = "SELECT r.idOrdine, r.idArticolo, r.qta
         FROM ordine o, rigaordine r
         where o.idOrdine = r.idOrdine
-        and o.idCliente = ?";
+        and o.idCliente = ?
+        group by r.idOrdine";
 
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $idCliente);
@@ -144,5 +145,17 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getOrderById($idordine){
+        $query = "SELECT r.idOrdine, r.idArticolo, r.qta
+        FROM ordine o, rigaordine r
+        where o.idOrdine = r.idOrdine
+        and r.idOrdine = ?";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idordine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     
 }
