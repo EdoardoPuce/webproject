@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 18, 2021 alle 20:06
+-- Creato il: Dic 29, 2021 alle 21:50
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.12
 
@@ -25,6 +25,33 @@ USE `progettowebdb` ;
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `idCategoria` int(11) NOT NULL,
+  `nomeCategoria` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Struttura della tabella `rivenditore`
+--
+
+CREATE TABLE `rivenditore` (
+  `idRivenditore` int(11) NOT NULL,
+  `nome` varchar(30) NOT NULL,
+  `cognome` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(15) NOT NULL,
+  `piva` varchar(11) NOT NULL,
+  `citta` varchar(30) NOT NULL,
+  `indirizzo` varchar(50) NOT NULL,
+  `civico` int(11) NOT NULL,
+  `cap` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+--
 -- Struttura della tabella `articolo`
 --
 
@@ -38,17 +65,6 @@ CREATE TABLE `articolo` (
   `qtaMagazzino` int(11) NOT NULL,
   `categoria` int(11) NOT NULL,
   `rivenditore` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `categoria`
---
-
-CREATE TABLE `categoria` (
-  `idCategoria` int(11) NOT NULL,
-  `nomeCategoria` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -78,7 +94,8 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `ordine` (
   `idOrdine` int(11) NOT NULL,
-  `idCliente` int(11) NOT NULL
+  `idCliente` int(11) NOT NULL,
+  `stato` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -95,22 +112,7 @@ CREATE TABLE `rigaordine` (
 
 -- --------------------------------------------------------
 
---
--- Struttura della tabella `rivenditore`
---
 
-CREATE TABLE `rivenditore` (
-  `idRivenditore` int(11) NOT NULL,
-  `nome` varchar(30) NOT NULL,
-  `cognome` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `password` varchar(15) NOT NULL,
-  `piva` varchar(11) NOT NULL,
-  `citta` varchar(30) NOT NULL,
-  `indirizzo` varchar(50) NOT NULL,
-  `civico` int(11) NOT NULL,
-  `cap` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indici per le tabelle scaricate
