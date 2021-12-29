@@ -20,10 +20,10 @@ header > h3{
     display: block;
 }
 
-section > input {
+form > input {
     padding: 5px 20px;
 }
 
-article > section > input:hover {
+article > form > input:hover {
     background-color: var(--hover_pulsante);
 }
