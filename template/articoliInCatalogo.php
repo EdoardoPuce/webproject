@@ -1,32 +1,30 @@
 <link rel="stylesheet" type="text/css" href="./css/catalogo.css" />
 
 <section class="ricerca">
-    <form class="rierca">
+    <form class="ricerca">
         <input type="image" src="./upload/search.png" alt="Submit" />
-        <input type="text" name="ricerca" placeholder="Ricerca..." />
+        <label for="ricerca">Ricerca:<input type="text" name="ricerca" id="ricerca" /></label>
     </form>
     <input type="button" value="Filtra" />
 </section>
 
 <aside>
-    <p>Categorie</p>
     <form method="get">
-        <?php foreach ($templeteParams["categorie"] as $categoria) : ?>
-            <li>
-                <label><input type="radio" name="categoria" value="<?php echo $categoria["idCategoria"] ?>" /><?php echo $categoria["nomeCategoria"] ?></label>
-            </li>
-        <?php endforeach; ?>
-        <p>Prezzo</p>
-        <li>
-            <label><input type="radio" name="prezzo" value="1">€0 - €15</label>
-        </li>
-        <li>
-            <label><input type="radio" name="prezzo" value="2">€15 - €50</label>
-        </li>
-        <li>
-            <label><input type="radio" name="prezzo" value="3">> €50</label>
-        </li>
-        <input type="submit" value="Filtra" />
+        <fieldset>
+            <legend>Filtra:</legend>
+            <p>Categorie</p>
+            <?php foreach ($templeteParams["categorie"] as $categoria) :
+                $idcategoria = $categoria["idCategoria"] ?>
+                <label for="<?php echo $idcategoria ?>"><input type="radio" name="categoria" value="<?php echo $idcategoria ?>" id="<?php echo $idcategoria ?>" /> <?php echo $categoria["nomeCategoria"] ?></label>
+            <?php endforeach; ?>
+            
+            <p>Prezzo</p>
+            <label for="economico"><input type="radio" name="prezzo" value="1" id="economico" /> €0 - €15</label>
+            <label for="costoso"><input type="radio" name="prezzo" value="2" id="costoso" /> €15 - €50</label>
+            <label for="moltocostoso"><input type="radio" name="prezzo" value="3" id="moltocostoso" /> > €50</label>
+            <input type="submit" value="Filtra">
+        </fieldset>
+    </form>
 </aside>
 
 <section class="articoli">
@@ -38,16 +36,15 @@
 
         $qta = $articolo["qtaMagazzino"];
         $disponibilità = verificaDisponibilita($qta);
-        ?> 
+    ?>
 
-        <div class="articolo" >
-            <a href="articolo.php?idArticolo=<?php echo( $articolo["idArticolo"]);?>">
-            <img class="prodotto" src='<?php echo UPLOAD_IMG . $articolo["imgArticolo"]; ?>' alt="" />
+        <div class="articolo">
+            <a href="articolo.php?idArticolo=<?php echo ($articolo["idArticolo"]); ?>">
+                <img class="prodotto" src='<?php echo UPLOAD_IMG . $articolo["imgArticolo"]; ?>' alt="<?php echo $articolo["nomeArticolo"] ?>" />
             </a>
             <p class="prezzo">€ <?php echo ($articolo["prezzo"]) ?> </p>
-            <a href="articolo.php?idArticolo=<?php echo( $articolo["idArticolo"]); ?>"> <?php echo ($articolo["nomeArticolo"]) ?> </a> 
-            <p class="disponibilità" value="<?php echo $disponibilità ?>"> <?php echo $disponibilità ?>
-            </p>
+            <a href="articolo.php?idArticolo=<?php echo ($articolo["idArticolo"]); ?>"> <?php echo ($articolo["nomeArticolo"]) ?> </a>
+            <p class="<?php echo $disponibilità ?>"> <?php echo $disponibilità ?></p>
         </div>
 
     <?php endforeach; ?>

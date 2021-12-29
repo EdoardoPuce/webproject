@@ -1,9 +1,6 @@
+/*Sezione di ricerca*/
 section.ricerca{
     background-color: #76A99A;
-}
-
-/*Sezione di ricerca*/
-main > section:first-of-type{
     padding: 10px 5px;
 }
 
@@ -12,17 +9,30 @@ main > section > form{
     display: inline-block;
     background-color: #98DAC6;
     border-radius: 20px;
-    width: 300px;
+    width: 400px;
     margin: 0;
 }
 
 /*LABEL FORM DI RICERCA */
 section > form > label{
-    vertical-align: top;
+    vertical-align: super;
+    margin:10px 10px 10px 20px;
     font-family: verdana, "Helvetica Neue", Helvetica, sans-serif;
     color: black;
 }
 
+/*Form dove si scrive*/
+main > section.ricerca > form.ricerca > label > input {
+    background-color: #98DAC6;
+    border: none;
+    padding-left: 10px;
+    vertical-align:top;
+    margin: 10px 10px;
+    width: 200px;
+}
+main > section.ricerca > form.ricerca > label > input:focus{
+    outline: none; /*Toglie il bordo blu da input text*/
+}
 
 
 /*Lente d'ingrandimento bottone*/
@@ -35,7 +45,7 @@ main > section > form > input[type="image"]{
 }
 
 /* BOTTONE FILTRA  HOVER*/
-section > input[type="button"]:hover{  
+section > input[type="button"]:hover, fieldset > input:hover{  
     background-color: #E5A23C;
     border-radius: 20px;
 }
@@ -51,16 +61,6 @@ section > input[type="button"]{
     height: 30px;    
 }
 
-/*Form dove si scrive*/
-main > section > form > input[type="text"]{
-    background-color: #98DAC6;
-    border: none;
-    padding-left: 10px;
-    vertical-align:top;
-    margin: 10px 10px;
-    width: 200px;
-}
-
 /*  ASIDE */
 aside{
     float: left;
@@ -70,18 +70,44 @@ aside{
     font-size: 18px;
     border-style: solid;
     border-color: black;
-    width: 10%;
+    width: 150px;
     overflow: visible;
     min-width: 107px;   
 }
 
-/* CATEGORIE ASIDE*/
-main > aside > form > li{
-    list-style:none;
-    margin: 10px 0;
-    font-size:15px;
+legend{
+    display:none;
 }
 
+aside > form > fieldset {
+    border:none;
+    padding:0px;
+}
+
+aside > form > fieldset > label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+aside > form > fieldset > p{
+    margin: 10px 0;
+}
+
+/* PULSANTE FILTRA DENTRO ASIDE */
+fieldset > input{
+    margin: 10px auto;
+    display: block;
+    float:center;
+    background-color: #def2c8;
+    border:none;
+    width: 50px;
+    height: 30px;
+}
+
+main > section.articoli > p:first-of-type{
+    margin: 20px auto;
+    font-size: 22px;
+}
 /*CONTENITORE ARTICOLO */
 div.articolo{
     display: inline-block;
@@ -124,18 +150,17 @@ body > main > section.articoli > div.articolo > a:hover{
     text-decoration: underline;
 }
 
-p.disponibilità[value ="Disponibile"]{
+p[class ="Disponibile"]{
     color: green;
 }
 
-p.disponibilità[value ="Non disponibile"]{
+p[class ="Non disponibile"]{
     color:red;
 }
 
-p.disponibilità[value ="Ultimi pezzi"]{
+p[class ="Ultimi pezzi"]{
     color:orange;
 }
-
 
 /* PROPRIETA' SOLO PER SCHERMO PICCOLO */
 @media screen and (max-width: 768px){
