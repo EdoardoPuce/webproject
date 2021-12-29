@@ -34,16 +34,11 @@
         <p> <?php echo $templateParams["messaggio"] ?> </p>
     <?php };
 
-    foreach ($templateParams['articoli'] as $articolo) : ?>
+    foreach ($templateParams['articoli'] as $articolo) :
 
-        <?php $qta = $articolo["qtaMagazzino"];
-        if ($qta > 5) {
-            $disponibilità = "Disponibile";
-        } else if ($qta > 0 && $qta <= 5) {
-            $disponibilità = "Ultimi pezzi";
-        } else {
-            $disponibilità = "Non disponibile";
-        } ?>
+        $qta = $articolo["qtaMagazzino"];
+        $disponibilità = verificaDisponibilita($qta);
+        ?> 
 
         <div class="articolo" >
             <a href="articolo.php?idArticolo=<?php echo( $articolo["idArticolo"]);?>">

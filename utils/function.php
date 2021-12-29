@@ -58,4 +58,15 @@ function isUserLoggedIn(){
     return !empty($_SESSION['idcliente']);
 }
 
+function verificaDisponibilita($qta){
+    if ($qta > 5) {
+        $disponibilità = "Disponibile";
+    } else if ($qta > 0 && $qta <= 5) {
+        $disponibilità = "Ultimi pezzi";
+    } else {
+        $disponibilità = "Non disponibile";
+    }
+    return $disponibilità;
+}
+
 ?>

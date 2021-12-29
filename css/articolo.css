@@ -1,42 +1,58 @@
+/*CONTENITORE IMMAGINE */
 div.img{
     float:left;
-    margin: 80px 50px 40px 60px;
-    width:40%;
-}
-
-/*Immagine stelle recensione*/
-article > section > div> img{
-    width: 10%;
-    float: left;
-}
-
-article > section > div.recensione > p{
-    margin: 30px 0 10px 0;
+    margin: 30px 80px 40px 60px;
+    width:30%;
 }
 
 img{
     width: 100%;
 }
 
-p{
-    font-family: verdana;
+/*Immagine stelle recensione*/
+article > section > div.recensione> img{
+    width: 116px;
+    float: left;
 }
 
-h1{
-    
-    margin:30px 0;
-    font-family: verdana;
+/* DIV RECENSIONI */
+article > section > div.recensione {
+    margin: 30px 0 25px 0;
+
 }
+/*SCRITTA RECENSIONI */
+article > section > div.recensione > p {
+    margin: 0px;
+    padding-top: 4px;
+    font-size: 14px;
+    
+}
+
+
+p{
+    font-family: verdana;
+    font-size: 100%;
+}
+
+/* TITOLO */
+h1{
+    margin:50px 0 30px 0;
+    font-family: verdana;
+    font-size: 40px;
+}
+
+/* PREZZO */
 article > header > p{
     display:inline-block;
     padding: 4px 15px;
-    margin: 0 20px 0 0;
+    margin: 0 40px 0 0;
     background-color: yellow;
     border: 1px;
     border-style: solid;
     box-shadow: 1px 1px black;
 }
 
+/*PULSANTE AGGIUNGI AL CARRELLO*/
 article > header > input{
     border-radius:20px;
     padding: 10px; 
@@ -44,4 +60,46 @@ article > header > input{
 
 article > header > input:hover{
     background-color:#E5A23C;
+}
+
+article > section > p:nth-of-type(2){
+    margin: 5px 0 30px 0;
+}
+p[class ="Disponibile"]{
+    color: green;
+}
+
+p[class ="Non disponibile"]{
+    color:red;
+}
+
+p[class ="Ultimi pezzi"]{
+    color:orange;
+}
+
+@media screen and (max-width: 768px) {
+
+    div.img{
+        display: block;
+        width: 80%;
+        float:none;
+        margin: 40px auto;
+        
+    }
+    
+    article > header, article > section{
+        display:block;
+        width: 100%;
+        margin-left: 30px;
+    }
+
+    h1{
+        font-size:100%;
+        margin: 50px 0 15px 0;
+    }
+
+    article > section > div.recensione {
+        margin: 30px 0 10px 0;
+    }
+
 }
