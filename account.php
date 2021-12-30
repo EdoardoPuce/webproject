@@ -25,7 +25,10 @@ if(isset($templateParams["pg"]) && $templateParams["pg"] == 3){
         
         array_push($articoli,$articolo);  //Inserisco l'articolo nell'array di articoli       
     }
-    $templateParams["articoli"] = $articoli; 
+    $templateParams["articoli"] = $articoli;
+
+    $templateParams["riepilogo"] = RiepilogoOrdine($ordine, $dbh);
+    var_dump($templateParams["riepilogo"]);
 
   
 }

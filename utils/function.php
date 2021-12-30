@@ -54,6 +54,21 @@ function registerLoggedUser($user){
     $_SESSION["nome"] = $user["nome"];
 }
 
+function RiepilogoOrdine($ordine, $dbh){
+    $nArticoli = count($ordine);
+    $costoArticoli = 0;
+    $CostoSpedizione = 5;
+    $Totale = 0;
+    foreach($ordine as $rigaordine){
+        $articolo = $dbh->getArticoloByid($rigaordine["idArticolo"]);  //Ottengo l'articolo dal db
+        $costoArticoli = $rigaordine['qta']*$articolo[0]['prezzo'];
+        $Totale = $Totale + $costoArticoli;
+    }
+    $costoArticoli = $Totale;
+    $Totale = $Totale + $CostoSpedizione;
+    return array('nArticoli'=>$nArticoli, 'costoArticoli'=>$costoArticoli, 'spedizione'=>$CostoSpedizione, 'totale'=>$Totale);
+}
+
 function isUserLoggedIn(){
     return !empty($_SESSION['idcliente']);
 }
