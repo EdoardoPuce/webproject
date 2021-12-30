@@ -69,6 +69,24 @@ function RiepilogoOrdine($ordine, $dbh){
     return array('nArticoli'=>$nArticoli, 'costoArticoli'=>$costoArticoli, 'spedizione'=>$CostoSpedizione, 'totale'=>$Totale);
 }
 
+function getStato($stato){
+    $result = "";
+    switch($stato){
+        case 0:
+            $result = "Ordine Effettuato";
+            break;
+        case 1:
+            $result = "Ordine Preso in Carico";
+            break;
+        case 2:
+            $result = "Ordine Spedito";
+            break;
+        case 3:
+            $result = "Arrivato a Destinazione";
+            break;
+    }
+}
+
 function isUserLoggedIn(){
     return !empty($_SESSION['idcliente']);
 }
