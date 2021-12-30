@@ -14,44 +14,54 @@ if(isset($_POST['registrazione-form'])){
     
     $lungPassword = mb_strlen($password);
     
-    if(empty($nome) || empty($cognome) || empty($indirizzo) || empty($civico) || empty($città)|| empty($cap) || empty($email) || empty($password) || empty($conferma_password){
-        $msg= 'Compila tutti i campi';
-    }elseif($lungPassword < 8 || $lungPassword > 20) {
-    $msg = 'Lunghezza minima password 8 caratteri.Lunghezza massima 20 caratteri';
-    }elseif(if(strcmp ($password,$conferma_password)))== 0 {
-        $msg= ' Password inserita correttamente';
-    } else {
-        $msg= ' Si utilizzi la stessa password!';
-    }
-    else{
-    $password_hash = password_hash($password, PASSWORD_BCRYPT);
+    if(isset($nome) || isset($cognome) || isset($indirizzo) || isset($civico) || isset($città)|| isset($cap) || isset($email) || isset($password) || isset($conferma_password){
+        
+        if($lungPassword > 8 || $lungPassword < 20) {
+            
+            if(strcmp ($password,$conferma_password)))== 0 {
+                $msg= ' Password inserita correttamente';
 
-    $query= "
-    SELECT idCliente
-    FROM cliente
-    WHERE username = $username
-    ";
+                $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-    $stmt = $this->db->prepare($query);
-    $stmt->bind_param('username', $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
+                $query= "SELECT idCliente
+                         FROM cliente
+                         WHERE username = $username
+                         ";
+                
+                $stmt = $this->db->prepare($query);
+                $stmt->bind_param('username', $username);
+                $stmt->execute();
+                $result = $stmt->get_result();
    
-    $user = $result->fetch_all(MYSQLI_ASSOC);
-}
- 
-    if (count($user) > 0) {
-    $msg = 'Username già in uso';
+                $user = $result->fetch_all(MYSQLI_ASSOC);
+
+                if (count($user) > 0) {
+                    $msg = 'Username già in uso';
+                }
+                else {
+                    $query = "INSERT INTO cliente(nome, cognome, indirizzo, civico, città, cap, email, password)
+                              VALUES ('$nome', '$cognome', '$indirizzo', '$civico', '$città', '$cap', '$email', '$password')
+                              ";
+                     
+                    $stmt = $this->db->prepare($query);
+                    $stmt->bind_param('username', $username);
+                    $stmt->execute();   
+
+            }else { 
+            $msg = 'Lunghezza minima password 8 caratteri.Lunghezza massima 20 caratteri';
+            }
+
+        }else {
+        $msg= ' Si utilizzi la stessa password!';
+        } 
+
+    else{
+        $msg= 'Compila tutti i campi';
     }
-    else {
-        $query = "INSERT INTO cliente(nome, cognome, indirizzo, civico, città, cap, email, password)
-                  VALUES ('$nome', '$cognome', '$indirizzo', '$civico', '$città', '$cap', '$email', '$password')
-                  ";
-                   
-            $stmt = $this->db->prepare($query);
-            $stmt->bind_param('username', $username);
-            $stmt->execute();           
+
 }
-}
+
 require 'template/base.php';
 ?>
+                    
+                    
