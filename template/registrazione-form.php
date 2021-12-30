@@ -11,7 +11,7 @@
     </fieldset>
 </form>
 
-<form>
+<form action="#" method="POST">
     <fieldset><legend> Registrazione:</legend>
         <label> Nome:
         <input type="text"  name="nome"/>
@@ -36,9 +36,6 @@
         </label><br>
         <label> P.iva:
         <input type="text" name="città"/>
-        </label><br>
-        <label> Telefono:
-        <input type="tel" name="telefono"/>
         </label><br>
         <label> Email:
         <input type="email" name="email"/>
