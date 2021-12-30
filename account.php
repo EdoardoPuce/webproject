@@ -28,7 +28,6 @@ if(isset($templateParams["pg"]) && $templateParams["pg"] == 3){
     $templateParams["articoli"] = $articoli;
 
     $templateParams["riepilogo"] = RiepilogoOrdine($ordine, $dbh);
-    var_dump($templateParams["riepilogo"]);
 
   
 }
