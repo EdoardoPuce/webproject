@@ -8,7 +8,6 @@ $templateParams["nome"] = "account.php";
 //$templateParams["persona"] = $dbh->getPersonaByEmail("mario.bianchi@gmail.com",0);
 $templateParams["persona"] = $dbh->getPersonaByEmail("giorgio.verdi@gmail.com");
 $templateParams["ordini"] = $dbh->getOrderByClient(1);    //$_SESSION["idcliente"]
-
 $templateParams["pg"] = $_GET["pg"];
 
 
@@ -25,14 +24,11 @@ if(isset($templateParams["pg"]) && $templateParams["pg"] == 3){
         $articolo = $dbh->getArticoloByid($rigaordine["idArticolo"]);  //Ottengo l'articolo dal db
         
         array_push($articoli,$articolo);  //Inserisco l'articolo nell'array di articoli       
-       
-        //$ordine = array_push($dbh->getArticoloByid($ordini["idArticolo"]));
     }
-    //var_dump($articoli);
+    $templateParams["articoli"] = $articoli; 
+
   
 }
-
-//$templateParams["articoli"] = $dbh->getArticoloByid(1);
 
 require_once "template/base.php";
 ?>

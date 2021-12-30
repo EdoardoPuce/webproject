@@ -1,13 +1,17 @@
-<link rel="stylesheet" type="text/css" href="./css/account.css" />
-<script src="./js/account.js" type="text/javascript"></script>
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/account.css" />
+    <script src="./js/account.js" type="text/javascript"></script>
+</head>
+
+
 <section>
     <h1>Account</h1>
     <aside class="account-menu">
-        <a href="#">Dati</a>
+        <a href="account.php?pg=1">Dati</a>
         <hr>
-        <a href="#">Ordini</a>
-        <hr>
-        <a href="#">Gestione Articoli</a>
+        <a href="account.php?pg=2">Ordini</a>
+        <hr class="gestione-articoli">
+        <a href="account.php?pg=4" class="gestione-articoli">Gestione Articoli</a>
     </aside>
     <?php if($templateParams['pg'] == 1): ?>
     <section class="account">
@@ -41,3 +45,10 @@
 
 
 </section>
+
+<?php 
+echo '<script type="text/javascript"> 
+        Rivenditore();
+     </script>'
+;
+?>

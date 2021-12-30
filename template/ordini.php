@@ -30,9 +30,9 @@
 <section class="dati">
     <fieldset class="dati-spedizione">
         <legend>Dati Spedizione</legend>
-        <p>Indirizzo: </p>
-        <p>Paese: </p>
-        <p>Citta: </p>
+        <p><?php echo "Indirizzo: ".$templateParams["persona"][0]["indirizzo"]." ".$templateParams["persona"][0]["civico"]?></p>
+        <p><?php echo "Paese: ".$templateParams["persona"][0]["paese"]?></p>
+        <p><?php echo "Citta: ".$templateParams["persona"][0]["citta"]?></p>
     </fieldset>
     <fieldset class="riepilogo-ordine">
         <legend>Riepilogo Ordine</legend>

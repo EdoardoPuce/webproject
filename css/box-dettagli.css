@@ -20,10 +20,14 @@ header > h3{
     display: block;
 }
 
-form > input {
+.link {
     padding: 5px 20px;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
 }
 
-article > form > input:hover {
+.link:hover {
     background-color: var(--hover_pulsante);
 }
