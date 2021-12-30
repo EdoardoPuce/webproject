@@ -157,5 +157,17 @@ class DatabaseHelper
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getStatoByOrderId($idordine){
+        $query = "SELECT stato
+        FROM ordine
+        where idOrdine = ?";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idordine);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     
 }

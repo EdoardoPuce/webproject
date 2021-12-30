@@ -15,7 +15,9 @@ if(isset($templateParams["pg"]) && $templateParams["pg"] == 3){
     //$templateParams["IdOrdine"] = $_GET["idO"];
     
     $idOrdine = $_GET["idO"];       //Salvo l'id dell'Ordine
-    
+
+    $templateParams["stato"] = $dbh->getStatoByOrderId($idOrdine)[0]['stato']; //Ottengo lo stato della spedizione
+
     $ordine = $dbh->getOrderById($idOrdine);    //Ottengo l'ordine dal db
     
     $articoli = array();    //Array associativo contenente tutti gli articoli dell'ordine richiesto
