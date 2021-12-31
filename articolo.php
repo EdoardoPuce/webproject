@@ -16,8 +16,6 @@ $templateParams["nome"] = "singolo-articolo.php";
 
 if (isset($_POST["submit"])){
     aggiungiAlCarrello($templateParams["articolo"][0]);
-
-
 }
 require 'template/base.php';
 ?>

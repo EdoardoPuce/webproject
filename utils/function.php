@@ -102,16 +102,48 @@ function verificaDisponibilita($qta){
     return $disponibilità;
 }
 
-function aggiungiAlCarrello($idArticolo){
+function aggiungiAlCarrello($articolo){
 
     if(isset($_SESSION["carrello"])){
         $i = count($_SESSION["carrello"]);
-        $_SESSION["carrello"][$i] = $idArticolo;
+        $_SESSION["carrello"][$i] = $articolo;
 
     } else{
-        $_SESSION["carrello"][0] = $idArticolo;
+        $_SESSION["carrello"][0] = $articolo;
     }
 
-    //unset($_SESSION["carrello"]);
+    aumentaQtaArticoloInCarrello($articolo["idArticolo"]);
+    compattaCarrello();
+
+}
+
+function aumentaQtaArticoloInCarrello($idArticoloDaAumentare){
+    for($i = 0 ; $i < count($_SESSION["carrello"]) ; $i = $i+1){
+    
+        if ($_SESSION["carrello"][$i]["idArticolo"] == $idArticoloDaAumentare){
+            if( isset($_SESSION["carrello"][$i]["qtaCarrello"])){
+                $_SESSION["carrello"][$i]["qtaCarrello"] = $_SESSION["carrello"][$i]["qtaCarrello"] + 1;
+            } else{
+                $_SESSION["carrello"][$i]["qtaCarrello"] = 1;
+            }
+        }    
+    }
+}
+
+function compattaCarrello(){
+    //RIMUOVO GLI ARTICOLI DUPLICATI NEL CARRELLO
+    $arrayId = array();
+    for($i = 0 ; $i < count($_SESSION["carrello"]) ; $i = $i+1){
+        
+        if ( in_array( $_SESSION["carrello"][$i]["idArticolo"], $arrayId)){ //SE l'elemento E' GIA' presente
+            unset($_SESSION["carrello"][$i]);
+        } else {
+            array_push($arrayId, $_SESSION["carrello"][$i]["idArticolo"]); //Se l'elemento NON E' GIA' PRESENTE
+        }
+    }
 } 
+
+function svuotaCarrello(){
+    unset($_SESSION["carrello"]);
+}
 ?>

@@ -11,7 +11,7 @@ if (isset($_SESSION["carrello"])) {
             </header>
             <section>
                 <p>Prezzo: € <?php echo ($articolo["prezzo"]) ?></p>
-                <p>Quantita: 1</p>
+                <p>Quantita:<?php echo ($articolo["qtaCarrello"]) ?></p>
                 <div>
                     <img src="./upload/add.png" alt="" />
                     <img src="./upload/minus.png" alt="" />
