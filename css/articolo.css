@@ -52,13 +52,17 @@ article > header > p{
     box-shadow: 1px 1px black;
 }
 
+/* FORM PULSANTE AGGIUNGI AL CARRELLO*/
+article > header > form{
+    display:inline-block;
+}
 /*PULSANTE AGGIUNGI AL CARRELLO*/
-article > header > input{
+article > header > form > input{
     border-radius:20px;
     padding: 10px; 
 }
 
-article > header > input:hover{
+article > header > form > input:hover{
     background-color:#E5A23C;
 }
 

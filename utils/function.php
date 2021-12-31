@@ -102,4 +102,16 @@ function verificaDisponibilita($qta){
     return $disponibilità;
 }
 
+function aggiungiAlCarrello($idArticolo){
+
+    if(isset($_SESSION["carrello"])){
+        $i = count($_SESSION["carrello"]);
+        $_SESSION["carrello"][$i] = $idArticolo;
+
+    } else{
+        $_SESSION["carrello"][0] = $idArticolo;
+    }
+
+    //unset($_SESSION["carrello"]);
+} 
 ?>

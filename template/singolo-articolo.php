@@ -15,7 +15,9 @@
         <header>
             <h1><?php echo $articolo["nomeArticolo"]; ?></h1>
             <p class="prezzo">€ <?php echo $articolo["prezzo"]; ?></p>
-            <input type="button" value="Aggiungi al carrello">
+            <form method = "post">
+                <input type="submit" value="Aggiungi al carrello" name = "submit"/>
+            </form>
         </header>
         <section>
             <p>Taglia: <?php echo $articolo["taglia"]; ?></p>
