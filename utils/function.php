@@ -146,4 +146,21 @@ function compattaCarrello(){
 function svuotaCarrello(){
     unset($_SESSION["carrello"]);
 }
+
+function numeroArticoliInCarrello(){
+    $numeroArticoli = 0;
+    for($i = 0 ; $i < count($_SESSION["carrello"]) ; $i = $i+1){
+        $numeroArticoli += $_SESSION["carrello"][$i]["qtaCarrello"];
+    }
+    return $numeroArticoli;
+}
+
+function costoArticoliInCarrello(){
+    $costoTotale = 0;
+    for($i = 0 ; $i < count($_SESSION["carrello"]) ; $i = $i+1){
+        $costoTotale += $_SESSION["carrello"][$i]["qtaCarrello"] * $_SESSION["carrello"][$i]["prezzo"];
+    }
+ 
+    return $costoTotale;
+}
 ?>

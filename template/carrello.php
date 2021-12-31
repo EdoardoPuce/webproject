@@ -44,10 +44,10 @@
             </form>
             <section class="riepilogo-ordine">
                 <h2>Riepilogo Ordine</h2>
-                <p>N° Articoli: 4</p>
-                <p>Costo Articoli: 32$</p>
-                <p>Spedizione: 5$</p>
-                <p>Totale: 37$</p>
+                <p>N° Articoli: <?php echo numeroArticoliInCarrello() ?></p>
+                <p>Costo Articoli: € <?php echo costoArticoliInCarrello() ?></p>
+                <p>Spedizione: € <?php echo $templateParams["costoSpedizione"] ?></p>
+                <p>Totale: € <?php echo costoArticoliInCarrello() + $templateParams["costoSpedizione"] ?></p>
                 <form>
                     <input type="button" name="Acquista" value="acquista" />
                 </form>
