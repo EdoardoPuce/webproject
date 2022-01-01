@@ -50,7 +50,7 @@ h2{
 }
 
 
-.dati-spedizione > fieldset > div > input, .dati-pagamento > fieldset > div > input{
+.dati-pagamento > fieldset > div > input{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -66,9 +66,6 @@ h2{
     font-size: 18px;
 }
 
-.dati-spedizione > fieldset > div:nth-child(2) > input{
-    width: 60%;
-}
 
 .dati-spedizione > fieldset > div:nth-child(3){
     float: left;

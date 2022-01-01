@@ -7,20 +7,20 @@
         ?>
     </section>
     <div class="dati">
-        <form class="dati-spedizione">
+        <section class="dati-spedizione">
             <fieldset>
                 <legend>Dati Spedizione</legend>
                 <div>
-                    <label for="indirizzo">Indirizzo:</label><input type="text" id="indirizzo" name="indirizzo"/>
+                    <label for="indirizzo">Indirizzo: <?php echo $templateParams['persona'][0]["indirizzo"] ." ". $templateParams['persona'][0]["civico"]; ?></label>
                 </div>
                 <div>
-                    <label for="paese">Paese:</label><input type="text" id="paese" name="paese" />
+                    <label for="paese">Paese: <?php echo $templateParams['persona'][0]["paese"]; ?></label>
                 </div>
                 <div>
-                    <label for="citta">Citta:</label><input type="text" id="citta" name="citta" />
+                    <label for="citta">Citta: <?php echo $templateParams['persona'][0]["citta"]; ?></label>
                 </div>
             </fieldset>
-        </form>
+        </section>
         <div>
             <form class="dati-pagamento">
                 <fieldset >
