@@ -13,10 +13,10 @@
     <nav>
         <ul>
             <li>
-                <a href="#">HomePage</a>
+                <a href="index.php">HomePage</a>
             </li>
             <li>
-                <a href="#">Catalogo</a>
+                <a href="catalogo.php">Catalogo</a>
             </li>
             <li>
                 <a href="#">Contatti</a>
@@ -28,7 +28,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="account.php?pg=1">
                     <img src="./upload/user.png" alt="Profilo Utente" >
                 </a>
             </li>
@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="carrello.php">
                     <img src="./upload/cart.png" alt="Carrello" >
                 </a>
             </li>
