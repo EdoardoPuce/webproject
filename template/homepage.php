@@ -21,27 +21,16 @@
 <div class="container3">
     <section>
         <h3> Articoli del momento!</h3>
-        <div class="articolo">
+        
         <?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>
-            <img src="<?php echo UPLOAD_DIR.$articolocasuale["imgArticolo"]; ?>" alt="" />
+            <div class="articolo">
+            <img src="<?php echo UPLOAD_IMG.$articolocasuale["imgArticolo"]; ?>" alt="" />
             <a href="#"><?php echo $articolocasuale["nomeArticolo"]; ?></a>
-            <p><?php echo $articolocasuale["prezzo"]; ?></p>
+            <p>€ <?php echo $articolocasuale["prezzo"]; ?></p>
+            </div>
             <?php endforeach; ?>
-        </div>
-        <div class="articolo">
-            <<?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>
-            <img src="<?php echo UPLOAD_DIR.$articolocasuale["imgArticolo"]; ?>" alt="" />
-            <a href="#"><?php echo $articolocasuale["nomeArticolo"]; ?></a>
-            <p><?php echo $articolocasuale["prezzo"]; ?></p>
-            <?php endforeach; ?>
-        </div>
-        <div class="articolo">
-        <?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>
-            <img src="<?php echo UPLOAD_DIR.$articolocasuale["imgArticolo"]; ?>" alt="" />
-            <a href="#"><?php echo $articolocasuale["nomeArticolo"]; ?></a>
-            <p><?php echo $articolocasuale["prezzo"]; ?></p>
-            <?php endforeach; ?>
-        </div>
+        
+       
     </section>
 </div>
 <div class="container4">
