@@ -48,7 +48,8 @@ function uploadImage($path, $image){
     return array($result, $msg);
 }
 
-function registerLoggedUser($user){
+function registerLoggedUser($user, $cliente){
+    $_SESSION['value'] = $cliente;
     $_SESSION["idcliente"] = $user["idCliente"];
     $_SESSION["email"] = $user["email"];
     $_SESSION["nome"] = $user["nome"];

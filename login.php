@@ -8,6 +8,14 @@ if(isset($_POST["email"]) && isset($_POST["password"])){ //controllo se email e 
         $templateParams["errorelogin"] = "Errore! Email o password errate!";
     }
     else{
+        
+        if($_POST['persona1'] == "cliente"){
+            registerLoggedUser($login_result[0],1); 
+        }
+        else {
+            registerLoggedUser($login_result[0],0); 
+        }
+
         //login effettuato con successo
         registerLoggedUser($login_result[0]);
     }
@@ -15,7 +23,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){ //controllo se email e 
 
 if(isUserLoggedIn()){
     $templateParams["titolo"] = "Cliente";
-    $templateParams["nome"] = "login-home.php";
+    $templateParams["nome"] = "login.home.php";
 }
 else{
     $templateParams["titolo"] = "Login";

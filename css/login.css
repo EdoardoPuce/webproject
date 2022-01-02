@@ -1,0 +1,72 @@
+.container {
+    background-color: #F4FDF0;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: medium;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+.container > article > h1 {
+    font-family: sans-serif;
+    font-size: 30pt;
+    text-align: center;   
+}
+
+.container > article > p {
+    font-family: serif;
+    font-size: 15pt;
+    text-align: center;
+}
+
+.container > article > form {
+    font-family: serif;
+    font-size: 15pt;
+    text-align: center;
+    margin-top: -10px;
+}
+
+form h2{
+    font-family: sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label,input{
+    display:inline-block;
+    margin: 5px;
+    font-size: 16px;
+}
+
+button {
+  width: 18%;
+  background-color: yellow;
+  color: black;
+  font-size: 16px;
+  padding: 14px 20px;
+  margin: 8px 0;
+}
+
+button:hover{
+    background-color: orange;
+}
+
+.google button{
+  margin-left: 210px;
+  width: 180px;
+  padding: 5px 10px 10px 5px;
+  background-color: #F65E00;
+  color: white;
+  text-align: center;
+}
+
+.facebook button{
+  margin-left: 210px;
+  width: 180px;
+  padding: 5px 10px 10px 5px;
+  background-color: #128FD6;
+  color: white;
+  text-align: center;
+}
