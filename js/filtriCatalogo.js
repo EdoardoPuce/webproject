@@ -6,7 +6,7 @@ $(document).ready(function () {
             $("aside").removeClass("selected");
             $("aside").slideUp("fast");
             $("div.articolo").css("margin", "10px 2%");
-            $("section.articoli").css("width", "100%"); à
+            $("section.articoli").css("width", "100%");
             $("div.footer").css("clear", "both");
     
             }else {
