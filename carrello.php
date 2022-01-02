@@ -7,7 +7,7 @@ $templateParams["nome"] = "carrello.php";
 
 $templateParams["costoSpedizione"] = 5;
 
-$templateParams["persona"] = $dbh->getPersonaByEmail("giorgio.verdi@gmail.com");
+$templateParams["persona"] = $dbh->getPersonaById(1);
 
 require 'template/base.php';
 ?>

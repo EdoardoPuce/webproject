@@ -11,15 +11,15 @@ class DatabaseHelper
         }
     }
 
-    public function getPersonaByEmail($email, $i = 1)
+    public function getPersonaById($id, $i = 1)
     {
         if($i==1){
-            $query = "SELECT idCliente, nome, cognome, email, 'password', paese, citta, indirizzo, civico, cap FROM cliente WHERE email = ?";
+            $query = "SELECT idCliente, nome, cognome, email, 'password', paese, citta, indirizzo, civico, cap FROM cliente WHERE idCliente = ?";
         } else {
-            $query = "SELECT idRivenditore, nome, cognome, email, 'password', piva, citta, indirizzo, civico, cap FROM rivenditore WHERE email = ?";
+            $query = "SELECT idRivenditore, nome, cognome, email, 'password', piva, citta, indirizzo, civico, cap FROM rivenditore WHERE idRivenditore = ?";
         }
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('s', $email);
+        $stmt->bind_param('s', $id);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
