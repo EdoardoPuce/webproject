@@ -2,8 +2,8 @@
 <section>
     <h1>Carrello</h1>
     <section class="carrello">
-        <?php 
-            require("articolo-carrello.php")
+        <?php
+        require("articolo-carrello.php")
         ?>
     </section>
     <div class="dati">
@@ -11,7 +11,7 @@
             <fieldset>
                 <legend>Dati Spedizione</legend>
                 <div>
-                    <label for="indirizzo">Indirizzo: <?php echo $templateParams['persona'][0]["indirizzo"] ." ". $templateParams['persona'][0]["civico"]; ?></label>
+                    <label for="indirizzo">Indirizzo: <?php echo $templateParams['persona'][0]["indirizzo"] . " " . $templateParams['persona'][0]["civico"]; ?></label>
                 </div>
                 <div>
                     <label for="paese">Paese: <?php echo $templateParams['persona'][0]["paese"]; ?></label>
@@ -23,7 +23,7 @@
         </section>
         <div>
             <form class="dati-pagamento">
-                <fieldset >
+                <fieldset>
                     <legend>Dati Pagamento</legend>
                     <div>
                         <label for="nome">Nome:</label><input type="text" id="nome" name="nome" />
@@ -46,8 +46,17 @@
                 <h2>Riepilogo Ordine</h2>
                 <p>N° Articoli: <?php echo numeroArticoliInCarrello() ?></p>
                 <p>Costo Articoli: € <?php echo costoArticoliInCarrello() ?></p>
-                <p>Spedizione: € <?php echo $templateParams["costoSpedizione"] ?></p>
-                <p>Totale: € <?php echo costoArticoliInCarrello() + $templateParams["costoSpedizione"] ?></p>
+                <p>Spedizione: € <?php if (numeroArticoliInCarrello() == 0) {
+                                        echo 0;
+                                    } else {
+                                        echo $templateParams["costoSpedizione"];
+                                    } ?></p>
+                <p>Totale: € <?php if (numeroArticoliInCarrello() == 0) {
+                                    echo 0;
+                                } else {
+                                    echo (costoArticoliInCarrello() + $templateParams["costoSpedizione"]);
+                                }
+                                ?></p>
                 <form>
                     <input type="button" name="Acquista" value="acquista" />
                 </form>
