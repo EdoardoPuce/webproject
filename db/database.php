@@ -169,5 +169,19 @@ class DatabaseHelper
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getRandomArticoli($n=3){
+        $query = "SELECT idArticolo, nomeArticolo, imgArticolo, prezzo
+        FROM articolo
+        ORDER BY RAND()
+        LIMIT ?";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $n);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     
 }

@@ -1,0 +1,121 @@
+div {
+    padding: 5px;
+}
+
+.container1 > section {
+    background-image: url('sfondotrek.jpg');
+    position: relative;
+    height: 1000px;
+    width: 1500px;
+    left: 50px;
+}
+
+.container1 > section > h1 {
+    font-size: 40pt;
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    
+}
+
+.container1 > section > p {
+    font-size: 21pt;
+    text-align: center;
+    color: white;
+    background-color: #050505;
+}
+
+.container2{
+    height: 450px;
+}
+
+.container2 > section > h2 {
+    font-size: 40pt;
+    font-family: fantasy;
+    text-align: center;   
+}
+
+.container2 > section {
+    background-color: white;
+    height: 450px;
+}
+
+.container2 > section > img {
+    border: solid;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    left: 150px;
+    top: -110px;
+}
+
+.container2 > section > p {
+    text-align: center;
+    font-size: 21pt;
+    
+}
+
+.container3 > section > .articolo{
+    background-color: #F4FDF0;
+}
+
+.container3 > section > h3 {
+    font-family: sans-serif;
+    font-size: 40;
+    text-align: center; 
+    margin-bottom: 5%;
+}
+
+.container3 > section > .articolo {
+    float: left;
+    width: 29%;
+    width: 33%;
+    width: 29%;
+    padding: 0 2%;
+}
+
+.container3 > section > .articolo > img {
+    position: relative;
+    left: 120px;
+    width: 240px;
+    height: 240px;
+}
+
+.container3 > section > .articolo > a {
+    font-size: 18;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.container3 > section > .articolo > p {
+    font-size: 18;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.container4 > section > h4 {
+    font-size: 40;
+    font-family: sans-serif;
+    text-align: center;
+    
+}
+
+.container4 > section > .colonna {
+    float: left;
+    width: 29%;
+    width: 33%;
+    width: 29%;
+    padding: 0 2%;
+}
+
+img{
+    position: relative;
+    top: -45px;
+    left: 720px;
+    width: 60px;
+    height: 60px;
+}
+
+.container4 > section > form {
+    text-align: center;
+}

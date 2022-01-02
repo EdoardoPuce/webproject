@@ -5,6 +5,7 @@ require_once 'bootstrap.php';
 $templateParams["titolo"] = "Home";
 $templateParams["logo"] = "hiking.png";
 //Home Template
+$templateParams["articolicausali"] = $dbh->getRandomArticoli(3);
 
 require 'template/base.php';
 ?>
