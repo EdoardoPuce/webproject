@@ -130,6 +130,19 @@ function aumentaQtaArticoloInCarrello($idArticoloDaAumentare){
     }
 }
 
+function diminuisciQtaArticoloInCarrello($idArticoloDaAumentare){
+    for($i = 0 ; $i < count($_SESSION["carrello"]) ; $i = $i+1){
+
+        if ($_SESSION["carrello"][$i]["idArticolo"] == $idArticoloDaAumentare){
+            if( $_SESSION["carrello"][$i]["qtaCarrello"] > 1 ){
+                $_SESSION["carrello"][$i]["qtaCarrello"] = $_SESSION["carrello"][$i]["qtaCarrello"] - 1;
+            } else{
+                unset($_SESSION["carrello"][$i]);
+            }
+        }    
+    }
+}
+
 function compattaCarrello(){
     //RIMUOVO GLI ARTICOLI DUPLICATI NEL CARRELLO
     $arrayId = array();
