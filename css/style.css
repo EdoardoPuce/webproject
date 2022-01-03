@@ -4,6 +4,9 @@
     --hover_pulsante: #E5A23C;
   }
 
+body > nav > ul > li > a{
+    font-family: verdana;
+}
 body, header {
     margin: 0;
     padding: 0;
@@ -166,6 +169,7 @@ body > footer > section.servizioClienti > a:hover{
     color: white;
 }
 
+
 @media screen and (max-width: 768px) {
 
     nav > ul > li:nth-child(-n+3){
@@ -185,10 +189,13 @@ body > footer > section.servizioClienti > a:hover{
         display: inline;
     } 
 
-    body > footer > section.servizioClienti, body > footer > section.pagamentiSicuri, body > footer > section.social{
+    body > footer > section, body > footer > section.pagamentiSicuri{
         box-sizing: content-box;
         display: block;
         width: 100%;
-
+        border-width:  1px 0 0 0;
+        border-style: solid;
+        border-color: rgb(0, 0, 0);
+        padding: 5px 0 15px;
     }
 }
