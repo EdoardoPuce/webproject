@@ -139,6 +139,7 @@ function diminuisciQtaArticoloInCarrello($idArticoloDaAumentare){
                 $_SESSION["carrello"][$i]["qtaCarrello"] = $_SESSION["carrello"][$i]["qtaCarrello"] - 1;
             } else{
                 unset($_SESSION["carrello"][$i]);
+                $_SESSION["carrello"] = array_values($_SESSION["carrello"]);
             }
         }    
     }
