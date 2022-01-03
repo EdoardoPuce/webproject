@@ -12,10 +12,10 @@ if (isset($_SESSION["carrello"])) {
             <section>
                 <p>Prezzo: € <?php echo ($articolo["prezzo"]) ?></p>
                 <p>Quantita:<?php echo ($articolo["qtaCarrello"]) ?></p>
-                <div>
-                    <img src="<?php echo (UPLOAD_DIR ."add.png") ?>" alt="" />
-                    <img src="<?php echo (UPLOAD_DIR ."minus.png") ?>" alt="" />
-                </div>
+                <form action="carrello.php?id=<?php echo ($articolo["idArticolo"]) ?>" method="post">
+                    <input type="image" name="plus" src="<?php echo (UPLOAD_DIR ."add.png") ?>" />
+                    <input type="image" name="minus" src="<?php echo (UPLOAD_DIR ."minus.png") ?>" />
+                </form>
             </section>
         </article>
 <?php endforeach;

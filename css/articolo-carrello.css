@@ -1,6 +1,10 @@
-article {
+
+article, article > section > form > input {
     border: 1px solid black;
     border-radius: var(--border);
+}
+
+article {
     margin: 5% 5% 0%;
     padding: 2% 0%;
 }
@@ -31,7 +35,16 @@ article > section{
     text-align: center;
 }
 
-article > section > p, .carrello > article > section > div{
+article > section > p{
     font-size: 18px;
     margin: 10px 0px 10;
+}
+
+article > section > form > input{
+    font-size: 18px;
+    margin: 10px 0px 10;
+}
+
+article > section > form > input:hover {
+    background-color: var(--hover_pulsante);
 }
