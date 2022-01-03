@@ -8,6 +8,7 @@ $templateParams["nome"] = "account.php";
 //$templateParams["persona"] = $dbh->getPersonaByEmail("mario.bianchi@gmail.com",0);
 $templateParams["persona"] = $dbh->getPersonaById(1);
 $templateParams["ordini"] = $dbh->getOrderByClient(1);    //$_SESSION["idcliente"]
+$templateParams["articoli"] = $dbh->getArticoloByRivenditore(1); 
 $templateParams["pg"] = $_GET["pg"];
 
 

@@ -135,6 +135,16 @@ class DatabaseHelper
 
     }
 
+    public function getArticoloByRivenditore($idrivenditore){
+        $query = "SELECT idArticolo, nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore FROM articolo WHERE rivenditore = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idrivenditore);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result ->fetch_all(MYSQLI_ASSOC);
+
+    }
+
     public function checkLogin($email, $password){
         $query = "SELECT idCliente, email, nome FROM cliente WHERE email = ? AND password = ?";
         $stmt = $this->db->prepare($query);
