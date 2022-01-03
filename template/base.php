@@ -77,3 +77,4 @@
     </footer>
 </body>
 </html>
+<script src = "./js/hamburger-menu.js" type = "text/javascript"></script>
