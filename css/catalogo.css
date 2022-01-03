@@ -108,12 +108,12 @@ main > section.articoli > p:first-of-type{
     margin: 20px auto;
     font-size: 22px;
 }
+
 /*CONTENITORE ARTICOLO */
 div.articolo{
     display: inline-block;
-    margin: 10px 2%;
+    margin: 15px 1%;
     width: 20%;
-    height: 40%;
     border-style: solid;
     border-width: 1px;
     border-color: black;
@@ -122,16 +122,24 @@ div.articolo{
     text-align: center;
 }
 
+
 img.prodotto{
     padding: 5px;
     display: block;
     margin:0px auto;
-    text-align: center;
-    width:80%;
-    
-    max-height: 204px;
+    width: 80%;
 }
 
+p.prezzo{
+    display:block;
+    padding: 4px 5px;
+    width: inherit;
+    margin: 7px auto;
+    background-color: yellow;
+    border: 1px;
+    border-style: solid;
+    box-shadow: 1px 1px black;
+}
 p{
     margin: 5px;
     text-align: center;
@@ -165,6 +173,9 @@ p[class ="Ultimi pezzi"]{
 /* PROPRIETA' SOLO PER SCHERMO PICCOLO */
 @media screen and (max-width: 768px){
 
+    div.articolo:nth-child(3n+1){
+        margin-left: 20px;
+    }
     div.articolo{
         width:30%;
         margin: 15px 5px;
@@ -184,7 +195,7 @@ p[class ="Ultimi pezzi"]{
 @media screen and (min-width: 768px){
     
     div.articolo:nth-child(4n+1){
-        margin-left: 25px;
+        margin-left: 55px;
     }
 
 

@@ -2,11 +2,8 @@
     --border: 15px;
     --main_color: #4F6D59;
     --hover_pulsante: #E5A23C;
-  }
-
-body > nav > ul > li > a{
-    font-family: verdana;
 }
+
 body, header {
     margin: 0;
     padding: 0;
@@ -19,19 +16,20 @@ body > header{
 body > header > img{
     padding: 5px 0px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin:  auto;
     width: 50px;
     height: 50px;
 }
 
 nav{
     background-color: var(--main_color);
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
-    height: 50px;
+    border-style:solid;
+    border-color: black;
+    border-width: 2px 0 2px 0;
+    height: 60px;
 }
 
+/*Lista in nav*/
 nav > ul{
     list-style: none;
     margin: 0px;
@@ -40,47 +38,66 @@ nav > ul{
     align-items: center;
 }
 
+/*Pulsante hamburger*/
 nav > ul > li:nth-child(4){
     display: none;
 }
 
+/*Primo li Homepage*/
 nav > ul > li:first-child{
     margin-left: 20px;
 }
 
+/*Ultimo li Carrello*/
 nav > ul > li:last-child{
     margin-right: 20px;
 }
 
+/*List item del nav*/
 nav > ul > li{
-margin: 0px 10px;
+    margin: 0px 10px;
 }
 
+/*li Account*/
 nav > ul > li:nth-child(5){
     margin-left: auto;
 }
 
+/*Link dentro i li*/
 nav > ul > li > a{
     text-decoration: none;
     display: block;
     color: white;
+    font-family: verdana;
 }
 
-nav > ul > li > a:hover{
+/*Hover li*/
+nav > ul > li > a:hover, body > footer > section.servizioClienti > a:hover{
     background-color: var(--hover_pulsante);
+    border-radius: 100px;
 }
 
 
+/*Primi 3 link*/
 nav > ul > li:nth-child(-n+3)> a{
     padding: 10px 20px;
 }
 
-
+/*Icone Account notifiche carrello*/
 nav > ul > li > a > img{
     width: 32px;
     height: 32px;
+    padding: 7px 5px 3px 5px ; 
+}
+/*Hover Account notifiche carrello*/
+nav > ul > li:nth-child(n+4)> a:hover{
+    border-radius: 10px;
 }
 
+/*Hover pulsante hamburger*/
+nav > ul > li:nth-child(4) > a:hover{
+    padding: 3px 3px 1px 2px;
+}
 
 body > footer{
     color: white;
@@ -92,9 +109,8 @@ body > footer{
 
 /* Linea sotto immagine */
 body > footer > div > hr{
-   
     margin:0px;
-    border: 1px;
+    border-width: 1px;
     border-style: solid;
     border-color: black;
 }
@@ -102,7 +118,6 @@ body > footer > div > hr{
 /*Immagine montagne */
 body > footer > div > img{
     width: 5%;
-   
 }
 
 body > footer > section{
@@ -115,12 +130,11 @@ body > footer > section{
     height: 100px;
 }
 
+/*Titoli sezioni footer*/
 body > footer > section > h2{
-    margin: 0px ;
-    padding-bottom: 7px;
-    padding-top:5px;
+    margin: 0px 0px 5px;
+    padding: 5px 0 7px 0;
 }
-
 
 body > footer > section.pagamentiSicuri{
     width: 34%;
@@ -133,7 +147,6 @@ body > footer > section.social > img{
     width: 42px;
     height: 42px;
     padding: 1%;
-    
 }
 
 body > footer > section > div{
@@ -160,8 +173,8 @@ body > footer > section > div > img[alt="mastercard"]{
 body > footer > section.servizioClienti > a{
     font-family: verdana;  
     color: white;  
-    padding:2px
-    
+    padding:5px;
+   
 }
 
 body > footer > section.servizioClienti > a:hover{
