@@ -9,7 +9,10 @@
         <a class="link" href="articolo.php?idArticolo=<?php echo $ordine[0]['idArticolo']; ?>">Dettagli</a>
     </article>
     <?php endforeach ?>
-<?php else: ?>
+<?php endif ?>
+
+
+<?php if($templateParams["pg"] == 2 && $_GET['test'] != 1): ?>
     <?php foreach($templateParams["ordini"] as $key=>$ordine): ?>
         
     <article>
@@ -20,4 +23,23 @@
         <a class="link" href="account.php?pg=3&idO=<?php echo $key+1; ?>">Dettagli</a>
     </article>
     <?php endforeach ?>
+<?php endif ?>
+
+
+<?php if($templateParams["pg"] == 2 && $_GET['test'] == 1 ): ?>
+    <form action="account.php?pg=4" class="crea">
+        <input type="button" name="crea" value="crea articolo"/>
+    </form>
+
+    <?php foreach($templateParams["articoli"] as $articolo): ?>
+  
+    <article>
+        <header>
+            <img src="<?php echo './upload/imgArticoli/'.$articolo['imgArticolo'];?>" alt="" />
+            <h3 for="nome"><?php echo $articolo['nomeArticolo'];?></h3>
+        </header>
+        <a class="link" href="account.php?pg=4&idA=<?php echo $articolo['idArticolo'];?>">Dettagli</a>
+    </article>
+    <?php endforeach ?>
+
 <?php endif ?>

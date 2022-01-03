@@ -1,6 +1,10 @@
-article {
+article, .link {
     border: 1px solid black;
     border-radius: var(--border);
+}
+
+
+article {
     display: inline-block;
     height: 180px;
     width: 150px;
@@ -23,11 +27,20 @@ header > h3{
 .link {
     padding: 5px 20px;
     text-decoration: none;
-    border: 1px solid black;
-    border-radius: 10px;
     color: black;
 }
 
-.link:hover {
+.link:hover, .crea > input:hover {
     background-color: var(--hover_pulsante);
 }
+
+.crea{
+    text-align: center;
+    margin: 10px;
+}
+
+.crea > input{
+    padding: 10px 20px;
+    border-radius: var(--border);
+}
+
