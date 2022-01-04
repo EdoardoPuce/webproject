@@ -10,8 +10,6 @@
         <a href="account.php?pg=1">Dati</a>
         <hr>
         <a href="account.php?pg=2">Ordini</a>
-        <hr class="gestione-articoli">
-        <a href="account.php?pg=4" class="gestione-articoli">Gestione Articoli</a>
     </aside>
     <?php if($templateParams['pg'] == 1): ?>
     <section class="account">
@@ -45,10 +43,3 @@
 
 
 </section>
-
-<?php 
-echo '<script type="text/javascript"> 
-        Rivenditore();
-     </script>'
-;
-?>

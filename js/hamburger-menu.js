@@ -1,9 +1,5 @@
-let nav = document.querySelector("body > nav");
 let btn = document.querySelector("nav > ul > li:nth-child(4)");
 let li = $("nav > ul > li:nth-child(-n+3)");
-var div = document.createElement("div");
-var ul = document.createElement("ul");
-
 
 $(document).ready(function () {
     btn.addEventListener("click", function () {
@@ -22,3 +18,14 @@ $(document).ready(function () {
        } 
     });
 });
+
+window.onresize = function(){ 
+    if(window.innerWidth > 768){ 
+        $("nav > ul > li").css("display", "initial");
+        $("nav > ul > li:nth-child(4)").css("display", "none");
+    }else{ 
+        $("nav > ul > li:nth-child(-n+3").css("display", "none");
+        $("nav > ul > li:nth-child(4)").css("display", "initial");
+        document.querySelector("nav > ul > li:nth-child(4) > a > img").src = "./upload/hamburger.png";
+    }
+}
