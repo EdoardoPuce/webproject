@@ -1,25 +1,25 @@
-.container {
+section > .container {
     background-color: #F4FDF0;
     border-style: solid;
     border-radius: 10px;
     border-width: medium;
     width: 600px;
     height: 600px;
-    margin: 0 auto;
+    margin-top: 50px;
 }
-.container > article > h1 {
+.container > section > h1 {
     font-family: sans-serif;
     font-size: 30pt;
     text-align: center;   
 }
 
-.container > article > p {
+.container > section > p {
     font-family: serif;
     font-size: 15pt;
     text-align: center;
 }
 
-.container > article > form {
+.container > section > form {
     font-family: serif;
     font-size: 15pt;
     text-align: center;

@@ -1,29 +1,33 @@
-div {
+ /*div {
     padding: 5px;
 }
+*/
+section.intro {
 
-.container1 > section {
-    background-image: url('sfondotrek.jpg');
+   background-color: skyblue;
+    /*
+    background-image: url('./upload/sfondotrek.jpg');
     position: relative;
-    height: 1000px;
-    width: 1500px;
+    height: 500px;
+    width: 500px;
     left: 50px;
-}
+    */
 
-.container1 > section > h1 {
+}
+section > h1 {
     font-size: 40pt;
     font-family: sans-serif;
     text-align: center;
     color: white;
-    
 }
 
-.container1 > section > p {
+section > p {
     font-size: 21pt;
     text-align: center;
     color: white;
     background-color: #050505;
 }
+/*
 
 .container2{
     height: 450px;
@@ -54,59 +58,70 @@ div {
     font-size: 21pt;
     
 }
-
-.container3 > section > .articolo{
-    background-color: #F4FDF0;
+*/
+section.artmom {
+    background-color: #5fdd29;
+    ;
 }
-
-.container3 > section > h3 {
+section.artmom > h3 {
     font-family: sans-serif;
-    font-size: 40;
+    font-size: 40pt;
     text-align: center; 
     margin-bottom: 5%;
 }
+section.artmom  > .articolo{
+    background-color: #F4FDF0;
+}
 
-.container3 > section > .articolo {
+section.artmom > .articolo {
     float: left;
     width: 29%;
     width: 33%;
     width: 29%;
-    padding: 0 2%;
+    padding: 2%;
 }
 
-.container3 > section > .articolo > img {
+section.artmom  > .articolo > img {
     position: relative;
     left: 120px;
     width: 240px;
     height: 240px;
 }
 
-.container3 > section > .articolo > a {
+section.artmom  > .articolo > p {
     font-size: 18;
-    font-family: sans-serif;
-    text-align: center;
-}
-
-.container3 > section > .articolo > p {
-    font-size: 18;
-    font-family: sans-serif;
-    text-align: center;
-}
-
-.container4 > section > h4 {
-    font-size: 40;
     font-family: sans-serif;
     text-align: center;
     
+
+}
+section.allart > h4 {
+    font-size: 40;
+    font-family: sans-serif;
+    text-align: center;
 }
 
-.container4 > section > .colonna {
+section.allart > .colonna > p {
+    font-size: 20pt;
+    font-family: sans-serif;
+    text-align: left;
+}
+section.allart > .colonna {
     float: left;
     width: 29%;
     width: 33%;
     width: 29%;
-    padding: 0 2%;
+    padding: 2%;
+    background-color: #F4FDF0;
 }
+
+section.allart > .colonna > ul > li {
+    text-align: left;
+    font-size: 14pt;
+}
+
+/*
+
 
 img{
     position: relative;

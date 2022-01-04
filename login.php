@@ -23,7 +23,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){ //controllo se email e 
 
 if(isUserLoggedIn()){
     $templateParams["titolo"] = "Cliente";
-    $templateParams["nome"] = "login.home.php";
+    $templateParams["nome"] = "index.php";
 }
 else{
     $templateParams["titolo"] = "Login";

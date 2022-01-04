@@ -91,6 +91,10 @@ function getStato($stato){
 function isUserLoggedIn(){
     return !empty($_SESSION['idcliente']);
 }
+//da eliminare
+function logout(){
+    unset($_SESSION['idcliente'))
+}
 
 function verificaDisponibilita($qta){
     if ($qta > 5) {

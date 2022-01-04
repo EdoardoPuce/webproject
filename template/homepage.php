@@ -1,43 +1,28 @@
-<link rel="stylesheet" type="text/css" href="./css/homepage.css">
-<div class="container1">
-    <section>
+<link rel="stylesheet" type="text/css" href="./css/homepage.css" />
+
+<section class="intro">
     <h1>Parti per l'avventura!</h1>
     <p> Scopri tutto l'abbigliamento e l'attrezzatura da trekking,<br>
-        lasciati ispirare dai nostri consigli e resta aggiornato sulle novità.</p>
-    </section>
-</div>
+    lasciati ispirare dai nostri consigli e resta aggiornato sulle novità.</p>
+</section>
 <hr>
-<img src="mountains.png" alt="logo">
-<div class="container2">
-    <section>
-        <h2> Offerta del giorno!</h2>
-        <p> Non farti scappare questa offerta. <br> 
-            Accedi e procedi con l'acquisto</p>
-        <img src="zaino.jpg" alt="zaino">
-    </section>
-</div>
-<hr>
-<img src="mountains.png" alt="logo">
-<div class="container3">
-    <section>
+<img src="./upload/mountains.png" alt="logo">
+
+<section class="artmom">
         <h3> Articoli del momento!</h3>
-        
         <?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>
             <div class="articolo">
-            <img src="<?php echo UPLOAD_IMG.$articolocasuale["imgArticolo"]; ?>" alt="" />
-            <a href="#"><?php echo $articolocasuale["nomeArticolo"]; ?></a>
-            <p>€ <?php echo $articolocasuale["prezzo"]; ?></p>
+                <img src="<?php echo UPLOAD_IMG.$articolocasuale["imgArticolo"]; ?>" alt="" />
+                <p><a href="#"><?php echo $articolocasuale["nomeArticolo"]; ?></a></p>
+                <p>€ <?php echo $articolocasuale["prezzo"]; ?></p>
             </div>
-            <?php endforeach; ?>
-        
-       
-    </section>
-</div>
-<div class="container4">
-    <section>
-        <h4> Catalogo </h4>
-        <div class="colonna">  
-            <p> Abbigliamneto da tracking</p>
+        <?php endforeach; ?>
+</section>
+
+<section class="allart">
+    <h4> Catalogo </h4>
+    <div class="colonna">  
+        <p> Abbigliamneto da tracking</p>
             <ul>
                 <li> Cappelli</li>
                 <li> Maglie </li>
@@ -70,6 +55,41 @@
                 <p> Vedi tutti </p>
            </ul>
         </div>
+
+        
+     <form action="cataologo.php">
+            <button type="submit"> 
+                Scopri il catalogo completo 
+            </button>
+        </section>
+    
+
+<!--
+<div class="container2">
+    <section>
+        <h2> Offerta del giorno!</h2>
+        <p> Non farti scappare questa offerta. <br> 
+            Accedi e procedi con l'acquisto</p>
+        <img src="zaino.jpg" alt="zaino">
+    </section>
+</div>
+<hr>
+<img src="./upload/mountains.png" alt="logo">
+<div class="container3">
+    <section>
+        <h3> Articoli del momento!</h3>
+        
+        <?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>
+            <div class="articolo">
+            <img src="<?php echo UPLOAD_IMG.$articolocasuale["imgArticolo"]; ?>" alt="" /> <br>
+            <a href="#"><?php echo $articolocasuale["nomeArticolo"]; ?></a>
+            <p>€ <?php echo $articolocasuale["prezzo"]; ?></p>
+            </div>
+            <?php endforeach; ?>
+        
+       
+    </section>
+</div>
         <form action="cataologo.php">
             <button type="submit"> 
                 Scopri il catalogo completo 
@@ -78,4 +98,6 @@
     </section>
 </div>
 <hr>
-<img src="mountains.png" alt="logo">
+<img src="./upload/mountains.png" alt="logo">
+
+        -->
