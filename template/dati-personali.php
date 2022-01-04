@@ -1,16 +1,14 @@
 <link rel="stylesheet" type="text/css" href="./css/dati-personali.css" />
 <?php
 
-    $test = $templateParams['persona'][0]["piva"];
-    if (isset($test)){
-        $res = "okok";
-        $ris = "P.iva";
+    if(isCliente()){
+        $label = "Paese";
+        $value = $templateParams["persona"][0]['paese'];
+    } else {
+        $label = "P.iva";
+        $value = $templateParams["persona"][0]['piva'];
     }
-    $lol = $templateParams['persona'][0]["paese"];
-    if (isset($lol)){
-        $res = "alee";
-        $ris = "Paese";
-    }
+
 ?>
 
 <fieldset>
@@ -25,7 +23,7 @@
         <label for="email">Email:</label><input type="email" id="email" name="email" value="<?php echo $templateParams['persona'][0]["email"]; ?>" />
     </div>
     <div>
-        <label for="paese_iva"><?php echo $ris; ?>:</label><input type="text" id="paese_iva" name="paese_iva"  value="<?php echo $res; ?>"/>
+        <label for="paese_iva"><?php echo $label; ?>:</label><input type="text" id="paese_iva" name="paese_iva"  value="<?php echo $value; ?>"/>
     </div>
     <div>
         <label for="citta">Citta:</label><input type="text" id="citta" name="citta" value="<?php echo $templateParams['persona'][0]["citta"]; ?>" />

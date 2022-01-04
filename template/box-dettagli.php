@@ -12,7 +12,7 @@
 <?php endif ?>
 
 
-<?php if($templateParams["pg"] == 2 && $_GET['test'] != 1): ?>
+<?php if($templateParams["pg"] == 2 && isCliente()): ?>
     <?php foreach($templateParams["ordini"] as $key=>$ordine): ?>
         
     <article>
@@ -26,11 +26,11 @@
 <?php endif ?>
 
 
-<?php if($templateParams["pg"] == 2 && $_GET['test'] == 1 ): ?>
-    <form action="account.php?pg=4" class="crea">
-        <input type="button" name="crea" value="crea articolo"/>
-    </form>
+<?php if($templateParams["pg"] == 2 && !isCliente() ): ?>
 
+    <div class="crea">
+        <a href="account.php?pg=4">Crea Articolo</a>
+    </div>
     <?php foreach($templateParams["articoli"] as $articolo): ?>
   
     <article>
