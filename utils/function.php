@@ -55,6 +55,14 @@ function registerLoggedUser($user, $cliente){
     $_SESSION["nome"] = $user["nome"];
 }
 
+function isCliente(){
+    if($_SESSION['value'] == 1){
+        return true;
+    } elseif($_SESSION['value'] == 0) {
+        return false;
+    }
+}
+
 function RiepilogoOrdine($ordine, $dbh){
     $nArticoli = count($ordine);
     $costoArticoli = 0;
