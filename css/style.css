@@ -89,14 +89,10 @@ nav > ul > li > a > img{
     height: 32px;
     padding: 7px 5px 3px 5px ; 
 }
-/*Hover Account notifiche carrello*/
-nav > ul > li:nth-child(n+4)> a:hover{
-    border-radius: 10px;
-}
 
-/*Hover pulsante hamburger*/
-nav > ul > li:nth-child(4) > a:hover{
-    padding: 3px 3px 1px 2px;
+ /*Hover Account notifiche carrello*/
+ nav > ul > li:nth-child(n+4)> a:hover{
+    border-radius: 10px;
 }
 
 body > footer{
@@ -174,7 +170,6 @@ body > footer > section.servizioClienti > a{
     font-family: verdana;  
     color: white;  
     padding:5px;
-   
 }
 
 body > footer > section.servizioClienti > a:hover{
@@ -182,26 +177,28 @@ body > footer > section.servizioClienti > a:hover{
     color: white;
 }
 
-
+/*SCHERMO PICCOLO*/
 @media screen and (max-width: 768px) {
 
+    /*Nasconde i Home catalogo e contatti*/
     nav > ul > li:nth-child(-n+3){
         display: none;
     }
     
+    /*Mostra hamburger pulsante*/
     nav > ul > li:nth-child(4){
         display: initial;
     }
+    /*Hover pulsante hamburger*/
+    nav > ul > li:nth-child(4) > a:hover{
+    padding: 3px 3px 1px 2px;
+}   
 
     nav > ul > li:nth-child(4) > a{
         display: block;
         margin-right: 10px;
     }
-
-    nav > ul > li:nth-child(4):hover ~ :nth-child(-n+3){
-        display: inline;
-    } 
-
+    
     body > footer > section, body > footer > section.pagamentiSicuri{
         box-sizing: content-box;
         display: block;
