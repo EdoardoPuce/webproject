@@ -37,7 +37,9 @@
                     <img src="./upload/bell.png" alt="Notifiche" >
                 </a>
                 <section class="notifiche">
-                    
+                <?php 
+                    require("notifica.php");
+                ?>
                 </section>
             </li>
             <li>
