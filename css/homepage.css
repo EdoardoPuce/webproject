@@ -1,18 +1,5 @@
- /*div {
-    padding: 5px;
-}
-*/
 section.intro {
-
    background-color: skyblue;
-    /*
-    background-image: url('./upload/sfondotrek.jpg');
-    position: relative;
-    height: 500px;
-    width: 500px;
-    left: 50px;
-    */
-
 }
 section > h1 {
     font-size: 40pt;
@@ -120,9 +107,6 @@ section.allart > .colonna > ul > li {
     font-size: 14pt;
 }
 
-/*
-
-
 img{
     position: relative;
     top: -45px;
@@ -130,7 +114,8 @@ img{
     width: 60px;
     height: 60px;
 }
-
+/*
 .container4 > section > form {
     text-align: center;
 }
+*/
