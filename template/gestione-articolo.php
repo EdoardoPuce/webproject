@@ -75,7 +75,7 @@ $categorie = $dbh->getCategorie(); ?>
             </div>
             <div>
                 <input type="submit" name="submit" value="Conferma"/>
-                <a href="#">Annulla</a>
+                <a href="account.php?pg=2">Annulla</a>
             </div>
         </div>
     </fieldset>
