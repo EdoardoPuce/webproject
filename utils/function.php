@@ -125,6 +125,7 @@ function getStato($stato){
             $result = "Arrivato a Destinazione";
             break;
     }
+    return $result;
 }
 
 function isUserLoggedIn(){

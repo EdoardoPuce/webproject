@@ -1,7 +1,20 @@
 :root {
     --border: 15px;
     --main_color: #4F6D59;
+    --second_color: #d5fde2;
     --hover_pulsante: #E5A23C;
+}
+
+.notifiche{
+    border: 1px solid black;
+    border-radius: var(--border);
+    background-color: var(--second_color);
+    display: none;
+    height: 300px;
+    width: 250px;
+    position: absolute;
+    top: 120px;
+    right: 1%;
 }
 
 body, header {

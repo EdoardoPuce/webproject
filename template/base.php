@@ -36,6 +36,9 @@
                 <a href="#">
                     <img src="./upload/bell.png" alt="Notifiche" >
                 </a>
+                <section class="notifiche">
+                    
+                </section>
             </li>
             <li>
                 <a href="carrello.php">
