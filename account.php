@@ -17,29 +17,56 @@ if (isUserLoggedIn() && isCliente()){ //cliente
     if(isset($templateParams["pg"]) && $templateParams["pg"] == 3){
         
         $idOrdine = $_GET["idO"];       //Salvo l'id dell'Ordine
-    
         $templateParams["stato"] = $dbh->getStatoByOrderId($idOrdine)[0]['stato']; //Ottengo lo stato della spedizione
-    
         $ordine = $dbh->getOrderById($idOrdine);    //Ottengo l'ordine dal db
-        
         $articoli = array();    //Array associativo contenente tutti gli articoli dell'ordine richiesto
         
         foreach($ordine as $rigaordine){
             $articolo = $dbh->getArticoloByid($rigaordine["idArticolo"]);  //Ottengo l'articolo dal db
-            
             array_push($articoli,$articolo);  //Inserisco l'articolo nell'array di articoli       
         }
         $templateParams["articoli"] = $articoli;
-    
         $templateParams["riepilogo"] = RiepilogoOrdine($ordine, $dbh);
-    
-      
     }
 
 } elseif (isUserLoggedIn() && !isCliente()) { //rivenditore
     $templateParams["persona"] = $dbh->getPersonaById($_SESSION["idcliente"], 0);
     $templateParams["articoli"] = $dbh->getArticoloByRivenditore($_SESSION["idcliente"]);
 
+    //MODIFICA ARTICOLO
+    if (isset($_POST["submit"]) and $_POST["submit"] == "Conferma" && isset($_GET["idA"])){
+        $articoloModificato = array();
+        array_push($articoloModificato, $_POST["nome"]);
+        array_push($articoloModificato, $_POST["descrizione"]);
+        array_push($articoloModificato, $_POST["taglia"]);
+        array_push($articoloModificato, floatval($_POST["prezzo"]));
+        if($_POST["img"] == ""){
+            array_push($articoloModificato, $dbh->getArticoloByid($_GET["idA"])[0]["imgArticolo"]  );
+        } else{
+            array_push($articoloModificato, $_POST["img"]);
+        }
+        array_push($articoloModificato, intval($_POST["qta"]));
+        $idCategoria = $dbh->getCategoriaByName($_POST["categoria"])[0]["idCategoria"];
+        array_push($articoloModificato, $idCategoria);
+        $dbh->modificaArticolo( intval($_GET["idA"]),$articoloModificato);
+        header("Refresh:0"); /* AGGIORNARE VISUALIZZAZIONE ARTICOLO DOPO LA MODIFICA NEL DB*/
+    }
+
+    //AGGIUNTA ARTICOLO 
+    else if(isset($_POST["submit"]) and $_POST["submit"] == "Conferma" && !(isset($_GET["idA"]))){
+        $nuovoArticolo = array();
+        array_push($nuovoArticolo, $_POST["nome"]);
+        array_push($nuovoArticolo, $_POST["descrizione"]);
+        array_push($nuovoArticolo, $_POST["taglia"]);
+        array_push($nuovoArticolo, floatval($_POST["prezzo"]));
+        array_push($nuovoArticolo, $_POST["img"]);
+        array_push($nuovoArticolo, intval($_POST["qta"]));
+        $idCategoria = $dbh->getCategoriaByName($_POST["categoria"])[0]["idCategoria"];
+        array_push($nuovoArticolo, $idCategoria);
+        array_push($nuovoArticolo, $templateParams["persona"][0]["idRivenditore"]);
+        $dbh->aggiungiArticolo($nuovoArticolo);
+        header("location: account.php?pg=2");
+    }
 } else { // non loggato
     header("location: login.php");
 }

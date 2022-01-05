@@ -3,13 +3,13 @@
 <section>
     <h2>Accedi</h2>
     <form method="POST"> 
-        <input type="checkbox" id="persona1" name="persona1" value="cliente">
+        <input type="radio" id="persona1" name="cliente" value="1">
         <label for="cliente"> Cliente </label>
-        <input type="checkbox" id="persona2" name="persona2" value="rivenditore">
-        <label for="persona"> Rivenditore </label>
+        <input type="radio" id="persona2" name="rivenditore" value="0">
+        <label for="rivenditore"> Rivenditore </label>
     </form>
     <p> Non sei ancora registrato?</p>
-    <a href="form.php"> Registrati qui</a>
+    <p><a href="form.php"> Registrati qui</a></p>
     <div class="login">
         <form action="#" method="POST">
             <?php if(isset($templateParams["errorelogin"])): ?>
@@ -22,19 +22,13 @@
             <input type="submit" name="submit" value="Accedi" />
         </form>
      </div> 
-     <form action="./template/homepage.php">
-         <button type="submit"> Accedi </button>  
-        </form>
-        <p> Oppure accedi tramite:</p>
-        <div class= "social">
-                    <div class="google">
-                        <button type="submit"> Google </button>
-                    </div>
-                    <div class="facebook">
-                        <button type="submit"> Facebook </button>
-                    </div>
-                </div>
-            </form>
-    </div>
-
-  </section>
+     <p> Oppure accedi tramite:</p>
+      <div class= "social">
+          <div class="google">
+              <button type="submit"> Google </button>
+            </div>
+            <div class="facebook">
+                <button type="submit"> Facebook </button>
+            </div>
+        </div>
+</section>
