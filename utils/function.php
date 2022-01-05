@@ -48,9 +48,8 @@ function uploadImage($path, $image){
     return array($result, $msg);
 }
 
-function registerLoggedUser($user, $cliente){
-    $_SESSION['value'] = $cliente;
-    $_SESSION["idcliente"] = $user["idCliente"];
+function registerLoggedUser($user){
+    $_SESSION["idUtente"] = $user["idCliente"];
     $_SESSION["email"] = $user["email"];
     $_SESSION["nome"] = $user["nome"];
 }
@@ -99,6 +98,15 @@ function getStato($stato){
 function isUserLoggedIn(){
     return !empty($_SESSION['idcliente']);
 }
+
+/*
+function logout(){
+    unset($_SESSION['idcliente']);
+    unset($_SESSION['email']);
+    unset($_SESSION['nome']);
+    unset($_SESSION['value']);
+}
+*/
 
 function verificaDisponibilita($qta){
     if ($qta > 5) {
