@@ -49,7 +49,7 @@ function uploadImage($path, $image){
 }
 
 function registerLoggedUser($user){
-    $_SESSION["idUtente"] = $user["idCliente"];
+    $_SESSION["idUtente"] = $user["idRivenditore"];
     $_SESSION["email"] = $user["email"];
     $_SESSION["nome"] = $user["nome"];
 }

@@ -7,7 +7,6 @@ if(isset($_GET["idA"])){
     
 }else{
     $articolo = array(
-    
     "nomeArticolo" => "", 
     "descrizione" => "", 
     "taglia" => "", 
@@ -20,16 +19,16 @@ if(isset($_GET["idA"])){
 
 $categorie = $dbh->getCategorie(); ?>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     <fieldset>
         <legend>Gestione Articolo</legend>
         <div class="left">
             <div>
                 <label for="nome">Nome Articolo</label><input type="text" id="nome" name="nome" value="<?php 
-                if (isset($articolo['nomeArticolo'])){echo $articolo['nomeArticolo'];}?>" />
+                 echo $articolo['nomeArticolo'];?>" />
             </div>
             <div>
-                <label for="descrizione">Descrizione</label><textarea type="text" id="descrizione" name="descrizione"><?php if(isset($articolo["descrizione"])){echo $articolo["descrizione"];} ?></textarea>
+                <label for="descrizione">Descrizione</label><textarea type="text" id="descrizione" name="descrizione"><?php echo $articolo["descrizione"]; ?></textarea>
             </div>
             <div>
                 <label for="prezzo">Prezzo</label><input type="number" step=".01" id="prezzo" name="prezzo" value="<?php echo ($articolo['prezzo']); ?>" />
@@ -37,8 +36,6 @@ $categorie = $dbh->getCategorie(); ?>
             <div>
                 <img src="<?php echo (UPLOAD_IMG . $articolo["imgArticolo"]); ?>" alt="none">
             </div>
-            
-            
             <div>
                 <label for="imgarticolo">Immagine Articolo</label><input type="file" id="img" name="img"/>
             </div>

@@ -42,11 +42,22 @@ if (isUserLoggedIn() && isCliente()){ //cliente
         array_push($articoloModificato, $_POST["descrizione"]);
         array_push($articoloModificato, $_POST["taglia"]);
         array_push($articoloModificato, floatval($_POST["prezzo"]));
-        if($_POST["img"] == ""){
+                
+        if($_FILES["img"]["name"] == ""){
             array_push($articoloModificato, $dbh->getArticoloByid($_GET["idA"])[0]["imgArticolo"]  );
-        } else{
-            array_push($articoloModificato, $_POST["img"]);
-        }
+        } 
+        //Aggiunge foto in da altre cartelle che in upload/imgArticoli
+        else{                     
+            $file = $_FILES['img'];
+            var_dump($file);
+            if (UPLOAD_ERR_OK === $file['error']) {
+                $fileName = basename($file['name']);
+                move_uploaded_file($file['tmp_name'], UPLOAD_IMG.DIRECTORY_SEPARATOR.$fileName);
+            }
+            var_dump($file["name"]);
+            array_push($articoloModificato, $file["name"]);
+        } 
+
         array_push($articoloModificato, intval($_POST["qta"]));
         $idCategoria = $dbh->getCategoriaByName($_POST["categoria"])[0]["idCategoria"];
         array_push($articoloModificato, $idCategoria);
