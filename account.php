@@ -47,7 +47,6 @@ if (isUserLoggedIn() && isCliente()){ //cliente
         //Aggiunge foto in da altre cartelle che in upload/imgArticoli
         else{                     
             $file = $_FILES['img'];
-            var_dump($file);
             if (UPLOAD_ERR_OK === $file['error']) {
                 $fileName = basename($file['name']);
                 move_uploaded_file($file['tmp_name'], UPLOAD_IMG.DIRECTORY_SEPARATOR.$fileName);
@@ -73,7 +72,6 @@ if (isUserLoggedIn() && isCliente()){ //cliente
         //Aggiunge foto in da altre cartelle che in upload/imgArticoli
 
         $file = $_FILES['img'];
-        var_dump($file);
         if (UPLOAD_ERR_OK === $file['error']) {
             $fileName = basename($file['name']);
             move_uploaded_file($file['tmp_name'], UPLOAD_IMG . DIRECTORY_SEPARATOR . $fileName);
