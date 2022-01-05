@@ -205,7 +205,7 @@ class DatabaseHelper
     }
 
     public function insertOrder($idCliente){
-        $query = "INSERT INTO `ordine`(`idCliente`, `stato`) VALUES (?,'0')";
+        $query = "INSERT INTO `ordine`(`idCliente`, `stato`, `visualizzato`) VALUES (?,'0','0')";
         
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $idCliente);
