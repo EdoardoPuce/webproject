@@ -204,6 +204,37 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function insertOrder($idCliente){
+        $query = "INSERT INTO `ordine`(`idCliente`, `stato`) VALUES (?,'0')";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idCliente);
+        $stmt->execute();
+    }
+
+    public function insertOrderRow($qta,$idArticolo,$idOrdine){
+        $query = "INSERT INTO `rigaordine`(`qta`, `idArticolo`, `idOrdine`) VALUES (?,?,?)";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iii', $qta,$idArticolo,$idOrdine);
+        $stmt->execute();
+    }
+
+    public function decrementArticle($idArticolo){
+        $query = "UPDATE `articolo` SET qtaMagazzino= qtaMagazzino - 1 WHERE `idArticolo`= ? ";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idArticolo);
+        $stmt->execute();
+    }
+
+    public function lastOrderId(){
+        $query = "SELECT max(idOrdine) FROM `ordine`";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     public function modificaArticolo($idArticolo, $modifiche){  
         $query = "UPDATE articolo SET nomeArticolo = ? , descrizione = ? , taglia = ? , prezzo = ? , imgArticolo = ? , qtaMagazzino = ? , categoria = ? WHERE idArticolo = ? ";
         $stmt = $this->db->prepare($query);

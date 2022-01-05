@@ -62,6 +62,38 @@ function isCliente(){
     }
 }
 
+function checkPagamento(){
+    if( $_POST['nome'] != "" 
+        && $_POST['cognome'] != "" 
+        && $_POST['codice-carta'] != "" 
+        && $_POST['data'] != "" 
+        && $_POST['cvv'] != ""  ){
+
+        unset($_POST['nome']);
+        unset($_POST['cognome']);
+        unset($_POST['codice-carta']);
+        unset($_POST['data']);
+        unset($_POST['cvv']);
+        unset($_POST['acquista']);
+
+            return true;
+        } else {
+            return false;
+        }
+}
+
+function inserireOrdine($dbh, $newId){
+
+    $dbh->insertOrder($_SESSION['idcliente']);
+
+    foreach($_SESSION["carrello"] as $articolo){
+        $dbh->insertOrderRow($articolo["qtaCarrello"],$articolo["idArticolo"], $newId);
+        $dbh->decrementArticle($articolo["idArticolo"]);
+    }
+
+    svuotaCarrello();
+}
+
 function RiepilogoOrdine($ordine, $dbh){
     $nArticoli = count($ordine);
     $costoArticoli = 0;
@@ -107,6 +139,16 @@ function logout(){
     unset($_SESSION['value']);
 }
 */
+
+function checkCarrello($carrello){
+    foreach($carrello as $articolo){
+        if($articolo['qtaMagazzino'] >= 1){
+        } else {
+            return false;
+        }
+        return true;
+    }
+}
 
 function verificaDisponibilita($qta){
     if ($qta > 5) {

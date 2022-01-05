@@ -15,7 +15,7 @@ h2{
     border: 1px solid black;
 }
 
-.carrello, .dati, .dati-spedizione > fieldset , .dati-pagamento > fieldset, .riepilogo-ordine  {
+.carrello, .dati, .dati-spedizione > fieldset , .dati-pagamento , .riepilogo-ordine  {
     border-radius: var(--border);
 }
 
@@ -31,13 +31,13 @@ h2{
     display: none;
 }
 
-
-.dati{
+.container{
     float: right;
+    width: 60%;
     margin-right: 2%;
     margin-top: 10px;
-    width: 60%;
 }
+
 
 .dati-spedizione{
     margin: 20px auto 30px;
@@ -45,12 +45,12 @@ h2{
     height: auto;
 }
 
-.dati-spedizione > fieldset  > div, .dati-pagamento > fieldset > div, .riepilogo-ordine > div {
+.dati-spedizione > fieldset  > div, .dati-pagamento > div, .riepilogo-ordine > div {
     text-align: center;
 }
 
 
-.dati-pagamento > fieldset > div > input{
+.dati-pagamento > div > input{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
@@ -97,18 +97,17 @@ h2{
     height: max-content;
 }
 
-.dati-pagamento > fieldset > div{
+.dati-pagamento > div{
     margin: 20px 0px;
 }
 
-
 .riepilogo-ordine{
+    height: max-content;
     float: right;
-    width: 42%;
-    height: fit-content;
-    padding-top: 3%;
+    width: 45%;
+    padding-top: 2%;
     padding-left: 0px;
-    margin-top: 2%;
+    margin-top: 1%;
     margin-bottom: 2%;
     text-align: center;
 }
@@ -117,12 +116,12 @@ h2{
     margin: 20px 0px;
 }
 
-.riepilogo-ordine > form > input{
+.riepilogo-ordine > input{
     padding: 10px 20px;
     margin-bottom: 20px;
 }
 
-.riepilogo-ordine > form > input:hover{
+.riepilogo-ordine > input:hover{
     background-color: orange;
 }
 
@@ -135,7 +134,7 @@ h2{
         height: var(--height_main);
     }
     
-    .dati{
+    .container{
         margin: 50px 5%;
         display: block;
         width: 90%;
