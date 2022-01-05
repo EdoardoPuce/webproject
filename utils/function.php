@@ -84,7 +84,7 @@ function checkPagamento(){
 
 function inserireOrdine($dbh, $newId){
 
-    $dbh->insertOrder($_SESSION['idcliente']);
+    $dbh->insertOrder($_SESSION["idUtente"]);
 
     foreach($_SESSION["carrello"] as $articolo){
         $dbh->insertOrderRow($articolo["qtaCarrello"],$articolo["idArticolo"], $newId);
@@ -128,7 +128,7 @@ function getStato($stato){
 }
 
 function isUserLoggedIn(){
-    return !empty($_SESSION['idcliente']);
+    return !empty($_SESSION["idUtente"]);
 }
 
 /*

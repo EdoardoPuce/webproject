@@ -5,14 +5,15 @@ $templateParams["titolo"] = "Account";
 $templateParams["nome"] = "account.php";
 
 $user = $dbh->getPersonaById(1,1);
-registerLoggedUser($user[0],1);
+registerLoggedUser($user[0]);
+$_SESSION['value'] = 1;
 
 
 $templateParams["pg"] = $_GET["pg"];
 
 if (isUserLoggedIn() && isCliente()){ //cliente
-    $templateParams["persona"] = $dbh->getPersonaById($_SESSION["idcliente"]);
-    $templateParams["ordini"] = $dbh->getOrderByClient($_SESSION["idcliente"]);
+    $templateParams["persona"] = $dbh->getPersonaById($_SESSION["idUtente"]);
+    $templateParams["ordini"] = $dbh->getOrderByClient($_SESSION["idUtente"]);
 
     if(isset($templateParams["pg"]) && $templateParams["pg"] == 3){
         
@@ -30,8 +31,8 @@ if (isUserLoggedIn() && isCliente()){ //cliente
     }
 
 } elseif (isUserLoggedIn() && !isCliente()) { //rivenditore
-    $templateParams["persona"] = $dbh->getPersonaById($_SESSION["idcliente"], 0);
-    $templateParams["articoli"] = $dbh->getArticoloByRivenditore($_SESSION["idcliente"]);
+    $templateParams["persona"] = $dbh->getPersonaById($_SESSION["idUtente"], 0);
+    $templateParams["articoli"] = $dbh->getArticoloByRivenditore($_SESSION["idUtente"]);
 
     //MODIFICA ARTICOLO
     if (isset($_POST["submit"]) and $_POST["submit"] == "Conferma" && isset($_GET["idA"])){
