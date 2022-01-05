@@ -125,6 +125,16 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getCategoriaByName($nameCategoria)
+    {
+        $query = "SELECT idCategoria FROM categoria WHERE nomeCategoria = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $nameCategoria);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getArticoloByid($idarticolo){
         $query = "SELECT idArticolo, nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore FROM articolo WHERE idArticolo = ?";
         $stmt = $this->db->prepare($query);
@@ -192,6 +202,26 @@ class DatabaseHelper
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function modificaArticolo($idArticolo, $modifiche){  
+        $query = "UPDATE articolo SET nomeArticolo = ? , descrizione = ? , taglia = ? , prezzo = ? , imgArticolo = ? , qtaMagazzino = ? , categoria = ? WHERE idArticolo = ? ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("sssdsiii", $modifiche[0], $modifiche[1], $modifiche[2], $modifiche[3], $modifiche[4], $modifiche[5], $modifiche[6], $idArticolo);  
+
+        if(!$stmt->execute()){
+            var_dump($stmt->error);
+        }
+    }
+
+    public function aggiungiArticolo($articolo){     
+        $query = "INSERT INTO articolo (nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("sssdsiii", $articolo[0] /*nome*/, $articolo[1]/*descrizione*/, $articolo[2]/*taglia*/,$articolo[3]/*prezzo*/,$articolo[4]/*img*/, $articolo[5]/*qta*/, $articolo[6]/*categoria*/, $articolo[7]/*rivenditore*/ );
+
+        if(!$stmt->execute()){
+            var_dump($stmt->error);
+        }
     }
     
 }
