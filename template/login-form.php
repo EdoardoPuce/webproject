@@ -36,11 +36,5 @@
                 </div>
             </form>
     </div>
-    <?php 
-    function logout 
-    {
-    unset($_SESSION['idcliente']);
-}
 
-?>
   </section>

@@ -4,11 +4,10 @@ require_once 'bootstrap.php';
 $templateParams["titolo"] = "Account";
 $templateParams["nome"] = "account.php";
 
-$user = $dbh->getPersonaById(1,0);
-registerLoggedUser($user[0],0);
+$user = $dbh->getPersonaById(1,1);
+registerLoggedUser($user[0],1);
 
 
-//$templateParams["articoli"] = $dbh->getArticoloByRivenditore(1); 
 $templateParams["pg"] = $_GET["pg"];
 
 if (isUserLoggedIn() && isCliente()){ //cliente
@@ -16,7 +15,6 @@ if (isUserLoggedIn() && isCliente()){ //cliente
     $templateParams["ordini"] = $dbh->getOrderByClient($_SESSION["idcliente"]);
 
     if(isset($templateParams["pg"]) && $templateParams["pg"] == 3){
-        //$templateParams["IdOrdine"] = $_GET["idO"];
         
         $idOrdine = $_GET["idO"];       //Salvo l'id dell'Ordine
     
