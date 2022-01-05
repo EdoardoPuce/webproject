@@ -17,25 +17,26 @@ if(isset($_POST["plus_x"])){
     aumentaQtaArticoloInCarrello($_GET["id"]);
 }
 
-
 if(isset($_POST['acquista'])){
 
     if(isUserLoggedIn()){
 
         if(isCliente()){
 
-            if(!empty($_SESSION['carrello'][0])){
+            if(!empty($_SESSION['carrello'][0]) && checkCarrello($_SESSION['carrello'])){
 
                 if(checkPagamento()){
-                    inserireOrdine($dbh);
-                    echo '<script>alert("Fatto")</script>';
+                    $lastid = $dbh->lastOrderId();
+                    $newId = $lastid[0]["max(idOrdine)"]+1;
+                    inserireOrdine($dbh,$newId);
+                    header("location: account.php?pg=3&idO=".$newId);
 
                 }else{
                     echo '<script>alert("Pagamento  Non Andata A Buon Fine, controlla i dati inseriti")</script>';
                 }
 
             } else {
-                echo '<script>alert("Carrello Vuoto")</script>';
+                echo '<script>alert("Un articolo non e\' disponibile oppure il Carrello e\' vuoto ")</script>';
             }
 
         } else{
