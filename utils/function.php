@@ -82,16 +82,13 @@ function checkPagamento(){
         }
 }
 
-function inserireOrdine($dbh){
-
-    $lastid = $dbh->lastOrderId();
-    $newId = $lastid[0]["max(idOrdine)"]+1;
-
+function inserireOrdine($dbh, $newId){
 
     $dbh->insertOrder($_SESSION['idcliente']);
 
     foreach($_SESSION["carrello"] as $articolo){
         $dbh->insertOrderRow($articolo["qtaCarrello"],$articolo["idArticolo"], $newId);
+        $dbh->decrementArticle($articolo["idArticolo"]);
     }
 
     svuotaCarrello();
@@ -142,6 +139,16 @@ function logout(){
     unset($_SESSION['value']);
 }
 */
+
+function checkCarrello($carrello){
+    foreach($carrello as $articolo){
+        if($articolo['qtaMagazzino'] >= 1){
+        } else {
+            return false;
+        }
+        return true;
+    }
+}
 
 function verificaDisponibilita($qta){
     if ($qta > 5) {

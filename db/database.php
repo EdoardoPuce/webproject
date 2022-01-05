@@ -220,6 +220,14 @@ class DatabaseHelper
         $stmt->execute();
     }
 
+    public function decrementArticle($idArticolo){
+        $query = "UPDATE `articolo` SET qtaMagazzino= qtaMagazzino - 1 WHERE `idArticolo`= ? ";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idArticolo);
+        $stmt->execute();
+    }
+
     public function lastOrderId(){
         $query = "SELECT max(idOrdine) FROM `ordine`";
         $stmt = $this->db->prepare($query);
