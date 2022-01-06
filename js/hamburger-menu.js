@@ -1,7 +1,7 @@
 let btn = document.querySelector("nav > ul > li:nth-child(4)");
 let li = $("nav > ul > li:nth-child(-n+3)");
 
-let btnNotifiche = document.querySelector("nav > ul > li:nth-child(6)");
+let btnNotifiche = document.querySelector("nav > ul > li:nth-child(6) > a");
 let notifiche = $(".notifiche");
 
 $(document).ready(function () {

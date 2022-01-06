@@ -15,7 +15,13 @@
     position: absolute;
     top: 120px;
     right: 1%;
+    overflow: auto;
 }
+
+.notifiche::-webkit-scrollbar {
+    display: none;
+}
+
 
 body, header {
     margin: 0;

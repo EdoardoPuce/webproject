@@ -190,6 +190,18 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getStatiByUser($idUtente){
+        $query = "SELECT idOrdine, stato
+        FROM ordine
+        where idCliente = ?";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idUtente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getRandomArticoli($n=3){
         $query = "SELECT idArticolo, nomeArticolo, imgArticolo, prezzo
         FROM articolo

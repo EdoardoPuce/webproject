@@ -109,17 +109,21 @@ function RiepilogoOrdine($ordine, $dbh){
     return array('nArticoli'=>$nArticoli, 'costoArticoli'=>$costoArticoli, 'spedizione'=>$CostoSpedizione, 'totale'=>$Totale);
 }
 
+function getNotifiche($dbh){
+    return $dbh->getStatiByUser($_SESSION['idUtente']);
+}
+
 function getStato($stato){
     $result = "";
     switch($stato){
         case 0:
-            $result = "Ordine Effettuato";
+            $result = "Effettuato";
             break;
         case 1:
-            $result = "Ordine Preso in Carico";
+            $result = "Preso in Carico";
             break;
         case 2:
-            $result = "Ordine Spedito";
+            $result = "Spedito";
             break;
         case 3:
             $result = "Arrivato a Destinazione";
