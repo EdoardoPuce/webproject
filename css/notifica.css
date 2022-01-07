@@ -1,9 +1,12 @@
+.accesso{
+    text-align: center;
+}
+
+.reset{
+    all: revert;
+}
 
 .notifica{
-    /*
-    margin-top: 20px;
-    border-top: 1px solid black;
-    */
     all: revert;
 
     border-bottom: 1px solid black;
@@ -13,7 +16,7 @@
 .testo_notifica {
     all: revert;
 
-    width: 75%;
+    width: 70%;
     text-align: left;
     margin-right: 0px;
     margin-left: 10px;
@@ -30,9 +33,17 @@
     display: inline-block;
 }
 
-.accesso{
-    text-align: center;
+.notifica > form > button{
+    all: revert;
+    border-radius: var(--border);
+    background-color: transparent;
 }
+
+.notifica > form > button:hover{
+    background-color: var(--hover_pulsante);
+}
+
+
 
 
 

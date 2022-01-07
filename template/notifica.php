@@ -6,6 +6,12 @@
 
         if(isCliente()){
             $ordini = getNotifiche($dbh);
+
+            if(isset($_POST['idN'])){
+                $dbh->cancellaNotifica($_POST['idN']);
+                header("Refresh:0");
+            }
+            
         } else{
             $articoli = getNotificheRivenditore($dbh);
         }
@@ -21,10 +27,12 @@
             <article class="notifica">
                 <Header class="testo_notifica">
                     <h3><?php echo "Ordine ".$ordine['idOrdine'].":"; ?></h3>
-                    <p><?php echo getStato($ordine['stato']); ?></p>
+                    <p class="reset"><?php echo getStato($ordine['stato']); ?></p>
                 </Header>
-                <form>
-                    <input type="image" name="minus" src="<?php echo (UPLOAD_DIR ."delete.png") ?>" />
+                <form method="POST">
+                    <button type="submit" name="idN" value="<?php echo $ordine['idOrdine']; ?>">
+                        <img alt="Cancella Notifica" src="<?php echo (UPLOAD_DIR ."delete.png") ?>">
+                    </button>
                 </form>
             </article>
 

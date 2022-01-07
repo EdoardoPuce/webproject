@@ -155,6 +155,14 @@ class DatabaseHelper
 
     }
 
+    public function cancellaNotifica($idOrdine){
+        $query = "UPDATE `ordine` SET `visualizzato`= b'1' WHERE idOrdine = ?";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idOrdine);
+        $stmt->execute();
+    }
+
     public function getArticoloNotificaRivenditore($idrivenditore){
         $query = "SELECT nomeArticolo, qtaMagazzino FROM articolo WHERE rivenditore = ? AND qtaMagazzino < 6";
         $stmt = $this->db->prepare($query);
@@ -203,7 +211,8 @@ class DatabaseHelper
     public function getStatiByUser($idUtente){
         $query = "SELECT idOrdine, stato
         FROM ordine
-        where idCliente = ?";
+        where idCliente = ?
+        AND visualizzato = 0";
 
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $idUtente);
@@ -227,7 +236,7 @@ class DatabaseHelper
     }
 
     public function insertOrder($idCliente){
-        $query = "INSERT INTO `ordine`(`idCliente`, `stato`, `visualizzato`) VALUES (?,'0','0')";
+        $query = "INSERT INTO `ordine`(`idCliente`, `stato`, `visualizzato`) VALUES (?,'0',b'0')";
         
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('i', $idCliente);
