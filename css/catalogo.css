@@ -9,8 +9,9 @@ main > section > form{
     display: inline-block;
     background-color: #98DAC6;
     border-radius: 20px;
-    width: 400px;
+    width: 25%;
     margin: 0;
+    min-width:285px;
 }
 
 /*LABEL FORM DI RICERCA */
@@ -28,7 +29,8 @@ main > section.ricerca > form.ricerca > label > input {
     padding-left: 10px;
     vertical-align:top;
     margin: 10px 10px;
-    width: 200px;
+    width: 40%;
+    min-width: 100px;
 }
 main > section.ricerca > form.ricerca > label > input:focus{
     outline: none; /*Toglie il bordo blu da input text*/
@@ -66,13 +68,13 @@ aside{
     float: left;
     background-color: #DEF2C8;
     display:none;
-    margin: 10px 0;
     font-size: 18px;
     border-style: solid;
-    border-color: black;
+    border-color: #ebf3e2;
+    border-width: 3px;
     width: 150px;
     overflow: visible;
-    min-width: 107px;   
+    min-width: 107px;  
 }
 
 legend{
@@ -134,7 +136,7 @@ img.prodotto{
 p.prezzo{
     display:block;
     padding: 4px 5px;
-    width: inherit;
+    width: 45%;
     margin: 7px auto;
     background-color: yellow;
     border: 1px;
@@ -145,14 +147,22 @@ p{
     margin: 5px;
     text-align: center;
     font-family: verdana;
+    white-space: nowrap;
+    overflow:hidden;
 }
 
 body > main > section.articoli > div.articolo > a:link,body > main > section.articoli > div.articolo > a:visited{
+    width: 100%;
+    padding: 5px;
+    display: block;
     color:black;
     text-align: center;
     text-decoration: none;
-    text-decoration: bold;
+    font-weight: bold;
     font-family: verdana;
+    white-space: nowrap;
+    overflow:hidden;
+    box-sizing: border-box;
 }
 
 body > main > section.articoli > div.articolo > a:hover{
@@ -174,12 +184,9 @@ p[class ="Ultimi pezzi"]{
 /* PROPRIETA' SOLO PER SCHERMO PICCOLO */
 @media screen and (max-width: 768px){
 
-    div.articolo:nth-child(3n+1){
-        margin-left: 20px;
-    }
     div.articolo{
         width:30%;
-        margin: 15px 5px;
+        margin: 15px auto;
     }
 
     aside{
@@ -189,7 +196,12 @@ p[class ="Ultimi pezzi"]{
 
     section.articoli{
         width: 100%;
+        text-align: center;
     }
+
+    aside{
+        margin: 0px 0;
+    }   
 }
 
 /* PROPRIETA' SOLO PER SCHERMO GRANDE */
@@ -198,6 +210,8 @@ p[class ="Ultimi pezzi"]{
     div.articolo:nth-child(4n+1){
         margin-left: 55px;
     }
-
-
+    aside{
+        margin: 10px 0;
+    }
+    
 }    
