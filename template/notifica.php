@@ -47,7 +47,7 @@
 
     <?php endif?>
 
-<?php endif?>
+<?php else:?>
 
 
 <article class="notifica">
@@ -55,3 +55,5 @@
         <h3>EFFETTUA L'ACCESSO</h3>
     </Header>
 </article>
+
+<?php endif?>
