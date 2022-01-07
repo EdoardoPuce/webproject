@@ -113,6 +113,10 @@ function getNotifiche($dbh){
     return $dbh->getStatiByUser($_SESSION['idUtente']);
 }
 
+function getNotificheRivenditore($dbh){
+    return $dbh->getArticoloNotificaRivenditore($_SESSION['idUtente']);
+}
+
 function getStato($stato){
     $result = "";
     switch($stato){

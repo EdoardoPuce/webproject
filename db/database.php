@@ -155,7 +155,17 @@ class DatabaseHelper
 
     }
 
-    public function checkLogin($email, $password){
+    public function getArticoloNotificaRivenditore($idrivenditore){
+        $query = "SELECT nomeArticolo, qtaMagazzino FROM articolo WHERE rivenditore = ? AND qtaMagazzino < 6";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idrivenditore);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result ->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+    public function checkLoginCliente($email, $password){
         $query = "SELECT idCliente, email, nome FROM cliente WHERE email = ? AND password = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ss',$email, $password);

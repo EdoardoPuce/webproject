@@ -1,20 +1,57 @@
 <link rel="stylesheet" type="text/css" href="./css/notifica.css" />
 
-<?php
-    $ordini = getNotifiche($dbh);
-?>
+<?php if(isUserLoggedIn()): ?>
 
-<?php if(isCliente()): ?>
+    <?php
 
-    <?php foreach($ordini as $ordine): ?>
+        if(isCliente()){
+            $ordini = getNotifiche($dbh);
+        } else{
+            $articoli = getNotificheRivenditore($dbh);
+        }
 
-        <article class="notifica">
-            <p class="testo_notifica"><?php echo "Ordine ".$ordine['idOrdine'].":"; ?></br><?php echo getStato($ordine['stato']); ?></p>
-            <form>
-                <input type="image" name="minus" src="<?php echo (UPLOAD_DIR ."delete.png") ?>" />
-            </form>
-        </article>
+    ?>
 
-    <?php endforeach?>
+
+
+    <?php if(isCliente()): ?>
+
+        <?php foreach($ordini as $ordine): ?>
+
+            <article class="notifica">
+                <Header class="testo_notifica">
+                    <h3><?php echo "Ordine ".$ordine['idOrdine'].":"; ?></h3>
+                    <p><?php echo getStato($ordine['stato']); ?></p>
+                </Header>
+                <form>
+                    <input type="image" name="minus" src="<?php echo (UPLOAD_DIR ."delete.png") ?>" />
+                </form>
+            </article>
+
+        <?php endforeach?>
+
+    <?php endif?>
+
+    <?php if(!isCliente()): ?>
+
+        <?php foreach($articoli as $articolo): ?>
+        
+            <article class="notifica">
+                    <Header class="testo_notifica">
+                        <h3><?php echo $articolo['nomeArticolo'].":"; ?></h3>
+                        <p><?php echo verificaDisponibilita($articolo['qtaMagazzino']); ?></p>
+                    </Header>
+            </article>
+        
+        <?php endforeach?>
+
+    <?php endif?>
 
 <?php endif?>
+
+
+<article class="notifica">
+    <Header class="accesso">
+        <h3>EFFETTUA L'ACCESSO</h3>
+    </Header>
+</article>
