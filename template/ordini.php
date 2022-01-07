@@ -36,7 +36,7 @@
     </fieldset>
     <fieldset class="riepilogo-ordine">
         <legend>Riepilogo Ordine</legend>
-        <p>N° Articoli: <?php echo $templateParams["riepilogo"]["nArticoli"]?> $</p>
+        <p>N° Articoli: <?php echo $templateParams["riepilogo"]["nArticoli"]?></p>
         <p>Costo Articoli: <?php echo $templateParams["riepilogo"]["costoArticoli"]?> $</p>
         <p>Spedizione: <?php echo $templateParams["riepilogo"]["spedizione"]?> $</p>
         <p>Totale: <?php echo $templateParams["riepilogo"]["totale"]?> $</p>

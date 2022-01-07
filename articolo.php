@@ -15,7 +15,7 @@ $templateParams["titolo"] = $templateParams["articolo"][0]["nomeArticolo"];
 $templateParams["nome"] = "singolo-articolo.php";
 
 if (isset($_POST["submit"])){
-    aggiungiAlCarrello($templateParams["articolo"][0]);
+    aggiungiAlCarrello($templateParams["articolo"][0], $dbh);
 }
 require 'template/base.php';
 ?>

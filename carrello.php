@@ -14,7 +14,7 @@ if(isset($_POST["minus_x"])){
 }
 
 if(isset($_POST["plus_x"])){
-    aumentaQtaArticoloInCarrello($_GET["id"]);
+    aumentaQtaArticoloInCarrello($_GET["id"], $dbh);
 }
 
 if(isset($_POST['acquista'])){

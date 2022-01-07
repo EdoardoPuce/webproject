@@ -88,19 +88,20 @@ function inserireOrdine($dbh, $newId){
 
     foreach($_SESSION["carrello"] as $articolo){
         $dbh->insertOrderRow($articolo["qtaCarrello"],$articolo["idArticolo"], $newId);
-        $dbh->decrementArticle($articolo["idArticolo"]);
+        $dbh->decrementArticle($articolo["idArticolo"], $articolo["qtaCarrello"]);
     }
 
     svuotaCarrello();
 }
 
 function RiepilogoOrdine($ordine, $dbh){
-    $nArticoli = count($ordine);
+    $nArticoli = 0;
     $costoArticoli = 0;
     $CostoSpedizione = 5;
     $Totale = 0;
     foreach($ordine as $rigaordine){
         $articolo = $dbh->getArticoloByid($rigaordine["idArticolo"]);  //Ottengo l'articolo dal db
+        $nArticoli = $nArticoli + $rigaordine['qta'];
         $costoArticoli = $rigaordine['qta']*$articolo[0]['prezzo'];
         $Totale = $Totale + $costoArticoli;
     }
@@ -170,27 +171,36 @@ function verificaDisponibilita($qta){
     return $disponibilità;
 }
 
-function aggiungiAlCarrello($articolo){
+function aggiungiAlCarrello($articolo, $dbh){
 
-    if(isset($_SESSION["carrello"])){
-        $i = count($_SESSION["carrello"]);
-        $_SESSION["carrello"][$i] = $articolo;
+    $qta = $dbh->checkQta($articolo["idArticolo"])[0]["qtaMagazzino"];
+    if( $qta != 0 ){
+        if(isset($_SESSION["carrello"])){
+            $i = count($_SESSION["carrello"]);
+            $_SESSION["carrello"][$i] = $articolo;
 
-    } else{
-        $_SESSION["carrello"][0] = $articolo;
+        } else{
+            $_SESSION["carrello"][0] = $articolo;
+        }
+        aumentaQtaArticoloInCarrello($articolo["idArticolo"], $dbh);
+        compattaCarrello();
+    } else {
+        echo '<script>alert("Quest\'articolo non è piu disponibile")</script>';
     }
-
-    aumentaQtaArticoloInCarrello($articolo["idArticolo"]);
-    compattaCarrello();
 
 }
 
-function aumentaQtaArticoloInCarrello($idArticoloDaAumentare){
+function aumentaQtaArticoloInCarrello($idArticoloDaAumentare, $dbh){
     for($i = 0 ; $i < count($_SESSION["carrello"]) ; $i = $i+1){
     
         if ($_SESSION["carrello"][$i]["idArticolo"] == $idArticoloDaAumentare){
             if( isset($_SESSION["carrello"][$i]["qtaCarrello"])){
-                $_SESSION["carrello"][$i]["qtaCarrello"] = $_SESSION["carrello"][$i]["qtaCarrello"] + 1;
+                $qta = $dbh->checkQta($_SESSION["carrello"][$i]["idArticolo"])[0]["qtaMagazzino"];
+                if( $_SESSION["carrello"][$i]["qtaCarrello"] < $qta ){
+                    $_SESSION["carrello"][$i]["qtaCarrello"] = $_SESSION["carrello"][$i]["qtaCarrello"] + 1;
+                } else {
+                    echo '<script>alert("Raggiunta la quantita di articoli disponibili in magazzino")</script>';
+                }
             } else{
                 $_SESSION["carrello"][$i]["qtaCarrello"] = 1;
             }

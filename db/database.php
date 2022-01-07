@@ -145,6 +145,15 @@ class DatabaseHelper
 
     }
 
+    public function checkQta($idarticolo){
+        $query = "SELECT qtaMagazzino FROM articolo WHERE idArticolo = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idarticolo);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result ->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getArticoloByRivenditore($idrivenditore){
         $query = "SELECT idArticolo, nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore FROM articolo WHERE rivenditore = ?";
         $stmt = $this->db->prepare($query);
@@ -251,11 +260,11 @@ class DatabaseHelper
         $stmt->execute();
     }
 
-    public function decrementArticle($idArticolo){
-        $query = "UPDATE `articolo` SET qtaMagazzino= qtaMagazzino - 1 WHERE `idArticolo`= ? ";
+    public function decrementArticle($idArticolo, $qta){
+        $query = "UPDATE `articolo` SET qtaMagazzino= qtaMagazzino - ? WHERE `idArticolo`= ? ";
         
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('i', $idArticolo);
+        $stmt->bind_param('ii', $qta, $idArticolo);
         $stmt->execute();
     }
 
