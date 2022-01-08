@@ -5,6 +5,8 @@
 fieldset{
     padding: 30px 10px 50px;
     border-radius: var(--border);
+    background-color: white;
+    height: 310px;
 }
 
 fieldset > legend{
@@ -12,12 +14,6 @@ fieldset > legend{
     margin-top: 20px;
 }
 
-fieldset > div > input{
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    margin-left: 10px;
-}
 
 fieldset > div:nth-child(2), fieldset > div:nth-child(5), fieldset > div:nth-child(7), fieldset > div:nth-child(9){
     display: inline;
@@ -46,8 +42,8 @@ fieldset > div:nth-child(4), fieldset > div:nth-child(7){
     margin-left: 10%;
 }
 
-fieldset > div:nth-child(4) > input, fieldset > div:nth-child(7) > input{
-    width: 60%;
+fieldset > div:nth-child(4), fieldset > div:nth-child(7){
+    text-align: center;
 }
 
 

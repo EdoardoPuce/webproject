@@ -36,6 +36,11 @@
                 <a href="#">
                     <img src="./upload/bell.png" alt="Notifiche" >
                 </a>
+                <section class="notifiche">
+                <?php 
+                    require("notifica.php");
+                ?>
+                </section>
             </li>
             <li>
                 <a href="carrello.php">
@@ -53,10 +58,8 @@
     </main>
     <footer>
         <div class = "footer">
-            <hr> 
-            <img src="<?php echo UPLOAD_DIR."mountains.png"?>" alt=""/>
+            <hr class="foot"> 
         </div>
-        
             <section class="pagamentiSicuri">
                 <h2>Pagamenti sicuri</h2>
                 <div class="pagamenti"><img src="<?php echo UPLOAD_DIR.'mastercard.png'; ?>" alt ="mastercard"/></div>

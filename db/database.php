@@ -125,6 +125,16 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getCategoriaByName($nameCategoria)
+    {
+        $query = "SELECT idCategoria FROM categoria WHERE nomeCategoria = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('s', $nameCategoria);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getArticoloByid($idarticolo){
         $query = "SELECT idArticolo, nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore FROM articolo WHERE idArticolo = ?";
         $stmt = $this->db->prepare($query);
@@ -133,6 +143,15 @@ class DatabaseHelper
         $result = $stmt->get_result();
         return $result ->fetch_all(MYSQLI_ASSOC);
 
+    }
+
+    public function checkQta($idarticolo){
+        $query = "SELECT qtaMagazzino FROM articolo WHERE idArticolo = ?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idarticolo);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result ->fetch_all(MYSQLI_ASSOC);
     }
 
     public function getArticoloByRivenditore($idrivenditore){
@@ -145,7 +164,25 @@ class DatabaseHelper
 
     }
 
-    public function checkLogin($email, $password){
+    public function cancellaNotifica($idOrdine){
+        $query = "UPDATE `ordine` SET `visualizzato`= b'1' WHERE idOrdine = ?";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idOrdine);
+        $stmt->execute();
+    }
+
+    public function getArticoloNotificaRivenditore($idrivenditore){
+        $query = "SELECT nomeArticolo, qtaMagazzino FROM articolo WHERE rivenditore = ? AND qtaMagazzino < 6";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("i", $idrivenditore);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result ->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+    public function checkLoginCliente($email, $password){
         $query = "SELECT idCliente, email, nome FROM cliente WHERE email = ? AND password = ?";
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ss',$email, $password);
@@ -180,6 +217,19 @@ class DatabaseHelper
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getStatiByUser($idUtente){
+        $query = "SELECT idOrdine, stato
+        FROM ordine
+        where idCliente = ?
+        AND visualizzato = 0";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idUtente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getRandomArticoli($n=3){
         $query = "SELECT idArticolo, nomeArticolo, imgArticolo, prezzo
         FROM articolo
@@ -192,6 +242,57 @@ class DatabaseHelper
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function insertOrder($idCliente){
+        $query = "INSERT INTO `ordine`(`idCliente`, `stato`, `visualizzato`) VALUES (?,'0',b'0')";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $idCliente);
+        $stmt->execute();
+    }
+
+    public function insertOrderRow($qta,$idArticolo,$idOrdine){
+        $query = "INSERT INTO `rigaordine`(`qta`, `idArticolo`, `idOrdine`) VALUES (?,?,?)";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('iii', $qta,$idArticolo,$idOrdine);
+        $stmt->execute();
+    }
+
+    public function decrementArticle($idArticolo, $qta){
+        $query = "UPDATE `articolo` SET qtaMagazzino= qtaMagazzino - ? WHERE `idArticolo`= ? ";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii', $qta, $idArticolo);
+        $stmt->execute();
+    }
+
+    public function lastOrderId(){
+        $query = "SELECT max(idOrdine) FROM `ordine`";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    public function modificaArticolo($idArticolo, $modifiche){  
+        $query = "UPDATE articolo SET nomeArticolo = ? , descrizione = ? , taglia = ? , prezzo = ? , imgArticolo = ? , qtaMagazzino = ? , categoria = ? WHERE idArticolo = ? ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("sssdsiii", $modifiche[0], $modifiche[1], $modifiche[2], $modifiche[3], $modifiche[4], $modifiche[5], $modifiche[6], $idArticolo);  
+
+        if(!$stmt->execute()){
+            var_dump($stmt->error);
+        }
+    }
+
+    public function aggiungiArticolo($articolo){     
+        $query = "INSERT INTO articolo (nomeArticolo, descrizione, taglia, prezzo, imgArticolo, qtaMagazzino, categoria, rivenditore) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("sssdsiii", $articolo[0] /*nome*/, $articolo[1]/*descrizione*/, $articolo[2]/*taglia*/,$articolo[3]/*prezzo*/,$articolo[4]/*img*/, $articolo[5]/*qta*/, $articolo[6]/*categoria*/, $articolo[7]/*rivenditore*/ );
+
+        if(!$stmt->execute()){
+            var_dump($stmt->error);
+        }
     }
     
 }

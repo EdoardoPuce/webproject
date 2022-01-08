@@ -14,28 +14,28 @@
 <fieldset>
     <legend>Dati Personali</legend>
     <div>
-        <label for="nome">Nome:</label><input type="text" id="nome" name="nome" value="<?php echo $templateParams['persona'][0]["nome"]; ?>" />
+        <label for="nome">Nome: <?php echo $templateParams['persona'][0]["nome"]; ?></label>
     </div>
     <div>
-        <label for="cognome">Cognome:</label><input type="text" id="cognome" name="cognome" value="<?php echo $templateParams['persona'][0]["cognome"]; ?>" />
+        <label for="cognome">Cognome: <?php echo $templateParams['persona'][0]["cognome"]; ?></label>
     </div>
     <div>
-        <label for="email">Email:</label><input type="email" id="email" name="email" value="<?php echo $templateParams['persona'][0]["email"]; ?>" />
+        <label for="email">Email: <?php echo $templateParams['persona'][0]["email"]; ?></label>
     </div>
     <div>
-        <label for="paese_iva"><?php echo $label; ?>:</label><input type="text" id="paese_iva" name="paese_iva"  value="<?php echo $value; ?>"/>
+        <label for="paese_iva"><?php echo $label.": ".$value?></label>
     </div>
     <div>
-        <label for="citta">Citta:</label><input type="text" id="citta" name="citta" value="<?php echo $templateParams['persona'][0]["citta"]; ?>" />
+        <label for="citta">Citta: <?php echo $templateParams['persona'][0]["citta"]; ?></label>
     </div>
     <div>
-        <label for="indirizzo">Indirizzo:</label><input type="text" id="indirizzo" name="indirizzo" value="<?php echo $templateParams['persona'][0]["indirizzo"]; ?>" />
+        <label for="indirizzo">Indirizzo: <?php echo $templateParams['persona'][0]["indirizzo"]; ?></label>
     </div>
     <div>
-        <label for="civico">Civico:</label><input type="number" id="civico" name="civico" value="<?php echo $templateParams['persona'][0]["civico"]; ?>" />
+        <label for="civico">Civico: <?php echo $templateParams['persona'][0]["civico"]; ?></label>
     </div>
     <div>
-        <label for="cap">Cap:</label><input type="number" id="cap" name="cap" value="<?php echo $templateParams['persona'][0]["cap"]; ?>" />
+        <label for="cap">Cap: <?php echo $templateParams['persona'][0]["cap"]; ?></label>
     </div>
 </fieldset>
 

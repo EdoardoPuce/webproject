@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Dic 29, 2021 alle 21:50
+-- Creato il: Gen 05, 2022 alle 18:21
 -- Versione del server: 10.4.21-MariaDB
 -- Versione PHP: 8.0.12
 
@@ -24,6 +24,7 @@ CREATE SCHEMA IF NOT EXISTS `progettowebdb` DEFAULT CHARACTER SET utf8 ;
 USE `progettowebdb` ;
 -- --------------------------------------------------------
 
+
 --
 -- Struttura della tabella `categoria`
 --
@@ -32,6 +33,8 @@ CREATE TABLE `categoria` (
   `idCategoria` int(11) NOT NULL,
   `nomeCategoria` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
 -- Struttura della tabella `rivenditore`
@@ -50,7 +53,7 @@ CREATE TABLE `rivenditore` (
   `cap` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
+
 --
 -- Struttura della tabella `articolo`
 --
@@ -68,6 +71,7 @@ CREATE TABLE `articolo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
+
 
 --
 -- Struttura della tabella `cliente`
@@ -95,7 +99,8 @@ CREATE TABLE `cliente` (
 CREATE TABLE `ordine` (
   `idOrdine` int(11) NOT NULL,
   `idCliente` int(11) NOT NULL,
-  `stato` int(11) NOT NULL
+  `stato` int(11) NOT NULL,
+  `visualizzato` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -200,8 +205,8 @@ ALTER TABLE `rivenditore`
 -- Limiti per la tabella `articolo`
 --
 ALTER TABLE `articolo`
-  ADD CONSTRAINT `articoloCategoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`idCategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `articoloRivenditore` FOREIGN KEY (`rivenditore`) REFERENCES `rivenditore` (`idRivenditore`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `articoloCategoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`idCategoria`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `articoloRivenditore` FOREIGN KEY (`rivenditore`) REFERENCES `rivenditore` (`idRivenditore`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limiti per la tabella `ordine`

@@ -1,0 +1,50 @@
+.accesso{
+    text-align: center;
+}
+
+.reset{
+    all: revert;
+}
+
+.notifica{
+    all: revert;
+
+    border-bottom: 1px solid black;
+    padding: 10px 0px;
+}
+
+.testo_notifica {
+    all: revert;
+
+    width: 70%;
+    text-align: left;
+    margin-right: 0px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.notifica > form{
+    all: revert;
+
+    width: 15%;
+    display: inline-block;
+}
+
+.notifica > form > button{
+    all: revert;
+    border-radius: var(--border);
+    background-color: transparent;
+}
+
+.notifica > form > button:hover{
+    background-color: var(--hover_pulsante);
+}
+
+
+
+
+
+

@@ -1,6 +1,5 @@
 <head>
     <link rel="stylesheet" type="text/css" href="./css/account.css" />
-    <script src="./js/account.js" type="text/javascript"></script>
 </head>
 
 
@@ -40,6 +39,5 @@
         ?>
     </section>
     <?php endif ?>
-
 
 </section>

@@ -1,8 +1,31 @@
 :root {
     --border: 15px;
     --main_color: #4F6D59;
+    --second_color: #d5fde2;
     --hover_pulsante: #E5A23C;
 }
+
+body{
+    background-color: var(--second_color);
+}
+
+.notifiche{
+    border: 1px solid black;
+    border-radius: var(--border);
+    background-color: var(--second_color);
+    display: none;
+    height: 300px;
+    width: 250px;
+    position: absolute;
+    top: 120px;
+    right: 1%;
+    overflow: auto;
+}
+
+.notifiche::-webkit-scrollbar {
+    display: none;
+}
+
 
 body, header {
     margin: 0;
@@ -105,11 +128,36 @@ body > footer{
 
 /* Linea sotto immagine */
 body > footer > div > hr{
-    margin:0px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
+    background-image: url('../upload/mountains.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    display: block;
+    height: 40px;
+    border: 0;
+    position: relative;
 }
+
+.foot:before,
+.foot:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: black;
+    height: 2px;
+    top: 18px;
+}
+.foot:before {
+    left: 0;
+    right: 52%;
+    margin-right: 10px;
+}
+.foot:after {
+    right: 0;
+    left: 52%;
+    margin-left: 10px;
+}
+
 
 /*Immagine montagne */
 body > footer > div > img{
