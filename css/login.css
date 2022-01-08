@@ -27,6 +27,7 @@ section > a {
     height:250px; 
     background-color: skyblue;
     border:1px solid blue;
+    border-radius: 10px;
     margin:0 auto;
 }
 
@@ -39,9 +40,13 @@ section > .login > form > input[type="submit"] {
     background-color: yellow;
 }
 
+label {
+    padding: 2%;
+}
+
 input[type="radio"] {
     position: relative;
-    margin-left: 18%;
+    margin-left: 16%;
 }
 
 input[type="submit"] {
@@ -63,86 +68,31 @@ input[type="text"],input[type="password"] {
 
 .google button{
     margin-left: 45%;
-     width: 180px;
-      padding: 5px 10px 10px 5px;
-     background-color: #F65E00;
-  color: white;
-  text-align: center;
+    width: 180px;
+    padding: 5px 10px 10px 5px;
+    background-color: #F65E00;
+    color: white;
+    text-align: center;
 }
 
 .facebook button{
-  margin-left: 45%;
+    margin-left: 45%;
     margin-top: 10px;
     margin-bottom: 10px;
-  width: 180px;
-  padding: 5px 10px 10px 5px;
-  background-color: #128FD6;
-  color: white;
-  text-align: center;
-}
-
-
-
-
-
-
-/*
-
-
-section {
-    background-color: #F4FDF0;
-}
-
-section > h2 {
-    font-family: sans-serif;
-    font-size: 40pt;
+    width: 180px;
+    padding: 5px 10px 10px 5px;
+    background-color: #128FD6;
+    color: white;
     text-align: center;
 }
 
-section > form {
-    text-align: center;
-    font-size: 16pt;
+@media screen and (max-width: 768px){
+    
+    .google button{
+        margin-left: 31%;
+    }
+    
+    .facebook button{
+        margin-left: 31%;
+    }
 }
-
-section > p {
-    text-align: center;
-    font-size: 16pt;
-}
-
-section > a {
-    text-align: center;
-    font-size: 14pt;
-}
-section > .login > form {
-    text-align: center;
-}
-
-section > .login > form > input[type="submit"] {
-    background-color: yellow;
-}
-
-label,input{
-    display:inline-block;
-    margin: 5px;
-    font-size: 16px;
-}
-
-.google button{
-  margin-left: 700px;
-  width: 180px;
-  padding: 5px 10px 10px 5px;
-  background-color: #F65E00;
-  color: white;
-  text-align: center;
-}
-
-.facebook button{
-  margin-left: 700px;
-  width: 180px;
-  padding: 5px 10px 10px 5px;
-  background-color: #128FD6;
-  color: white;
-  text-align: center;
-}
-
-*/
