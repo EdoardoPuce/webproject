@@ -1,7 +1,4 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="./css/account.css" />
-</head>
-
+<link rel="stylesheet" type="text/css" href="./css/account.css" />
 
 <section>
     <h1>Account</h1>

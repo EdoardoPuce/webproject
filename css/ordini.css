@@ -27,7 +27,7 @@
 .line{
     border-left: 5px solid black;
     height: 20px;
-    margin-left: 4%;
+    margin-left: 40px;
     margin-bottom: 5px;
 }
 
@@ -37,7 +37,7 @@
     width: 40px;
 }
 
-.spedizione > div > h3{
+.spedizione > div > h2{
     float: right;
     font-size: 18px;
 }
@@ -84,7 +84,7 @@
         margin-left: 5%;
     }
 
-    .spedizione > div > h3{
+    .spedizione > div > h2{
         margin-right: 5%;
     }
     

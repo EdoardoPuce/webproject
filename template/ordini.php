@@ -7,24 +7,24 @@
 </section>
 <fieldset class="spedizione">
     <legend>Dettagli Spedizione</legend>
-    <div id="spedizione">
+    <div class="spedizione">
         <img src="./upload/circle.png" alt="Ordine Effettuato">
-        <h3>Ordine Effettuato</h3>
+        <h2>Ordine Effettuato</h2>
     </div>
     <div class="line"></div>
-    <div id="spedizione">
+    <div class="spedizione">
         <img src="./upload/warehouse.png" alt="Ordine Preso in Carico">
-        <h3>Ordine Preso In Carico</h3>
+        <h2>Ordine Preso In Carico</h2>
     </div>
     <div class="line"></div>
-    <div id="spedizione">
+    <div class="spedizione">
         <img src="./upload/truck.png" alt="Ordine Spedito">
-        <h3>Ordine Spedito</h3>
+        <h2>Ordine Spedito</h2>
     </div>
     <div class="line"></div>
-    <div id="spedizione">
+    <div class="spedizione">
         <img src="./upload/pin.png" alt="Arrivato a Destinazione">
-        <h3>Arrivato a Destinazione</h3>
+        <h2>Arrivato a Destinazione</h2>
     </div>
 </fieldset>
 <section class="dati">
@@ -46,5 +46,17 @@
     $idOrdine = intval($_GET["idO"]);
     $idStato =  $dbh->getStatoByOrderId($idOrdine);
 ?>
-<meta name = "idStato" content = "<?php echo $idStato[0]["stato"] ?>" />
-<script src = "./js/statoOrdine.js" type="text/javascript"></script>
+<script>
+    var stato = <?php echo json_encode($idStato[0]["stato"], JSON_HEX_TAG); ?>;
+    let divs = document.querySelectorAll("fieldset.spedizione > div:nth-child(even)");
+
+    for (let i = 0 ; i <= stato ; i++){
+        let img = divs[i].children[0];
+        let h3 = divs[i].children[1];
+        img.setAttribute("src", "./upload/tick-spedizione.png");
+        h3.style.color = "#01b125";
+        console.log(img);
+}
+</script>
+
+

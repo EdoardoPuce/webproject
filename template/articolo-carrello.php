@@ -13,8 +13,8 @@ if (isset($_SESSION["carrello"])) {
                 <p>Prezzo: € <?php echo ($articolo["prezzo"]) ?></p>
                 <p>Quantita:<?php echo ($articolo["qtaCarrello"]) ?></p>
                 <form action="carrello.php?id=<?php echo ($articolo["idArticolo"]) ?>" method="post">
-                    <input type="image" name="plus" src="<?php echo (UPLOAD_DIR ."add.png") ?>" />
-                    <input type="image" name="minus" src="<?php echo (UPLOAD_DIR ."minus.png") ?>" />
+                    <input type="image" name="plus" src="<?php echo (UPLOAD_DIR ."add.png") ?>" alt="Aumenta quantità" />
+                    <input type="image" name="minus" src="<?php echo (UPLOAD_DIR ."minus.png") ?>" alt = "Diminuisci quantità" />
                 </form>
             </section>
         </article>

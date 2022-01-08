@@ -12,13 +12,13 @@
                 <fieldset>
                     <legend>Dati Spedizione</legend>
                     <div>
-                        <label for="indirizzo">Indirizzo: <?php echo $templateParams['persona'][0]["indirizzo"] . " " . $templateParams['persona'][0]["civico"]; ?></label>
+                        <p>Indirizzo: <?php echo $templateParams['persona'][0]["indirizzo"] . " " . $templateParams['persona'][0]["civico"]; ?></p>
                     </div>
                     <div>
-                        <label for="paese">Paese: <?php echo $templateParams['persona'][0]["paese"]; ?></label>
+                        <p>Paese: <?php echo $templateParams['persona'][0]["paese"]; ?></p>
                     </div>
                     <div>
-                        <label for="citta">Citta: <?php echo $templateParams['persona'][0]["citta"]; ?></label>
+                        <p>Citta: <?php echo $templateParams['persona'][0]["citta"]; ?></p>
                     </div>
                 </fieldset>
             </section>
@@ -26,19 +26,19 @@
                 <fieldset class="dati-pagamento">
                     <legend>Dati Pagamento</legend>
                     <div>
-                        <label>Nome:</label><input type="text" id="nome" name="nome" />
+                        <label>Nome:<input type="text" id="nome" name="nome" /></label>
                     </div>
                     <div>
-                        <label>Cognome:</label><input type="text" id="cognome" name="cognome" />
+                        <label>Cognome:<input type="text" id="cognome" name="cognome" /></label>
                     </div>
                     <div>
-                        <label>Codice carta:</label><input type="number" id="codice-carta" name="codice-carta" />
+                        <label>Codice carta:<input type="number" id="codice-carta" name="codice-carta" /></label>
                     </div>
                     <div>
-                        <label>Data:</label><input type="month" id="data" name="data" />
+                        <label>Data:<input type="month" id="data" name="data" /></label>
                     </div>
                     <div>
-                        <label>Cvv:</label><input type="number" id="cvv" name="cvv" />
+                        <label>Cvv:<input type="number" id="cvv" name="cvv" /></label>
                     </div>
                 </fieldset>
                 <section class="riepilogo-ordine">

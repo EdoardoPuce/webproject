@@ -14,28 +14,28 @@
 <fieldset>
     <legend>Dati Personali</legend>
     <div>
-        <label for="nome">Nome: <?php echo $templateParams['persona'][0]["nome"]; ?></label>
+        <p>Nome: <?php echo $templateParams['persona'][0]["nome"]; ?></p>
     </div>
     <div>
-        <label for="cognome">Cognome: <?php echo $templateParams['persona'][0]["cognome"]; ?></label>
+        <p>Cognome: <?php echo $templateParams['persona'][0]["cognome"]; ?></p>
     </div>
     <div>
-        <label for="email">Email: <?php echo $templateParams['persona'][0]["email"]; ?></label>
+        <p>Email: <?php echo $templateParams['persona'][0]["email"]; ?></p>
     </div>
     <div>
-        <label for="paese_iva"><?php echo $label.": ".$value?></label>
+        <p><?php echo $label.": ".$value?></p>
     </div>
     <div>
-        <label for="citta">Citta: <?php echo $templateParams['persona'][0]["citta"]; ?></label>
+        <p>Citta: <?php echo $templateParams['persona'][0]["citta"]; ?></p>
     </div>
     <div>
-        <label for="indirizzo">Indirizzo: <?php echo $templateParams['persona'][0]["indirizzo"]; ?></label>
+        <p>Indirizzo: <?php echo $templateParams['persona'][0]["indirizzo"]; ?></p>
     </div>
     <div>
-        <label for="civico">Civico: <?php echo $templateParams['persona'][0]["civico"]; ?></label>
+        <p>Civico: <?php echo $templateParams['persona'][0]["civico"]; ?></p>
     </div>
     <div>
-        <label for="cap">Cap: <?php echo $templateParams['persona'][0]["cap"]; ?></label>
+        <p>Cap: <?php echo $templateParams['persona'][0]["cap"]; ?><p>
     </div>
 </fieldset>
 

@@ -50,7 +50,7 @@ h2{
 }
 
 
-.dati-pagamento > div > input{
+.dati-pagamento > div > label > input{
     border-top-style: hidden;
     border-right-style: hidden;
     border-left-style: hidden;
