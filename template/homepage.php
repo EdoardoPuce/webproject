@@ -13,7 +13,7 @@
         <?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>
             <div class="articolo">
                 <img src="<?php echo UPLOAD_IMG.$articolocasuale["imgArticolo"]; ?>" alt="" />
-                <p><a href="#"><?php echo $articolocasuale["nomeArticolo"]; ?></a></p>
+                <p><a href="catalogo.php"> <?php echo $articolocasuale["nomeArticolo"]; ?> </a></p>
                 <p>€ <?php echo $articolocasuale["prezzo"]; ?></p>
             </div>
         <?php endforeach; ?>
@@ -22,48 +22,41 @@
 <section class="allart">
     <h4> Catalogo </h4>
     <div class="colonna">  
-        <p> Abbigliamneto da tracking</p>
+        <p> Abbigliamneto da trekking</p>
             <ul>
                 <li> Cappelli</li>
                 <li> Maglie </li>
                 <li> Pantaloni </li>
                 <li> Guanti </li>
                 <li> Calze </li>
-                <p> Vedi tutti </p>
-           </ul>
+             </ul>
+        <a href="catalogo.php">Vedi tutti</a>
         </div>
         <div class="colonna">
-            <p> Equipaggiamento da trecking</p>
+            <p> Equipaggiamento da trekking</p>
             <ul>
                 <li> Zaini </li>
                 <li> Occhiali </li>
                 <li> Binocoli </li>
                 <li> Bussola </li>
                 <li> Orologi </li>
-                <p> Vedi tutti </p>
            </ul>
+           <a href="catalogo.php">Vedi tutti</a>
         </div>
         <div class="colonna">
-            <p> Attrezzatura da trecking</p>
+            <p> Attrezzatura da trekking</p>
             <ul>
                 <li> Tende Trekking  </li>
                 <li> Materassini </li>
                 <li> Fornelli </li>
                 <li> Pasti pronti </li>
                 <li> Stoviglie </li>
-                <li> Posate </li>
-                <p> Vedi tutti </p>
            </ul>
+           <a href="catalogo.php">Vedi tutti</a>
         </div>
-
-        
-     <form action="cataologo.php">
-            <button type="submit"> 
-                Scopri il catalogo completo 
-            </button>
-        </section>
-    
-
+        <button onclick="location.href ='catalogo.php'">
+  Scopri il catalogo completo
+</button>
 <!--
 <div class="container2">
     <section>

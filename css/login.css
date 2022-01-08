@@ -1,6 +1,97 @@
 section {
     background-color: #F4FDF0;
 }
+section > h2 {
+    font-family: sans-serif;
+    font-size: 40pt;
+    text-align: center;
+}
+
+section > p {
+    text-align: center;
+    font-size: 16pt;
+}
+
+section > form {
+    text-align: center;
+    font-size: 16pt;
+}
+
+section > a {
+    text-align: center;
+    font-size: 14pt;
+}
+
+.login{
+    width:350px; 
+    height:250px; 
+    background-color: skyblue;
+    border:1px solid blue;
+    margin:0 auto;
+}
+
+section > .login > form > p {
+    text-align: center;  
+    font-size: 14pt;
+}
+
+section > .login > form > input[type="submit"] {
+    background-color: yellow;
+}
+
+input[type="radio"] {
+    position: relative;
+    margin-left: 18%;
+}
+
+input[type="submit"] {
+    width: 25%;
+    height: 10%;
+    position: relative;
+    margin-top: 15px;
+    margin-left: 40%;
+    
+}
+input[type="text"],input[type="password"] {
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+    width: 95%;
+    margin-top: 10px;
+}
+
+
+.google button{
+    margin-left: 45%;
+     width: 180px;
+      padding: 5px 10px 10px 5px;
+     background-color: #F65E00;
+  color: white;
+  text-align: center;
+}
+
+.facebook button{
+  margin-left: 45%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  width: 180px;
+  padding: 5px 10px 10px 5px;
+  background-color: #128FD6;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+
+
+/*
+
+
+section {
+    background-color: #F4FDF0;
+}
 
 section > h2 {
     font-family: sans-serif;
@@ -54,3 +145,4 @@ label,input{
   text-align: center;
 }
 
+*/

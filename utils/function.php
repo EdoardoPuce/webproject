@@ -99,14 +99,16 @@ function isUserLoggedIn(){
     return !empty($_SESSION['idcliente']);
 }
 
-/*
+
 function logout(){
     unset($_SESSION['idcliente']);
     unset($_SESSION['email']);
     unset($_SESSION['nome']);
     unset($_SESSION['value']);
+
+    session_destroy();
 }
-*/
+
 
 function verificaDisponibilita($qta){
     if ($qta > 5) {
