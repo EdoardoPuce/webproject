@@ -107,17 +107,35 @@ section.allart > .colonna > ul > li {
     text-align: left;
     font-size: 14pt;
 }
-main > hr {
+main > hr{
+    background-image: url('../upload/mountains.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    display: block;
+    height: 40px;
+    border: 0;
     position: relative;
-    margin-top: 80px;
-    border-style: solid;
 }
-main > img{
-    position: relative;
-    top: -45px;
-    left: 48%;
-    width: 65px;
-    height: 65px;
+
+.foot:before,
+.foot:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: black;
+    height: 2px;
+    top: 18px;
+}
+.foot:before {
+    left: 0;
+    right: 52%;
+    margin-right: 10px;
+}
+.foot:after {
+    right: 0;
+    left: 52%;
+    margin-left: 10px;
 }
 
 button {
