@@ -3,7 +3,7 @@ section.intro {
     margin-top: -45px;
     background-color: skyblue;
 }
-section > h2 {
+section.intro > h2 {
     font-size: 40pt;
     font-family: sans-serif;
     text-align: center;
@@ -83,6 +83,7 @@ section.allart > .colonna {
     padding: 1.5%;
     margin: 0.5%;
     background-color: #F4FDF0;
+    border-radius: 10px;
 }
 
 section.allart > .colonna > ul > li {
