@@ -156,6 +156,7 @@ body > main > section.articoli > div.articolo > a,body > main > section.articoli
     color:black;
     text-align: center;
     text-decoration: none;
+    font-weight: bold;
     white-space: nowrap;
     overflow:hidden;
     box-sizing: border-box;
