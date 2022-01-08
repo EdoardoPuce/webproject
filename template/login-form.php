@@ -11,10 +11,7 @@
             <label for="cliente"> Cliente </label>
             <input type="radio" id="persona2" name="utente" value="0">
             <label for="rivenditore"> Rivenditore </label> 
-            <br>
-            <?php if(isset($templateParams["errorelogin"])): ?>
-            <p><?php echo $templateParams["errorelogin"]; ?></p>
-            <?php endif; ?>
+            
             <label for="email"> Email: </label>
             <input type="text" id="email" name="email"/>
             <label for="password"> Password: </label>

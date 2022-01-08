@@ -11,81 +11,39 @@ else{
 }
 
 //fase di login
-if(isset($_POST["email"]) && isset($_POST["password"] && isset($_POST["submit"]))){ 
-    $login_result = $dbh->checkLogin($_POST["email"], $_POST["password"]);
-    if(count($login_result)==0){
-
-        $templateParams["errorelogin"] = "Errore! Email o password errate!";
-    }
-    else{
-        registerLoggedUser($login_result[0]);
-        if ($_POST['cliente'] == "1"){
-            $msg = 'Benvenuto cliente';
-            $_SESSION['value'] == '1';   //salvo cliente
-        } elseif ($_POST['rivenditore'] == '0'){
-            $msg =  'Benvenuto rivenditore';
-            $_SESSION['value'] == '0';    // salvo rivenditore
+if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"]) ){ 
+    if (isset($_POST["utente"]) && $_POST['utente'] == "1"){
+        $login_result = $dbh->checkLogin($_POST['utente'],$_POST["email"], $_POST["password"]);
+        if(count($login_result)==0){
+            echo '<script>alert("Errore! Email o password errate!")</script>';
         } else {
-            $msg = 'Si prega di fare una scelta' ;
-        }
-    }
-
-require 'template/base.php';
-}
-
-
-/*
-
-if ($_POST['cliente'] == "1"){
-    echo 'benvenuto cliente';
-    $_SESSION['value'] == '1';
-
-    if(isset($_POST["email"]) && isset($_POST["password"])){ 
-        $login_result = $dbh->checkLogin($_POST["email"], $_POST["password"]);
-        if(count($login_result)==0){
-
-            $templateParams["errorelogin"] = "Errore! Email o password errate!";
-        }
-        else{
             registerLoggedUser($login_result[0]);
+
+            $_SESSION['value'] = 1;   //salvo cliente
+            header("location: index.php");
         }
-    else{
-        echo 'Compilare tutti i campi!';
-    }
 
-else if ($_POST['rivenditore'] == '0'){
-    echo 'benvenuto cliente';
-    $_SESSION['value'] == '0';
+    } elseif (isset($_POST["utente"]) && $_POST['utente'] == '0'){
 
-    if(isset($_POST["email"]) && isset($_POST["password"])){ 
-        $login_result = $dbh->checkLogin($_POST["email"], $_POST["password"]);
+        $login_result = $dbh->checkLogin($_POST['utente'],$_POST["email"], $_POST["password"]);
         if(count($login_result)==0){
-
-            $templateParams["errorelogin"] = "Errore! Email o password errate!";
-        }
-        else{
+            echo '<script>alert("Errore! Email o password errate!")</script>';
+        } else {
             registerLoggedUser($login_result[0]);
+
+            $_SESSION['value'] = 0;    // salvo rivenditore
+            header("location: index.php");
         }
-    else{
-       echo 'Compilare tutti i campi!';
+    } else {
+        echo '<script>alert("Si prega di fare una scelta")</script>';
     }
 
-else{
-    $templateParams["errore1"] = "selezionare una scelta!";
-}
+    
 
-if(isUserLoggedIn()){
-    $templateParams["titolo"] = "Utente";
-    $templateParams["nome"] = "login-form.php";
-}
-else{
-    $templateParams["titolo"] = "Login";
-    $templateParams["nome"] = "login-form.php";
 }
 
 require 'template/base.php';
-?>
-*/
+
 
 ?>
 

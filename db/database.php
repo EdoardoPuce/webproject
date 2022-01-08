@@ -182,14 +182,24 @@ class DatabaseHelper
     }
 
 
-    public function checkLoginCliente($email, $password){
-        $query = "SELECT idCliente, email, nome FROM cliente WHERE email = ? AND password = ?";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ss',$email, $password);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        return $result->fetch_all(MYSQLI_ASSOC);
+    public function checkLogin($tipo, $email, $password){
+        if($tipo == 1){
+            $query = "SELECT idCliente, email, nome FROM cliente WHERE email = ? AND password = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ss',$email, $password);
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            return $result->fetch_all(MYSQLI_ASSOC);
+        } else{
+            $query = "SELECT idRivenditore, email, nome FROM rivenditore WHERE email = ? AND password = ?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ss',$email, $password);
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
     }
 
     public function getOrderById($idordine){

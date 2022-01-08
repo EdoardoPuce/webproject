@@ -4,9 +4,9 @@ require_once 'bootstrap.php';
 $templateParams["titolo"] = "Account";
 $templateParams["nome"] = "account.php";
 
-$user = $dbh->getPersonaById(1,1);
-registerLoggedUser($user[0]);
-$_SESSION['value'] = 1;
+$user = $dbh->getPersonaById($_SESSION['idUtente'],$_SESSION['value']);
+//registerLoggedUser($user[0]);
+//$_SESSION['value'] = 1;
 
 
 $templateParams["pg"] = $_GET["pg"];
