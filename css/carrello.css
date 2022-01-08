@@ -21,6 +21,7 @@ h2{
 
 .carrello, .dati, .riepilogo-ordine{
     border: 1px solid black;
+    background-color: var(--second_color);;
 }
 
 .carrello, .dati, .dati-spedizione > fieldset , .dati-pagamento , .riepilogo-ordine  {

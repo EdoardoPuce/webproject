@@ -5,7 +5,7 @@ section > h1 {
 .account-menu, .account {
     border: 1px solid black;
     border-radius: var(--border);
-    background-color: white;
+    background-color: var(--second_color);;
 }
 
 .account-menu {
@@ -13,7 +13,7 @@ section > h1 {
     margin: 0px 2% 10px;
     width: 20%;
     text-align: center;
-    background-color: white;
+    background-color: var(--second_color);
 }
 
 
@@ -42,6 +42,11 @@ section > aside > a:hover {
     overflow-y: auto;
     height: 400px;
     margin-bottom: 30px;
+    background-color: var(--second_color);;
+}
+
+.account > fieldset {
+    background-color: var(--second_color);;
 }
 
 .account::-webkit-scrollbar {

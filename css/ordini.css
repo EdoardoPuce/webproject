@@ -12,6 +12,7 @@
     overflow-x: hidden;
     border: 1px solid black;
     margin-right: 20px;
+    background-color: var(--second_color);
 }
 
 
@@ -23,6 +24,7 @@
     margin-left: 20px;
     margin-top: 20px;
     padding: 20px 1%;
+    background-color: var(--second_color);
 }
 
 .line{
@@ -54,10 +56,12 @@
 
 .dati-spedizione{
     height: 40%;
+    background-color: var(--second_color);;
 }
 
 .riepilogo-ordine{
     height: 60%;
+    background-color: var(--second_color);;
 }
 
 
