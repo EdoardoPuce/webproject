@@ -1,7 +1,9 @@
 <?php
 require_once 'bootstrap.php';
 
-f(isset($_POST['submit'])){
+$templateParams["nome"] = 'template/registrazione-form.php';
+
+if(isset($_POST['submit'])){
     $nome = $_POST['nome'];
     $cognome = $_POST['cognome'];
     $piva = $POST['piva'];
@@ -16,20 +18,14 @@ f(isset($_POST['submit'])){
 
     $lungPassword = mb_strlen($password); //per confrontare password in seguito
 
-    
-
     if (isset($_POST["utente"]) && $_POST['utente'] == "1"){
 
-
-
     $user = $dbh->checkEmail($email);
-
+    }
     if(count($user) > 0) {
         echo '<script>alert("Email già esistente!")</script>';
     } 
     else {
-
-
 
     }
 /*
@@ -92,8 +88,8 @@ if(isset($_POST['registrazione-form'])){
     }
 
 }
-
+*/}
 require 'template/base.php';
 ?>
-                    
-*/
+                  
+
