@@ -304,5 +304,19 @@ class DatabaseHelper
             var_dump($stmt->error);
         }
     }
+
+    public function checkEmail($email) {
+        $query = "SELECT idCliente, idRivenditore
+                  FROM cliente, rivenditore
+                  WHERE email = $email 
+                  ";
+
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('username', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     
 }
