@@ -11,8 +11,8 @@
         <h3> Articoli del momento!</h3>
         <?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>
             <div class="articolo">
-                <img src="<?php echo UPLOAD_IMG.$articolocasuale["imgArticolo"]; ?>" alt="" />
-                <p><a href="articolo.php?idArticolo=<?php echo $articolocasuale["idArticolo"]; ?>"> <?php echo $articolocasuale["nomeArticolo"] ?></a></p>
+                <img src="<?php echo UPLOAD_IMG.$articolocasuale["imgArticolo"]; ?>" alt="<?php echo $articolocasuale["nomeArticolo"]?>" />
+                <a href="articolo.php?idArticolo=<?php echo $articolocasuale["idArticolo"]; ?>"> <?php echo $articolocasuale["nomeArticolo"] ?></a>
                 <p>€ <?php echo $articolocasuale["prezzo"]; ?></p>
             </div>
         <?php endforeach; ?>

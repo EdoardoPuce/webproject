@@ -11,17 +11,14 @@
         <img src="./upload/circle.png" alt="Ordine Effettuato">
         <h2>Ordine Effettuato</h2>
     </div>
-    <div class="line"></div>
     <div class="spedizione">
         <img src="./upload/warehouse.png" alt="Ordine Preso in Carico">
         <h2>Ordine Preso In Carico</h2>
     </div>
-    <div class="line"></div>
     <div class="spedizione">
         <img src="./upload/truck.png" alt="Ordine Spedito">
         <h2>Ordine Spedito</h2>
     </div>
-    <div class="line"></div>
     <div class="spedizione">
         <img src="./upload/pin.png" alt="Arrivato a Destinazione">
         <h2>Arrivato a Destinazione</h2>
@@ -48,7 +45,7 @@
 ?>
 <script>
     var stato = <?php echo json_encode($idStato[0]["stato"], JSON_HEX_TAG); ?>;
-    let divs = document.querySelectorAll("fieldset.spedizione > div:nth-child(even)");
+    let divs = document.querySelectorAll("fieldset.spedizione > div");
 
     for (let i = 0 ; i <= stato ; i++){
         let img = divs[i].children[0];

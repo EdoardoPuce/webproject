@@ -14,6 +14,10 @@ body{
     background-color: var(--second_color);
 }
 
+fieldset {
+    border-color:black;
+}
+
 .notifiche{
     border: 1px solid black;
     border-radius: var(--border);
