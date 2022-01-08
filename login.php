@@ -1,18 +1,17 @@
 <?php
 require_once 'bootstrap.php';
 
-if ($_POST['cliente'] == "1"){
-    $msg = 'Benvenuto cliente';
-    $_SESSION['value'] == '1';   //salvo cliente
-} elseif ($_POST['rivenditore'] == '0'){
-    $msg =  'Benvenuto rivenditore';
-    $_SESSION['value'] == '0';    // salvo rivenditore
-} else {
-    $msg = 'Si prega di fare una scelta' ;
+if(isUserLoggedIn()){
+    header("location: index.php");
+}
+else{
+    $templateParams["titolo"] = "Login";
+    $templateParams["nome"] = "login-form.php";
+    
 }
 
 //fase di login
-if(isset($_POST["email"]) && isset($_POST["password"])){ 
+if(isset($_POST["email"]) && isset($_POST["password"] && isset($_POST["submit"]))){ 
     $login_result = $dbh->checkLogin($_POST["email"], $_POST["password"]);
     if(count($login_result)==0){
 
@@ -20,17 +19,17 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
     }
     else{
         registerLoggedUser($login_result[0]);
+        if ($_POST['cliente'] == "1"){
+            $msg = 'Benvenuto cliente';
+            $_SESSION['value'] == '1';   //salvo cliente
+        } elseif ($_POST['rivenditore'] == '0'){
+            $msg =  'Benvenuto rivenditore';
+            $_SESSION['value'] == '0';    // salvo rivenditore
+        } else {
+            $msg = 'Si prega di fare una scelta' ;
+        }
     }
 
-if(isUserLoggedIn()){
-    $templateParams["titolo"] = "Utente";
-    $templateParams["nome"] = "index.php";
-}
-else{
-    $templateParams["titolo"] = "Login";
-    $templateParams["nome"] = "login-form.php";
-}
-    
 require 'template/base.php';
 
 

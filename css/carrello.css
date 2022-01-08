@@ -11,6 +11,14 @@ h2{
     font-size: 20px;
 }
 
+.dati, .carrello{
+    background-color: white;
+}
+
+.dati-pagamento, .dati-spedizione, .riepilogo-ordine{
+    background-color: var(--second_color);
+}
+
 .carrello, .dati, .riepilogo-ordine{
     border: 1px solid black;
 }
@@ -56,6 +64,7 @@ h2{
     border-left-style: hidden;
     border-bottom-style: groove;
     text-align: center;
+    background-color: var(--second_color);
 }
 
 .dati-spedizione > fieldset > div:nth-child(2){

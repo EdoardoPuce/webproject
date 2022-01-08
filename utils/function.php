@@ -141,14 +141,16 @@ function isUserLoggedIn(){
     return !empty($_SESSION["idUtente"]);
 }
 
-/*
+
 function logout(){
     unset($_SESSION['idcliente']);
     unset($_SESSION['email']);
     unset($_SESSION['nome']);
     unset($_SESSION['value']);
+
+    session_destroy();
 }
-*/
+
 
 function checkCarrello($carrello){
     foreach($carrello as $articolo){

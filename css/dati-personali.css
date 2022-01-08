@@ -5,6 +5,8 @@
 fieldset{
     padding: 30px 10px 50px;
     border-radius: var(--border);
+    background-color: white;
+    height: 310px;
 }
 
 fieldset > legend{

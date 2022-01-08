@@ -5,6 +5,7 @@ section > h1 {
 .account-menu, .account {
     border: 1px solid black;
     border-radius: var(--border);
+    background-color: white;
 }
 
 .account-menu {
@@ -12,6 +13,7 @@ section > h1 {
     margin: 0px 2% 10px;
     width: 20%;
     text-align: center;
+    background-color: white;
 }
 
 
