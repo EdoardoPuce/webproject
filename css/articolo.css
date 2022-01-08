@@ -30,14 +30,12 @@ article > section > div.recensione > p {
 
 
 p{
-    font-family: verdana;
     font-size: 100%;
 }
 
 /* TITOLO */
 h1{
     margin:50px 0 30px 0;
-    font-family: verdana;
     font-size: 40px;
 }
 

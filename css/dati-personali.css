@@ -7,6 +7,7 @@ fieldset{
     border-radius: var(--border);
     background-color: white;
     height: 310px;
+    text-align: left;
 }
 
 fieldset > legend{
@@ -15,37 +16,24 @@ fieldset > legend{
 }
 
 
-fieldset > div:nth-child(2), fieldset > div:nth-child(5), fieldset > div:nth-child(7), fieldset > div:nth-child(9){
-    display: inline;
-    float: left;
-    margin-left: 5%;
-    margin-right: 10px;
+fieldset > p.label{
+    display: inline-block;
+    margin-left: 60px;
+    font-weight: bold;
 }
 
-fieldset > div:nth-child(3), fieldset > div:nth-child(6), fieldset > div:nth-child(8){
-    float: right;
+fieldset > p.value{
+    display:inline-block;
+    margin-left: 7px;
+}
+
+fieldset > p:nth-child(6){
     display: block;
-    margin-right: 5%;
-    margin-left: 10px;
+    clear:none;
 }
-
-fieldset > div:nth-child(2), fieldset > div:nth-child(5), fieldset > div:nth-child(9), fieldset > div:nth-child(3), fieldset > div:nth-child(6), fieldset > div:nth-child(8){
-    margin-top: 20px;
-    width: 38%;
+fieldset > p:nth-child(8){
+    display: inline-block;
 }
-
-fieldset > div:nth-child(4), fieldset > div:nth-child(7){
-    float: left;
-    width: 90%;
-    text-align: start;
-    margin-top: 20px;
-    margin-left: 10%;
-}
-
-fieldset > div:nth-child(4), fieldset > div:nth-child(7){
-    text-align: center;
-}
-
 
 @media screen and (max-width: 768px) {
     

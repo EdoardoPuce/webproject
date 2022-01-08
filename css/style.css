@@ -3,6 +3,11 @@
     --main_color: #4F6D59;
     --second_color: #d5fde2;
     --hover_pulsante: #E5A23C;
+    --fnt: verdana;
+}
+
+p,a,h1,h2,h3{
+    font-family: var(--fnt);
 }
 
 body{

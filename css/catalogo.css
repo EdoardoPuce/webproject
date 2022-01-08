@@ -18,7 +18,6 @@ main > section > form{
 section > form > label{
     vertical-align: super;
     margin:10px 10px 10px 20px;
-    font-family: verdana, "Helvetica Neue", Helvetica, sans-serif;
     color: black;
 }
 
@@ -146,20 +145,17 @@ p.prezzo{
 p{
     margin: 5px;
     text-align: center;
-    font-family: verdana;
     white-space: nowrap;
     overflow:hidden;
 }
 
-body > main > section.articoli > div.articolo > a:link,body > main > section.articoli > div.articolo > a:visited{
+body > main > section.articoli > div.articolo > a,body > main > section.articoli > div.articolo > a:visited{
     width: 100%;
     padding: 5px;
     display: block;
     color:black;
     text-align: center;
     text-decoration: none;
-    font-weight: bold;
-    font-family: verdana;
     white-space: nowrap;
     overflow:hidden;
     box-sizing: border-box;

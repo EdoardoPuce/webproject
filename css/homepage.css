@@ -5,7 +5,6 @@ section.intro {
 }
 section.intro > h2 {
     font-size: 40pt;
-    font-family: sans-serif;
     text-align: center;
     color: white;
 }
@@ -24,7 +23,7 @@ section.artmom {
     ;
 }
 section.artmom > h3 {
-    font-family: sans-serif;
+
     font-size: 40pt;
     text-align: center; 
 }
@@ -50,7 +49,6 @@ section.artmom  > .articolo > img {
 
 section.artmom  > .articolo > p {
     font-size: 18;
-    font-family: sans-serif;
     text-align: center;
     
 
@@ -65,13 +63,11 @@ section.allart > h4 {
 
 section.allart > .colonna > p {
     font-size: 20pt;
-    font-family: sans-serif;
     text-align: left;
 }
 
 section.allart > .colonna > a {
     font-size: 10pt;
-    font-family: sans-serif;
     text-align: center;
 }
 
