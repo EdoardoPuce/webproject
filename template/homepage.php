@@ -1,24 +1,22 @@
 <link rel="stylesheet" type="text/css" href="./css/homepage.css" />
 
 <section class="intro">
-    <h1>Parti per l'avventura!</h1>
+    <h2>Parti per l'avventura!</h2>
     <p> Scopri tutto l'abbigliamento e l'attrezzatura da trekking,<br>
     lasciati ispirare dai nostri consigli e resta aggiornato sulle novità.</p>
 </section>
 <hr>
 <img src="./upload/mountains.png" alt="logo">
-
 <section class="artmom">
         <h3> Articoli del momento!</h3>
         <?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>
             <div class="articolo">
                 <img src="<?php echo UPLOAD_IMG.$articolocasuale["imgArticolo"]; ?>" alt="" />
-                <p><a href="catalogo.php"> <?php echo $articolocasuale["nomeArticolo"]; ?> </a></p>
+                <p><a href="articolo.php?idArticolo=<?php echo $articolocasuale["idArticolo"]; ?>"> <?php echo $articolocasuale["nomeArticolo"] ?></a></p>
                 <p>€ <?php echo $articolocasuale["prezzo"]; ?></p>
             </div>
         <?php endforeach; ?>
 </section>
-
 <section class="allart">
     <h4> Catalogo </h4>
     <div class="colonna">  
@@ -55,42 +53,6 @@
            <a href="catalogo.php">Vedi tutti</a>
         </div>
         <button onclick="location.href ='catalogo.php'">
-  Scopri il catalogo completo
-</button>
-<!--
-<div class="container2">
-    <section>
-        <h2> Offerta del giorno!</h2>
-        <p> Non farti scappare questa offerta. <br> 
-            Accedi e procedi con l'acquisto</p>
-        <img src="zaino.jpg" alt="zaino">
-    </section>
-</div>
-<hr>
-<img src="./upload/mountains.png" alt="logo">
-<div class="container3">
-    <section>
-        <h3> Articoli del momento!</h3>
-        
-        <?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>
-            <div class="articolo">
-            <img src="<?php echo UPLOAD_IMG.$articolocasuale["imgArticolo"]; ?>" alt="" /> <br>
-            <a href="#"><?php echo $articolocasuale["nomeArticolo"]; ?></a>
-            <p>€ <?php echo $articolocasuale["prezzo"]; ?></p>
-            </div>
-            <?php endforeach; ?>
-        
-       
-    </section>
-</div>
-        <form action="cataologo.php">
-            <button type="submit"> 
-                Scopri il catalogo completo 
-            </button>
-        </form>
-    </section>
-</div>
-<hr>
-<img src="./upload/mountains.png" alt="logo">
-
-        -->
+        Scopri il catalogo completo
+       </button>
+ </section>

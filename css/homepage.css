@@ -1,7 +1,9 @@
 section.intro {
-   background-color: skyblue;
+    position: relative;
+    margin-top: -45px;
+    background-color: skyblue;
 }
-section > h1 {
+section > h2 {
     font-size: 40pt;
     font-family: sans-serif;
     text-align: center;
@@ -14,38 +16,7 @@ section > p {
     color: white;
     background-color: #050505;
 }
-/*
 
-.container2{
-    height: 450px;
-}
-
-.container2 > section > h2 {
-    font-size: 40pt;
-    font-family: fantasy;
-    text-align: center;   
-}
-
-.container2 > section {
-    background-color: white;
-    height: 450px;
-}
-
-.container2 > section > img {
-    border: solid;
-    position: relative;
-    width: 250px;
-    height: 250px;
-    left: 150px;
-    top: -110px;
-}
-
-.container2 > section > p {
-    text-align: center;
-    font-size: 21pt;
-    
-}
-*/
 section.artmom {
     background-color: #c1f1ac;
     position: relative;
@@ -126,7 +97,7 @@ main > hr {
 main > img{
     position: relative;
     top: -45px;
-    left: 50%;
+    left: 48%;
     width: 65px;
     height: 65px;
 }
@@ -136,7 +107,7 @@ button {
     text-align: center;
     color: white;
     position: relative;
-    margin-left: 40%;
+    margin-left: 44%;
     margin-bottom: 2%;
     margin-top: 2%;
     color: black;
@@ -157,6 +128,10 @@ button:hover {
         width: 10%;
         height: 10%;
         top: -40px;
+    }
+
+    section > p {
+        padding: 4px;
     }
 
     section.artmom {
@@ -184,6 +159,8 @@ button:hover {
     font-size: 10pt;
     height: 40pt;
     width: 70pt;
+    position: relative;
+    margin-left: 40%;
 
     }
 
@@ -201,6 +178,7 @@ button:hover {
         position: relative;
         margin-left: 25%;
         margin-top: 2.5%;
+        border-radius: 10px;
     }
 
 
