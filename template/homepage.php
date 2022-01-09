@@ -5,7 +5,6 @@
     <p> Scopri tutto l'abbigliamento e l'attrezzatura da trekking,<br>
     lasciati ispirare dai nostri consigli e resta aggiornato sulle novità.</p>
 </section>
-<hr class="foot"> 
 <section class="artmom">
         <h3> Articoli del momento!</h3>
         <?php foreach($templateParams["articolicasuali"] as $articolocasuale): ?>

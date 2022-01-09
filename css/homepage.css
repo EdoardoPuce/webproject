@@ -1,9 +1,9 @@
 section.intro {
-    position: relative;
-    margin-top: -45px;
     background-color: skyblue;
 }
 section.intro > h2 {
+    margin-top: 0px;
+    padding-top: 30px;
     font-size: 40pt;
     text-align: center;
     color: white;
@@ -13,14 +13,13 @@ section > p {
     font-size: 21pt;
     text-align: center;
     color: white;
+    padding: 10px 0px;
     background-color: #050505;
 }
 
 section.artmom {
     background-color: #c1f1ac;
-    position: relative;
-    top: -45px;
-    ;
+
 }
 section.artmom > h3 {
 
@@ -106,36 +105,6 @@ section.allart > .colonna {
 section.allart > .colonna > ul > li {
     text-align: left;
     font-size: 14pt;
-}
-main > hr{
-    background-image: url('../upload/mountains.png');
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: contain;
-    display: block;
-    height: 40px;
-    border: 0;
-    position: relative;
-}
-
-.foot:before,
-.foot:after {
-    content: '';
-    display: block;
-    position: absolute;
-    background: black;
-    height: 2px;
-    top: 18px;
-}
-.foot:before {
-    left: 0;
-    right: 52%;
-    margin-right: 10px;
-}
-.foot:after {
-    right: 0;
-    left: 52%;
-    margin-left: 10px;
 }
 
 button {
