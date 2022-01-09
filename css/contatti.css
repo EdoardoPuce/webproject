@@ -1,0 +1,62 @@
+section > h2 {
+    font-size: 26pt;
+    text-align: center;
+}
+section > p {
+    font-size: 14pt;
+    text-align: center;
+}
+section > .colonna {
+    float:left;
+    width: 29%;
+    width: 29%;
+    width: 29%;
+    padding: 2% 2%;
+    border: solid;
+    border-radius: 10px;
+    margin-top: 2%;
+    margin-left: 10%;
+    background-color: #B5B909;
+}
+
+section > .colonna > img {
+    height: 70px;
+    width: 70px;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+section > .colonna > h3 {
+    font-size: 21pt;
+    text-align: center;
+    position: relative;
+    top: -80px;
+}
+
+section > .colonna > hr {
+    position: relative;
+    margin-top: -50pt;
+}
+
+
+@media screen and (max-width: 768px){
+    
+    section > .colonna {
+        float: inherit;
+        width: 70%;
+    }
+    
+    section > .colonna > img {
+        height: 50px;
+        width: 50px;
+    }
+    
+    section > .colonna > h3 {
+        font-size: 18pt;
+        position: relative;
+        top: -65px;
+        margin-left: 25px;
+    }
+      
+}

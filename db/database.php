@@ -312,11 +312,29 @@ class DatabaseHelper
                   ";
 
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('username', $username);
+        $stmt->bind_param('email', $email);
         $stmt->execute();
         $result = $stmt->get_result();
 
         return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function aggiungiCliente($nome, $cognome , $paese, $citta, $indirizzo, $civico, $cap, $email, $password) {
+        $query = "INSERT INTO cliente(nome, cognome, paese, citta, indirizzo, civico, cap, email, 'password')
+                  VALUES ('$nome', '$cognome','$paese', '$citta','$indirizzo', '$civico', '$cap', '$email', '$password')
+                 ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("sssssiiss", $$nome, $cognome, $paese, $citta, $indirizzo, $civico, $cap, $email, $password);
+        $stmt->execute();   
+    }
+
+    public function aggiungiRivenditore($nome, $cognome , $piva, $citta, $indirizzo, $civico, $cap, $email, $password) {
+        $query = "INSERT INTO rivenditore(nome, cognome, paese, citta, indirizzo, civico, cap, email, 'password')
+                  VALUES ('$nome', '$cognome', '$piva', '$citta','$indirizzo', '$civico', '$cap', '$email', '$password')
+                 ";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param("sssssiiss", $nome, $cognome, $piva, $citta, $indirizzo, $civico, $cap, $email, $password);
+        $stmt->execute();   
     }
     
 }

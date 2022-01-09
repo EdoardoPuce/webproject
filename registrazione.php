@@ -1,14 +1,15 @@
 <?php
 require_once 'bootstrap.php';
 
-$templateParams["nome"] = 'template/registrazione-form.php';
+$templateParams["titolo"] = "Registrazione";
+$templateParams["nome"] = "registrazione-form.php";
 
 if(isset($_POST['submit'])){
     $nome = $_POST['nome'];
     $cognome = $_POST['cognome'];
     $piva = $POST['piva'];
     $paese = $POST['paese'];
-    $città = $_POST['città'];
+    $citta = $_POST['città'];
     $indirizzo = $_POST['indirizzo'];
     $civico = $_POST['civico'];
     $cap = $_POST['cap'];
@@ -18,17 +19,74 @@ if(isset($_POST['submit'])){
 
     $lungPassword = mb_strlen($password); //per confrontare password in seguito
 
+    
+
     if (isset($_POST["utente"]) && $_POST['utente'] == "1"){
+        if(isset($nome) && isset($cognome) && isset($paese)  && isset($citta) && isset($indirizzo) && isset($civico) && isset($cap) && isset($email) && isset($password) && isset($conferma_password){
+            $user = $dbh->checkEmail($email);
+            if(count($user) > 0) {
+                echo '<script>alert("Email già esistente!")</script>';
+            } 
+            else{
+                if($lungPassword < 8 || $lungPassword > 20) {
+                    echo '<script>alert("Lunghezza minima password 8 caratteri.Lunghezza massima 20 caratteri")</script>';      
+                } 
+                else{
+                    if(strcmp ($password,$conferma_password) == 0){
+                        $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
-    $user = $dbh->checkEmail($email);
+                        $nuovoCliente = $dbh->aggiungiCliente($nome, $cognome , $paese, $citta, $indirizzo, $civico, $cap, $email, $password);
+                    }
+                    else {
+                        echo '<script>alert("Inserire password uguali!")</script>';
+                    }
+                }
+            }
+        }
+        else {
+            echo '<script>alert("Inserire tutti i dati!")</script>';
+        }
+    else{
+        if (isset($_POST["utente"]) && $_POST['utente'] == "0"){
+            if(isset($nome) && isset($cognome) && isset($piva)  && isset($citta) && isset($indirizzo) && isset($civico) && isset($cap) && isset($email) && isset($password) && isset($conferma_password){
+                $user = $dbh->checkEmail($email);
+                if(count($user) > 0) {
+                    echo '<script>alert("Email già esistente!")</script>';
+                } 
+                else{
+                    if($lungPassword < 8 || $lungPassword > 20) {
+                        echo '<script>alert("Lunghezza minima password 8 caratteri.Lunghezza massima 20 caratteri")</script>';      
+                    } 
+                    else{
+                        if(strcmp ($password,$conferma_password) == 0){
+                            $password_hash = password_hash($password, PASSWORD_BCRYPT);
+    
+                            $nuovoRivenditore = $dbh->aggiungiRivenditore($nome, $cognome , $paese, $città, $indirizzo, $civico, $cap, $email, $password);
+                        }
+                        else {
+                            echo '<script>alert("Inserire password uguali!")</script>';
+                        }
+    
+                    }
+                }
+            }
+            else {
+                echo '<script>alert("Inserire tutti i dati!")</script>';
+            }
+        else{
+            echo '<script>alert("Selezionare prima una opzione!")</script>';
+        }
     }
-    if(count($user) > 0) {
-        echo '<script>alert("Email già esistente!")</script>';
-    } 
-    else {
+}
+}
+}
+require 'template/base.php';
+?>
 
-    }
-/*
+
+
+
+<!--
 if(isset($_POST['registrazione-form'])){
     $nome = $_POST['nome'];
     $cognome = $_POST['cognome'];
@@ -88,8 +146,5 @@ if(isset($_POST['registrazione-form'])){
     }
 
 }
-*/}
 require 'template/base.php';
-?>
-                  
-
+?>                 
