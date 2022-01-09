@@ -5,6 +5,8 @@
     <title><?php echo $templateParams["titolo"]; ?></title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <script src="js/jquery-3.4.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
 </head>
 <body>
     <header>

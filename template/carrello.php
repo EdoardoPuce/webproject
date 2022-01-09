@@ -12,13 +12,13 @@
                 <fieldset>
                     <legend>Dati Spedizione</legend>
                     <div>
-                        <p>Indirizzo: <?php echo $templateParams['persona'][0]["indirizzo"] . " " . $templateParams['persona'][0]["civico"]; ?></p>
+                        <p>Indirizzo: <?php if(isUserLoggedIn()){   echo $templateParams['persona'][0]["indirizzo"] . " " . $templateParams['persona'][0]["civico"];}  ?></p>
                     </div>
                     <div>
-                        <p>Paese: <?php echo $templateParams['persona'][0]["paese"]; ?></p>
+                        <p>Paese: <?php  if(isUserLoggedIn()){ echo $templateParams['persona'][0]["paese"]; } ?></p>
                     </div>
                     <div>
-                        <p>Citta: <?php echo $templateParams['persona'][0]["citta"]; ?></p>
+                        <p>Citta: <?php  if(isUserLoggedIn()){ echo $templateParams['persona'][0]["citta"]; } ?></p>
                     </div>
                 </fieldset>
             </section>
@@ -62,12 +62,3 @@
         </div>
     </form>
 </section>
-
-<script>
-
-function submitForms(){
-    //document.forms[0].submit();
-    document.forms[1].submit();
-}
-
-</script>

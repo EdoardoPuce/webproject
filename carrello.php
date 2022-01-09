@@ -7,7 +7,10 @@ $templateParams["nome"] = "carrello.php";
 
 $templateParams["costoSpedizione"] = 5;
 
-$templateParams["persona"] = $dbh->getPersonaById(1);
+if(isUserLoggedIn()){
+    $templateParams["persona"] = $dbh->getPersonaById($_SESSION['value']);
+}
+
 
 if(isset($_POST["minus_x"])){
     diminuisciQtaArticoloInCarrello($_GET["id"]);

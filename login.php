@@ -7,7 +7,6 @@ if(isUserLoggedIn()){
 else{
     $templateParams["titolo"] = "Login";
     $templateParams["nome"] = "login-form.php";
-    
 }
 
 //fase di login
@@ -20,7 +19,7 @@ if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"]
             registerLoggedUser($login_result[0]);
 
             $_SESSION['value'] = 1;   //salvo cliente
-            header("location: index.php");
+            header("location: account.php?pg=1");
         }
 
     } elseif (isset($_POST["utente"]) && $_POST['utente'] == '0'){
@@ -32,7 +31,7 @@ if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"]
             registerLoggedUser($login_result[0]);
 
             $_SESSION['value'] = 0;    // salvo rivenditore
-            header("location: index.php");
+            header("location: account.php?pg=1");
         }
     } else {
         echo '<script>alert("Si prega di fare una scelta")</script>';
