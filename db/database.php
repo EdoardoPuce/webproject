@@ -305,35 +305,32 @@ class DatabaseHelper
         }
     }
 
-    public function checkEmail($email) {
-        $query = "SELECT idCliente, idRivenditore
-                  FROM cliente, rivenditore
-                  WHERE email = $email 
-                  ";
+    public function checkEmail($email, $email2) {
+        $query = "SELECT idCliente, idRivenditore FROM cliente c, rivenditore r 
+        WHERE c.email = ? OR r.email = ? ";
 
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param('email', $email);
+        $stmt->bind_param('ss', $email, $email2);
         $stmt->execute();
         $result = $stmt->get_result();
-
+        $stmt->reset();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function aggiungiCliente($nome, $cognome , $paese, $citta, $indirizzo, $civico, $cap, $email, $password) {
-        $query = "INSERT INTO cliente(nome, cognome, paese, citta, indirizzo, civico, cap, email, 'password')
-                  VALUES ('$nome', '$cognome','$paese', '$citta','$indirizzo', '$civico', '$cap', '$email', '$password')
+        $query = "INSERT INTO cliente (nome, cognome, email, password, paese, citta, indirizzo, civico, cap ) VALUES (?, ?,?,?,?,?,?,?,?)
                  ";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param("sssssiiss", $$nome, $cognome, $paese, $citta, $indirizzo, $civico, $cap, $email, $password);
-        $stmt->execute();   
+        $stmt->bind_param("sssssssii", $nome, $cognome,  $email, $password, $paese, $citta, $indirizzo, $civico, $cap);
+        $stmt->execute();
     }
 
     public function aggiungiRivenditore($nome, $cognome , $piva, $citta, $indirizzo, $civico, $cap, $email, $password) {
-        $query = "INSERT INTO rivenditore(nome, cognome, paese, citta, indirizzo, civico, cap, email, 'password')
-                  VALUES ('$nome', '$cognome', '$piva', '$citta','$indirizzo', '$civico', '$cap', '$email', '$password')
+        $query = "INSERT INTO rivenditore(nome, cognome, email, password, piva, citta, indirizzo, civico, cap)
+                  VALUES (?, ?,?,?,?,?,?,?,?)
                  ";
         $stmt = $this->db->prepare($query);
-        $stmt->bind_param("sssssiiss", $nome, $cognome, $piva, $citta, $indirizzo, $civico, $cap, $email, $password);
+        $stmt->bind_param("ssssissii", $nome, $cognome, $email, $password, $piva, $citta, $indirizzo, $civico, $cap);
         $stmt->execute();   
     }
     

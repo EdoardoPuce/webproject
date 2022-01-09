@@ -19,7 +19,7 @@
                 <a href="catalogo.php">Catalogo</a>
             </li>
             <li>
-                <a href="#">Contatti</a>
+                <a href="contatti.php">Contatti</a>
             </li>
 
             <li>
@@ -68,7 +68,7 @@
                 <div class="pagamenti"><img src="<?php echo UPLOAD_DIR.'visa.png'; ?>" alt ="visa"/></div>
             </section><section class ="servizioClienti">
                 <h2>Servizio clienti</h2>
-                <a href="#">Contatti</a>
+                <a href="contatti.php">Contatti</a>
             </section><section class = "social">
                 <h2>Seguici su</h2>
                 <img src="<?php echo UPLOAD_DIR.'facebook.png'; ?>" alt ="facebook"/>

@@ -7,7 +7,7 @@
 
     <h2> Registrati! </h2>
     <div class="registrazione">
-        <form action="#" method="POST">
+        <form method="POST">
             <h3> Sei un cliente o un rivenditore?</h3>
             <input type="radio" id="persona1" name="utente" value="1">
             <label for="cliente"> Cliente </label>
@@ -28,7 +28,7 @@
                     <input type="text" name="paese" />
                 </label>
                 <label> Città:
-                    <input type="text" name="città" />
+                    <input type="text" name="citta" />
                 </label>
                 <label> Indirizzo:
                     <input type="text" name="indirizzo" />
@@ -46,11 +46,11 @@
                     <input type="password" name="password" />
                 </label>
                 <label> Conferma password:
-                    <input type="password" name="password" />
+                    <input type="password" name="conferma_password" />
                 </label>
             </fieldset>
-            <button type="submit" value="Registrati">Registrati</button>
-            <button type="submit" value="Annulla">Annulla </button>
+            <button type="submit" name="submit" value="Registrati">Registrati</button>
+            <button type="submit" name="submit" value="Annulla">Annulla </button>
         </form>
     </div>
 
