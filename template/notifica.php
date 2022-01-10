@@ -24,11 +24,11 @@
 
     <?php if(isCliente()): ?>
 
-        <?php foreach($_SESSION["notifica"] as $ordine): ?>
+        <?php foreach($_SESSION["notifica"] as $key=>$ordine): ?>
 
             <article class="notifica">
                 <Header class="testo_notifica">
-                    <h3><?php echo "Ordine ".$ordine['idOrdine'].":"; ?></h3>
+                    <h3><?php $index=$key+1; echo "Ordine ".$index.":"; ?></h3>
                     <p class="reset"><?php echo getStato($ordine['stato']); ?></p>
                 </Header>
                 <form method="POST">
