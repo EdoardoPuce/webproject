@@ -149,12 +149,10 @@ function isUserLoggedIn(){
 
 
 function logout(){
-    unset($_SESSION['idcliente']);
+    unset($_SESSION['idUtente']);
     unset($_SESSION['email']);
     unset($_SESSION['nome']);
     unset($_SESSION['value']);
-
-    session_destroy();
 }
 
 

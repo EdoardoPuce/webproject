@@ -1,11 +1,14 @@
 <link rel="stylesheet" type="text/css" href="./css/account.css" />
 
+
 <section>
     <h1>Account</h1>
     <aside class="account-menu">
         <a href="account.php?pg=1">Dati</a>
         <hr>
         <a href="account.php?pg=2">Ordini</a>
+        <hr>
+        <a href="login.php?lg=1">Logout</a>
     </aside>
     <?php if($templateParams['pg'] == 1): ?>
     <section class="account">

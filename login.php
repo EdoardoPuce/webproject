@@ -2,12 +2,14 @@
 require_once 'bootstrap.php';
 
 if(isUserLoggedIn()){
-    header("location: index.php");
+    if(isset($_GET['lg']) && $_GET['lg']==1 ){
+        logout();
+    }
 }
-else{
+
     $templateParams["titolo"] = "Login";
     $templateParams["nome"] = "login-form.php";
-}
+
 
 //fase di login
 if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"]) ){ 
