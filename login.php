@@ -21,7 +21,9 @@ if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"]
             registerLoggedUser($login_result[0]);
 
             $_SESSION['value'] = 1;   //salvo cliente
+            
             header("location: account.php?pg=1");
+            var_dump($_REQUEST);
         }
 
     } elseif (isset($_POST["utente"]) && $_POST['utente'] == '0'){
