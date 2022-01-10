@@ -207,7 +207,7 @@ body > footer > section > div{
     display: inline-block;
     width: 42px;
     height: 42px;
-    margin: 2% 2% 0 2%;
+    margin: 2% 2% 2% 2%;
     background-color: white;
     border-radius: 10px;
 }

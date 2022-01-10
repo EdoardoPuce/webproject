@@ -1,17 +1,22 @@
-section > h2 {
+main > section > h2 {
     font-size: 26pt;
     text-align: center;
+    margin-bottom: 0pt;;
 }
-section > p {
+
+main > section > p {
     font-size: 14pt;
     text-align: center;
+    padding: 2%;
+    margin: 0px;
 }
-section > .colonna {
+
+main > section > .colonna {
     float:left;
     width: 29%;
     width: 29%;
     width: 29%;
-    padding: 2% 2%;
+    padding: 2%;
     border: solid;
     border-radius: 10px;
     margin-top: 2%;
@@ -19,42 +24,48 @@ section > .colonna {
     background-color: #B5B909;
 }
 
-section > .colonna > img {
-    height: 70px;
-    width: 70px;
-    position: relative;
-    margin-left: 10%;
+main > section > .colonna > img {
+    height: 50px;
+    width: 50px;
+    margin-left: 4%;
     margin-top: 2%;
 }
 
-section > .colonna > h3 {
-    font-size: 21pt;
+main > section > .colonna > h3 {
+    font-size: 16pt;
     text-align: center;
     position: relative;
-    top: -80px;
+    top: -50pt;
+    
 }
 
-section > .colonna > hr {
-    position: relative;
+main > section > .colonna > hr {
     margin-top: -50pt;
 }
 
 
 @media screen and (max-width: 768px){
+
+    main > section > h2 {
+        font-size: 24pt;
+    }
+
+    main > section > p {
+        font-size: 12pt;
+    }
     
-    section > .colonna {
+    main > section > .colonna {
         float: inherit;
         width: 70%;
     }
     
-    section > .colonna > img {
+    main > section > .colonna > img {
         height: 50px;
         width: 50px;
     }
     
-    section > .colonna > h3 {
+    main > section > .colonna > h3 {
         font-size: 18pt;
-        position: relative;
         top: -65px;
         margin-left: 25px;
     }

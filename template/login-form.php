@@ -5,7 +5,7 @@
     <p> Non sei ancora registrato?</p>
     <p><a href="registrazione.php"> Registrati qui</a></p>
     <div class="login">
-        <form action="#" method="POST">
+        <form method="POST">
             <p> Sei un cliente o un rivenditore?</p>
             <input type="radio" id="persona1" name="utente" value="1">
             <label for="cliente"> Cliente </label>
@@ -29,6 +29,7 @@
             </div>
         </div>
   </section>
+
 
 
 

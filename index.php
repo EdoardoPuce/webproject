@@ -8,6 +8,5 @@ $templateParams["logo"] = "hiking.png";
 $templateParams["nome"] = "template/homepage.php";
 $templateParams["articolicasuali"] = $dbh->getRandomArticoli(3);
 $templateParams["categoriecasuali"] = $dbh->getRandomCategorie(3);
-
 require 'template/base.php';
 ?>
