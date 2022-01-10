@@ -120,29 +120,44 @@ function getNotifiche($dbh){
     return $dbh->getStatiByUser($_SESSION['idUtente']);
 }
 
-function checkNotifiche($dbh){
-    if(isUserLoggedIn()){
-        $old = getNotifiche($dbh);
-        // ASPETTA TOT TEMPO (5 minuti = 5*60*1000)
+function build_sorter($key) {
+    return function ($a, $b) use ($key) {
+        return strnatcmp($a[$key], $b[$key]);
+    };
+}
 
-            /*
-            <script>
-                setTimeout(function () { window.location.reload(); }, 5*1000); //5*1000 = 5 secondi
-                // just show current time stamp to see time of last refresh.
-                document.write(new Date());
-            </script>
-            */
+function checkNotifiche($dbh, $old){
 
+        usort($old, build_sorter('idOrdine'));
 
         $new = getNotifiche($dbh);
-        foreach( $old as $notifica){
-            //per ogni vecchia notifica se new ha dentro quella vecchia e lo stato e diverso
-            // stampa nuova notifica
-            echo $notifica['idOrdine'];
-            echo $notifica['stato'];
+        usort($new, build_sorter('idOrdine'));
 
+        $update = array();
+        for($i = 0; $i < sizeof($new) ; $i++){
+            $result = array();
+            $result = array_diff_assoc($new[$i], $old[$i]);
+            if(!empty($result)){
+                $new_input = array(
+                    'idOrdine' => $i, 
+                    'stato' => $result['stato'], 
+                );
+                array_push($update, $new_input);
+            }
         }
-    }
+
+        foreach($update as $nuovo){
+            $id = $nuovo['idOrdine']+1;
+            $string = getStato($nuovo['stato']);
+            $str = 'Ordine '.$id.': '.$string.'.';
+
+            echo "<script>
+            var myvar = '$str';
+            toastr.success(myvar);
+            </script>";
+        }
+
+        return $new;
 
 
 }

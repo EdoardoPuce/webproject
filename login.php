@@ -18,9 +18,11 @@ if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"]
         if(count($login_result)==0){
             echo '<script>alert("Errore! Email o password errate!")</script>';
         } else {
+            $_SESSION['value'] = 1;   //salvo cliente
             registerLoggedUser($login_result[0]);
 
-            $_SESSION['value'] = 1;   //salvo cliente
+            
+            $_SESSION["notifica"] = getNotifiche($dbh);
             header("location: account.php?pg=1");
         }
 
@@ -30,9 +32,11 @@ if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["submit"]
         if(count($login_result)==0){
             echo '<script>alert("Errore! Email o password errate!")</script>';
         } else {
+            $_SESSION['value'] = 0;    // salvo rivenditore
             registerLoggedUser($login_result[0]);
 
-            $_SESSION['value'] = 0;    // salvo rivenditore
+            
+            $_SESSION["notifica"] = getNotifiche($dbh);
             header("location: account.php?pg=1");
         }
     } else {
