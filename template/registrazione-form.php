@@ -5,42 +5,42 @@
     <div class="registrazione">
         <form method="POST">
             <h3> Sei un cliente o un rivenditore?</h3>
-            <input type="radio" id="persona1" name="utente" value="1">
-            <label for="cliente"> Cliente </label>
-            <input type="radio" id="persona2" name="utente" value="0">
-            <label for="rivenditore"> Rivenditore </label>
+            <fieldset>
+                <legend>Scegli tipologia utente:</legend>
+            <label for="cliente"><input type="radio" id="cliente" name="utente" value="1">
+                Cliente </label>
+            <label for="rivenditore"><input type="radio" id="rivenditore" name="utente" value="0">
+                Rivenditore </label>
+            </fieldset>
             <fieldset>
                 <legend> Inserisci i dati:</legend>
-                <label> Nome:</label>
-                <input type="text" id="nome" name="nome" />
-                <label> Cognome:</label>
-                <input type="text" name="cognome" />
-                <label class="riv"> P.iva:
-                <input type="text" name="piva" />
+                <label for="nome"> Nome:
+                    <input type="text" id="nome" name="nome" /></label>
+                <label for="cognome"> Cognome:
+                    <input type="text" name="cognome" id = "cognome"/></label>
+                <label class="riv" for="piva"> P.iva:
+                    <input type="text" name="piva" id = "piva" />
                 </label>
-                <label class="clien">Paese:
-                <input type="text" name="paese" />
+                <label class="clien" for="paese">Paese:
+                    <input type="text" name="paese" id = "paese" />
                 </label>
-                <label> Città:</label>
-                <input type="text" name="citta" />
-                <label> Indirizzo:</label>
-                <input type="text" name="indirizzo" />
-                <label>Civico:</label>
-                <input type="number" name="civico">
-                <label> Cap:</label>
-                <input type="number" name="cap" />
-                <label> Email:</label>
-                <input type="email" name="email" />
-                <label> Password:</label>
-                <input type="password" name="password" />
-                <label> Conferma password:</label>
-                <input type="password" name="conferma_password" />
+                <label for="citta"> Città:
+                    <input type="text" name="citta" id = "citta"/></label>
+                <label for="indirizzo"> Indirizzo:
+                    <input type="text" name="indirizzo" id = "indirizzo"/></label>
+                <label for="civico">Civico:
+                    <input type="number" name="civico" id = "civico"></label>
+                <label for="cap"> Cap:
+                    <input type="number" name="cap" id ="cap" /></label>
+                <label for="email"> Email:
+                    <input type="email" name="email" id = "email"/></label>
+                <label for="password"> Password:
+                    <input type="password" name="password" id ="password"/></label>
+                <label for="conferma_password"> Conferma password:
+                    <input type="password" name="conferma_password" id ="conferma_password"/></label>
             </fieldset>
             <button type="submit" name="submit" value="Registrati">Registrati</button>
-            <button onclick="location.href ='login.php'">
-            Annulla
-           </button>
+            <button onclick="location.href ='login.php'">Annulla</button>
         </form>
     </div>
 </section>
-

@@ -28,8 +28,14 @@ main > section > .registrazione > form {
 main > section > .registrazione > form > fieldset {
     margin-top: 10px;
 }
+
+legend, label{
+    font-family: var(--fnt);
+}
+
 label {
     padding: 2%,2%, 2%, 2%;
+    
 }
 
 input[type="radio"] {
