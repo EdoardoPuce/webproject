@@ -13,7 +13,7 @@
             Attivo dalle 09:00 alle 22:00, 7 giorni su 7</p>
     </div>
     <div class="colonna">
-        <img src="./upload/email.png"indiri alt="email">
+        <img src="./upload/email.png" alt="email">
         <h3>Email</h3>
         <hr> 
         <p> Assistenza clienti</p>

@@ -28,7 +28,7 @@ $categorie = $dbh->getCategorie(); ?>
                  echo $articolo['nomeArticolo'];?>" />
             </div>
             <div>
-                <label for="descrizione">Descrizione</label><textarea type="text" id="descrizione" name="descrizione"><?php echo $articolo["descrizione"]; ?></textarea>
+                <label for="descrizione">Descrizione</label><textarea  id="descrizione" name="descrizione"><?php echo $articolo["descrizione"]; ?></textarea>
             </div>
             <div>
                 <label for="prezzo">Prezzo</label><input type="number" step=".01" id="prezzo" name="prezzo" value="<?php echo ($articolo['prezzo']); ?>" />
@@ -37,37 +37,37 @@ $categorie = $dbh->getCategorie(); ?>
                 <img src="<?php echo (UPLOAD_IMG . $articolo["imgArticolo"]); ?>" alt="none">
             </div>
             <div>
-                <label for="imgarticolo">Immagine Articolo</label><input type="file" id="img" name="img"/>
+                <label for="imgarticolo">Immagine Articolo</label><input type="file" id="imgarticolo" name="img"/>
             </div>
         </div>
         <div class="right">
             <div>
-                <label for="taglia">Taglia:</label>
-                <input type="radio" id="taglia" name="taglia" value="unisex" <?php 
-                    if ("unisex" == $articolo["taglia"]){ echo "checked"; } ?> /><label for="taglia">Unisex</label>
-                <input type="radio" id="taglia" name="taglia" value="S" <?php 
-                    if ("S" == $articolo["taglia"]){ echo "checked"; } ?>/><label for="taglia">S</label>
-                <input type="radio" id="taglia" name="taglia" value="M" <?php 
-                    if ("M" == $articolo["taglia"]){ echo "checked"; } ?>/><label for="taglia">M</label>
-                <input type="radio" id="taglia" name="taglia" value="L"<?php 
-                    if ("L" == $articolo["taglia"]){ echo "checked"; } ?> /><label for="taglia">L</label>
-                <input type="radio" id="taglia" name="taglia" value="XL" <?php 
-                    if ("XL" == $articolo["taglia"]){ echo "checked"; } ?>/><label for="taglia">XL</label>
+                <p>Taglia:</p>
+                <label for="unisex"><input type="radio" id="unisex" name="taglia" value="unisex" <?php 
+                    if ("unisex" == $articolo["taglia"]){ echo "checked"; } ?> />Unisex</label>
+                <label for="s"><input type="radio" id="s" name="taglia" value="S" <?php 
+                    if ("S" == $articolo["taglia"]){ echo "checked"; } ?>/>S</label>
+                <label for="m"><input type="radio" id="m" name="taglia" value="M" <?php 
+                    if ("M" == $articolo["taglia"]){ echo "checked"; } ?>/>M</label>
+                <label for="l"><input type="radio" id="l" name="taglia" value="L"<?php 
+                    if ("L" == $articolo["taglia"]){ echo "checked"; } ?> />L</label>
+                <label for="xl"><input type="radio" id="xl" name="taglia" value="XL" <?php 
+                    if ("XL" == $articolo["taglia"]){ echo "checked"; } ?>/>XL</label>
             </div>
             <div>
                 <label for="qta">Quantita</label><input type="number" id="qta" name="qta" value="<?php echo ($articolo['qtaMagazzino']); ?>" />
             </div>
             <div>
-                <label for="categoria">Categoria</label>
+                <p>Categoria</p>
                 <div>
                     <?php foreach ($categorie as $categoria) :
                         if ($articolo["categoria"] == $categoria["idCategoria"]) { ?>
                             <div>
-                                <input type="radio" id="categoria" name="categoria" value="<?php echo ($categoria["nomeCategoria"]); ?>" checked /><label for="categoria"><?php echo ($categoria["nomeCategoria"]); ?></label>
+                            <label for="<?php echo ($categoria["nomeCategoria"])?>"><input type="radio" id="<?php echo ($categoria["nomeCategoria"])?>" name="categoria" value="<?php echo ($categoria["nomeCategoria"]); ?>" checked /><?php echo ($categoria["nomeCategoria"]); ?></label>
                             </div>
                         <?php } else { ?>
                             <div>
-                                <input type="radio" id="categoria" name="categoria" value="<?php echo ($categoria["nomeCategoria"]); ?>" /><label for="categoria"><?php echo ($categoria["nomeCategoria"]); ?></label>
+                            <label for="<?php echo ($categoria["nomeCategoria"])?>"> <input type="radio" id="<?php echo ($categoria["nomeCategoria"])?>" name="categoria" value="<?php echo ($categoria["nomeCategoria"]); ?>" /><?php echo ($categoria["nomeCategoria"]); ?></label>
                             </div>
                         <?php } ?>
                     <?php endforeach; ?>

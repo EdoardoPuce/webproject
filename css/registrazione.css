@@ -16,9 +16,11 @@ main > section > .registrazione > h3 {
     margin-bottom: 20px;  
 }
 
+label > input{
+    background-color: var(--second_color);
+}
 main > section > .registrazione > form {
     padding: 30px;
-    background: white;
     border: 1px solid #000000;
     border-radius: 10px;
     width: 450px;

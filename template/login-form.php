@@ -7,10 +7,12 @@
     <div class="login">
         <form method="POST">
             <p> Sei un cliente o un rivenditore?</p>
-            <input type="radio" id="persona1" name="utente" value="1">
-            <label for="cliente"> Cliente </label>
-            <input type="radio" id="persona2" name="utente" value="0">
-            <label for="rivenditore"> Rivenditore </label> 
+            <fieldset>
+            <label for="cliente"><input type="radio" id="cliente" name="utente" value="1">
+             Cliente </label>
+             <label for="rivenditore"><input type="radio" id="rivenditore" name="utente" value="0">
+            Rivenditore </label> 
+            </fieldset>
             
             <label for="email"> Email: </label>
             <input type="text" id="email" name="email"/>

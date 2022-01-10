@@ -200,4 +200,8 @@ button:hover {
         height: 50px;
 
     }
+
+    section.allart > button{
+        height: auto;
+    }
 }
