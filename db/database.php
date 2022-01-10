@@ -333,5 +333,14 @@ class DatabaseHelper
         $stmt->bind_param("ssssissii", $nome, $cognome, $email, $password, $piva, $citta, $indirizzo, $civico, $cap);
         $stmt->execute();   
     }
+
+    public function getRandomCategorie($n=3){
+        $query = "SELECT * FROM categoria ORDER BY RAND() LIMIT ?";       
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('i', $n);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     
 }

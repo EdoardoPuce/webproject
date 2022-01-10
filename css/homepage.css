@@ -1,6 +1,7 @@
 section.intro {
     background-color: skyblue;
 }
+
 section.intro > h2 {
     margin-top: 0px;
     padding-top: 30px;
@@ -10,6 +11,7 @@ section.intro > h2 {
 }
 
 section > p {
+    margin-top: 0px;
     font-size: 21pt;
     text-align: center;
     color: white;
@@ -17,12 +19,24 @@ section > p {
     background-color: #050505;
 }
 
+section.intro > p{
+    margin-bottom: 0px;
+}
+
 section.artmom {
     background-color: #c1f1ac;
-
+    width:100%;
 }
-section.artmom > h3 {
 
+
+section.artmom > h2, section.allart > h2{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    text-align: center;
+} 
+section.artmom > h2 {
     font-size: 40pt;
     text-align: center; 
 }
@@ -61,7 +75,9 @@ section.artmom  > .articolo > a,section.artmom  > .articolo > a:visited{
 section.artmom  > .articolo > a:hover{
     text-decoration: underline;
 }
-
+section.artmom{
+    overflow:auto;
+}
 section.artmom  > .articolo > p {
     margin: 10px auto;
     font-size: 18;
@@ -73,21 +89,20 @@ section.artmom  > .articolo > p {
     width: 45%;
 }
 
-section.allart > h4 {
+section.allart{
+    text-align: center;
+}
+section.allart > h2 {
     font-size: 40pt;
     font-family: sans-serif;
     text-align: center;
     background-color: #c1f1ac ;
-    margin-top: 320pt;
-}
-
-section.allart > .colonna > p {
-    font-size: 20pt;
-    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 
 section.allart > .colonna > a {
-    font-size: 10pt;
+    font-size: 20pt;
     text-align: center;
 }
 
@@ -102,23 +117,27 @@ section.allart > .colonna {
     border-radius: 10px;
 }
 
-section.allart > .colonna > ul > li {
-    text-align: left;
-    font-size: 14pt;
+section.allart > .colonna > a {
+    text-decoration: none;
+    font-family: var(--fnt);
+    color: black;
+}
+
+section.allart > .colonna > a:hover{
+    color:orange;
+text-decoration: underline;
 }
 
 button {
     font-size: 16pt;
     text-align: center;
-    color: white;
-    position: relative;
-    margin-left: 44%;
     margin-bottom: 2%;
     margin-top: 2%;
+    margin: 2% auto;
     color: black;
     background-color: yellow;
-    height: 40pt;
-    width: 140pt;
+    border-radius: 20px;
+    padding: 10px ;
 }
 
 button:hover {
@@ -138,6 +157,7 @@ button:hover {
     section > p {
         padding: 4px;
     }
+
 
     section.artmom {
         position: relative;
@@ -163,12 +183,7 @@ button:hover {
 
     }
 
-    section.allart > h4 {
-        margin-top: 220pt;
-    }
-    
-
-    section.allart > .colonna {
+        section.allart > .colonna {
         float: initial;
         width: 50%;
         width: 50%;
