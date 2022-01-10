@@ -9,6 +9,8 @@
 
             if(isset($_POST['idN'])){
                 $dbh->cancellaNotifica($_POST['idN']);
+                unset($_SESSION["notifica"]);
+                $_SESSION["notifica"] = getNotifiche($dbh);
                 header("Refresh:0");
             }
             

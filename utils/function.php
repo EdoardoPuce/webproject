@@ -127,7 +127,9 @@ function build_sorter($key) {
 }
 
 function checkNotifiche($dbh, $old){
-
+    $max = $dbh->lastOrderId();
+    
+    $index = $max[0]['max(idOrdine)'] - count($old);
         usort($old, build_sorter('idOrdine'));
 
         $new = getNotifiche($dbh);
@@ -139,7 +141,7 @@ function checkNotifiche($dbh, $old){
             $result = array_diff_assoc($new[$i], $old[$i]);
             if(!empty($result)){
                 $new_input = array(
-                    'idOrdine' => $i, 
+                    'idOrdine' => $i+ $index, 
                     'stato' => $result['stato'], 
                 );
                 array_push($update, $new_input);

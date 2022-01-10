@@ -20,6 +20,7 @@ if (isset($_POST["submit"])) {
             } else {
                 $_SESSION['value'] = 1;   //salvo cliente
                 registerLoggedUser($login_result[0]);
+                $_SESSION["notifica"] = getNotifiche($dbh);
                 header("location: account.php?pg=1");
             }
         } elseif (isset($_POST["utente"]) && $_POST['utente'] == '0') {
@@ -30,6 +31,7 @@ if (isset($_POST["submit"])) {
             } else {
                 $_SESSION['value'] = 0;    // salvo rivenditore
                 registerLoggedUser($login_result[0]);
+                $_SESSION["notifica"] = getNotifiche($dbh);
                 header("location: account.php?pg=1");
             }
         } else {
