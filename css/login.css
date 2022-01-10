@@ -1,23 +1,23 @@
-section {
-    background-color: #F4FDF0;
+main > section {
+    background-color: #d5fde2;
 }
-section > h2 {
+main > section > h2 {
     font-family: sans-serif;
     font-size: 40pt;
     text-align: center;
 }
 
-section > p {
+main > section > p {
     text-align: center;
     font-size: 16pt;
 }
 
-section > form {
+main > section > form {
     text-align: center;
     font-size: 16pt;
 }
 
-section > a {
+main > section > a {
     text-align: center;
     font-size: 14pt;
 }
@@ -31,12 +31,12 @@ section > a {
     margin:0 auto;
 }
 
-section > .login > form > p {
+main > section > .login > form > p {
     text-align: center;  
     font-size: 14pt;
 }
 
-section > .login > form > input[type="submit"] {
+main > section > .login > form > input[type="submit"] {
     background-color: yellow;
 }
 
@@ -52,7 +52,6 @@ input[type="radio"] {
 input[type="submit"] {
     width: 25%;
     height: 10%;
-    position: relative;
     margin-top: 15px;
     margin-left: 40%;
     
