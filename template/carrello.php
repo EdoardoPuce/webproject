@@ -12,13 +12,13 @@
                 <fieldset>
                     <legend>Dati Spedizione</legend>
                     <div>
-                        <p>Indirizzo: <?php if(isUserLoggedIn()){   echo $templateParams['persona'][0]["indirizzo"] . " " . $templateParams['persona'][0]["civico"];}  ?></p>
+                        <p>Indirizzo: <?php if(isUserLoggedIn() && isCliente()){   echo $templateParams['persona'][0]["indirizzo"] . " " . $templateParams['persona'][0]["civico"];}  ?></p>
                     </div>
                     <div>
-                        <p>Paese: <?php  if(isUserLoggedIn()){ echo $templateParams['persona'][0]["paese"]; } ?></p>
+                        <p>Paese: <?php  if(isUserLoggedIn() && isCliente()){ echo $templateParams['persona'][0]["paese"]; } ?></p>
                     </div>
                     <div>
-                        <p>Citta: <?php  if(isUserLoggedIn()){ echo $templateParams['persona'][0]["citta"]; } ?></p>
+                        <p>Citta: <?php  if(isUserLoggedIn() && isCliente()){ echo $templateParams['persona'][0]["citta"]; } ?></p>
                     </div>
                 </fieldset>
             </section>
