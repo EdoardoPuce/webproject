@@ -120,33 +120,6 @@ function getNotifiche($dbh){
     return $dbh->getStatiByUser($_SESSION['idUtente']);
 }
 
-function checkNotifiche($dbh){
-    if(isUserLoggedIn()){
-        $old = getNotifiche($dbh);
-        // ASPETTA TOT TEMPO (5 minuti = 5*60*1000)
-
-            /*
-            <script>
-                setTimeout(function () { window.location.reload(); }, 5*1000); //5*1000 = 5 secondi
-                // just show current time stamp to see time of last refresh.
-                document.write(new Date());
-            </script>
-            */
-
-
-        $new = getNotifiche($dbh);
-        foreach( $old as $notifica){
-            //per ogni vecchia notifica se new ha dentro quella vecchia e lo stato e diverso
-            // stampa nuova notifica
-            echo $notifica['idOrdine'];
-            echo $notifica['stato'];
-
-        }
-    }
-
-
-}
-
 function getNotificheRivenditore($dbh){
     return $dbh->getArticoloNotificaRivenditore($_SESSION['idUtente']);
 }

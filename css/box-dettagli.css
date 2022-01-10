@@ -7,7 +7,7 @@ article, .link, .crea {
     display: inline-block;
     line-height: 180px;
     height: 180px;
-    width: 150px;
+    width: 250px;
     text-align: center;
     margin: 8px 2%;
     vertical-align: top;
@@ -23,7 +23,7 @@ article, .link, .crea {
 article{
     display: inline-block;
     height: 180px;
-    width: 150px;
+    width: 250px;
     text-align: center;
     margin: 8px 2%;
     background-color: var(--second_color);
