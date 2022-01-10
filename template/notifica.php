@@ -5,24 +5,26 @@
     <?php
 
         if(isCliente()){
-            $ordini = getNotifiche($dbh);
+            $_SESSION["notifica"] = checkNotifiche($dbh, $_SESSION["notifica"]);
 
             if(isset($_POST['idN'])){
                 $dbh->cancellaNotifica($_POST['idN']);
+                unset($_SESSION["notifica"]);
+                $_SESSION["notifica"] = getNotifiche($dbh);
                 header("Refresh:0");
             }
             
         } else{
             $articoli = getNotificheRivenditore($dbh);
         }
-
+        
     ?>
 
 
 
     <?php if(isCliente()): ?>
 
-        <?php foreach($ordini as $ordine): ?>
+        <?php foreach($_SESSION["notifica"] as $ordine): ?>
 
             <article class="notifica">
                 <Header class="testo_notifica">

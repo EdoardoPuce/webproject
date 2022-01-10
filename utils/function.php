@@ -120,6 +120,50 @@ function getNotifiche($dbh){
     return $dbh->getStatiByUser($_SESSION['idUtente']);
 }
 
+function build_sorter($key) {
+    return function ($a, $b) use ($key) {
+        return strnatcmp($a[$key], $b[$key]);
+    };
+}
+
+function checkNotifiche($dbh, $old){
+    $max = $dbh->lastOrderId();
+    
+    $index = $max[0]['max(idOrdine)'] - count($old);
+        usort($old, build_sorter('idOrdine'));
+
+        $new = getNotifiche($dbh);
+        usort($new, build_sorter('idOrdine'));
+
+        $update = array();
+        for($i = 0; $i < sizeof($new) ; $i++){
+            $result = array();
+            $result = array_diff_assoc($new[$i], $old[$i]);
+            if(!empty($result)){
+                $new_input = array(
+                    'idOrdine' => $i+ $index, 
+                    'stato' => $result['stato'], 
+                );
+                array_push($update, $new_input);
+            }
+        }
+
+        foreach($update as $nuovo){
+            $id = $nuovo['idOrdine']+1;
+            $string = getStato($nuovo['stato']);
+            $str = 'Ordine '.$id.': '.$string.'.';
+
+            echo "<script>
+            var myvar = '$str';
+            toastr.success(myvar);
+            </script>";
+        }
+
+        return $new;
+
+
+}
+
 function getNotificheRivenditore($dbh){
     return $dbh->getArticoloNotificaRivenditore($_SESSION['idUtente']);
 }

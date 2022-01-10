@@ -172,6 +172,14 @@ class DatabaseHelper
         $stmt->execute();
     }
 
+    public function test($idOrdine, $i){
+        $query = "UPDATE `ordine` SET `stato`= ? WHERE idOrdine = ?";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ii',$i, $idOrdine);
+        $stmt->execute();
+    }
+
     public function getArticoloNotificaRivenditore($idrivenditore){
         $query = "SELECT nomeArticolo, qtaMagazzino FROM articolo WHERE rivenditore = ? AND qtaMagazzino < 6";
         $stmt = $this->db->prepare($query);
