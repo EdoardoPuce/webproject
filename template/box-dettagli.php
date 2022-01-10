@@ -20,7 +20,7 @@
             <img src="./upload/packaging.png" alt="" />
             <h2>Ordine: <?php echo $key+1;?></h2>
         </header>
-        <a class="link" href="account.php?pg=3&idO=<?php echo $key+1; ?>">Dettagli</a>
+        <a class="link" href="account.php?pg=3&idO=<?php echo $ordine["idOrdine"]; ?>">Dettagli</a>
     </article>
     <?php endforeach ?>
 <?php endif ?>
